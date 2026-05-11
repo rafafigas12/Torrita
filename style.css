@@ -182,3 +182,15 @@ body {
     border-top: 1px solid #333;
     padding-top: 20px;
 }
+
+.logo img {
+    height: 95px; /* Ajusta este valor se quiseres o logo mais pequeno ou maior */
+    width: auto;  /* Mantém a proporção da imagem */
+    display: block;
+}
+
+/* Removemos as definições de fonte antigas do .logo já que agora é uma imagem */
+.logo {
+    display: flex;
+    align-items: center;
+}
