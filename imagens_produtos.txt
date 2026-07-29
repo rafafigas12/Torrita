@@ -154,3 +154,38 @@ Tarte de Amêndoa: https://tb-static.uber.com/prod/image-proc/processed_images/f
 
 Bolo de Lótus Biscoff: https://tb-static.uber.com/prod/image-proc/processed_images/d4de528692077179280a7d4ad5025a11/bc9c318a9c96996e2d990faf2b0c65f6.jpeg
 
+Hambúrguer Especial: https://tb-static.uber.com/prod/image-proc/processed_images/393a99e98d42a9a2820869fa73612b8b/a1681d67ebe55c76c3af5f401619c278.jpeg
+
+Hambúrguer de Frango e Bacon: https://tb-static.uber.com/prod/image-proc/processed_images/87565e0870322d25f2903a5bb58a8aff/a1681d67ebe55c76c3af5f401619c278.jpeg
+
+Cachorro: https://tb-static.uber.com/prod/image-proc/processed_images/17b1b7f9340be336978c8a9a9487322a/a1681d67ebe55c76c3af5f401619c278.jpeg
+
+Sandes de Ovo Mexido: https://tb-static.uber.com/prod/image-proc/processed_images/9ccd9e89553df48031f51443da725b9f/a1681d67ebe55c76c3af5f401619c278.jpeg
+
+Sandes de Panado: https://tb-static.uber.com/prod/image-proc/processed_images/1b50d50c60f15011c55769c861fa4f5f/a1681d67ebe55c76c3af5f401619c278.jpeg
+
+Tosta Mista: https://tb-static.uber.com/prod/image-proc/processed_images/48666749c2e3f8eaacd36ddfa7d3583b/a1681d67ebe55c76c3af5f401619c278.jpeg
+
+Tosta de Frango: https://tb-static.uber.com/prod/image-proc/processed_images/52dfde3ef31a96dedf0d3383df8a948e/a1681d67ebe55c76c3af5f401619c278.jpeg
+
+Tosta Serrana: https://tb-static.uber.com/prod/image-proc/processed_images/76b5240b1c24383a480afb62656b122b/a1681d67ebe55c76c3af5f401619c278.jpeg
+
+Tosta de Atum: https://tb-static.uber.com/prod/image-proc/processed_images/bea841bdf3fa31b7b14213b79dad2b5d/a1681d67ebe55c76c3af5f401619c278.jpeg
+
+Tosta Portuguesa: https://tb-static.uber.com/prod/image-proc/processed_images/0911ff6c9a52b7b62603162166823c18/a1681d67ebe55c76c3af5f401619c278.jpeg
+
+Tosta Inglesa: https://tb-static.uber.com/prod/image-proc/processed_images/ceac6af6b8adcc577fd4aa8aba5dae90/a1681d67ebe55c76c3af5f401619c278.jpeg
+
+Tosta Francesa: https://tb-static.uber.com/prod/image-proc/processed_images/1b5332fcfb66078c70089a8f52429584/a1681d67ebe55c76c3af5f401619c278.jpeg
+
+Tosta Tórrita: https://tb-static.uber.com/prod/image-proc/processed_images/e9cd415f102bc6ff2230656c2efc6b82/a1681d67ebe55c76c3af5f401619c278.jpeg
+
+Bolo de Chantilly e Ananás: https://tb-static.uber.com/prod/image-proc/processed_images/183fd2a66ab19c8be740828755873a50/c67fc65e9b4e16a553eb7574fba090f1.jpeg
+
+Bolo Kinder Bueno: https://tb-static.uber.com/prod/image-proc/processed_images/d718070ef8419ffa4f7418590d999e16/a19bb09692310dfd41e49a96c424b3a6.jpeg
+
+Bolo Brigadeiro: https://tb-static.uber.com/prod/image-proc/processed_images/83c4b3f09dc3735133f3c7e811183fce/c67fc65e9b4e16a553eb7574fba090f1.jpeg
+
+Bolo de doce d’ovos: https://tb-static.uber.com/prod/image-proc/processed_images/1c5677c16b508f84a9df0cb2e9dc1c44/a19bb09692310dfd41e49a96c424b3a6.jpeg
+
+Bolo de Lótus Biscoff: https://tb-static.uber.com/prod/image-proc/processed_images/d4de528692077179280a7d4ad5025a11/bc9c318a9c96996e2d990faf2b0c65f6.jpeg

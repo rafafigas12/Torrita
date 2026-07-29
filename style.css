@@ -20,8 +20,8 @@ body {
     padding: 20px 50px;
     background-color: #fff;
     border-bottom: 1px solid #eee;
-    position: sticky; 
-    top: 0; 
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
@@ -71,29 +71,45 @@ body {
     margin-bottom: 40px;
 }
 
+/* --- Contentor dos Botões Delivery --- */
+.botoes-delivery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
 /* --- Contentor do Botão Secundário --- */
 .botao-secundario-container {
-    margin-top: 25px; /* Cria um espaço elegante em relação aos botões de cima */
+    margin-top: 20px;
+    /* Cria um espaço elegante em relação aos botões de cima */
 }
 
 /* --- Botão Secundário (Too Good To Go) --- */
 .botao-secundario {
     text-decoration: none;
-    background-color: transparent; /* Fundo transparente para não competir com os principais */
+    background-color: transparent;
+    /* Fundo transparente para não competir com os principais */
     color: #fff;
     padding: 10px 30px;
-    font-size: 0.85rem; /* Letra ligeiramente mais pequena */
+    font-size: 0.85rem;
+    /* Letra ligeiramente mais pequena */
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 1px solid rgba(255, 255, 255, 0.7); /* Borda mais fina e ligeiramente transparente */
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    /* Borda mais fina e ligeiramente transparente */
     transition: all 0.3s ease;
     display: inline-block;
-    border-radius: 4px; /* Cantos ligeiramente arredondados para um ar mais moderno */
+    border-radius: 4px;
+    /* Cantos ligeiramente arredondados para um ar mais moderno */
 }
 
 .botao-secundario:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Fica ligeiramente branco ao passar o rato */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Fica ligeiramente branco ao passar o rato */
     border-color: #fff;
     color: #fff;
 }
@@ -102,13 +118,15 @@ body {
     text-decoration: none;
     background-color: #fff;
     color: #000;
-    padding: 15px 40px;
-    font-size: 1rem;
+    padding: 15px 30px;
+    font-size: 0.95rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     border: 2px solid #fff;
     transition: all 0.3s ease;
+    display: inline-block;
+    border-radius: 4px;
 }
 
 .botao-principal:hover {
@@ -165,12 +183,12 @@ body {
     object-fit: cover;
     margin-bottom: 20px;
     border-radius: 4px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease; 
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .item-montra img:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 
@@ -216,7 +234,8 @@ body {
     margin-top: 30px;
     border-top: 1px solid #333;
     padding-top: 20px;
-    display: inline-block; /* Mantém o conteúdo centrado */
+    display: inline-block;
+    /* Mantém o conteúdo centrado */
 }
 
 .horario-detalhado h5 {
@@ -241,8 +260,10 @@ body {
 }
 
 .logo img {
-    height: 95px; /* Ajusta este valor se quiseres o logo mais pequeno ou maior */
-    width: auto;  /* Mantém a proporção da imagem */
+    height: 95px;
+    /* Ajusta este valor se quiseres o logo mais pequeno ou maior */
+    width: auto;
+    /* Mantém a proporção da imagem */
     display: block;
 }
 
@@ -263,13 +284,15 @@ body {
     font-size: 2rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    font-weight: 300; /* Letra mais fina e elegante */
+    font-weight: 300;
+    /* Letra mais fina e elegante */
 }
 
 .grid-catalogo {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 60px 30px; /* Mais espaço a respirar entre as linhas de produtos */
+    gap: 60px 30px;
+    /* Mais espaço a respirar entre as linhas de produtos */
     margin-top: 60px;
 }
 
@@ -279,23 +302,26 @@ body {
     border-radius: 0;
     box-shadow: none;
     text-align: center;
-    transition: opacity 0.3s ease; /* Transição muito suave */
+    transition: opacity 0.3s ease;
+    /* Transição muito suave */
 }
 
 /* Efeito Hover Premium: em vez de saltar, fica ligeiramente transparente */
 .cartao-produto:hover {
-    transform: none; 
+    transform: none;
     box-shadow: none;
-    opacity: 0.7; 
+    opacity: 0.7;
     cursor: pointer;
 }
 
 /* Imagens formato "Editorial" */
 .cartao-produto img {
     width: 100%;
-    height: 280px; /* Imagens um pouco maiores */
+    height: 280px;
+    /* Imagens um pouco maiores */
     object-fit: cover;
-    border-radius: 0; /* Linhas retas em vez de cantos arredondados */
+    border-radius: 0;
+    /* Linhas retas em vez de cantos arredondados */
     margin-bottom: 20px;
 }
 
@@ -303,9 +329,12 @@ body {
 .info-produto h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.95rem;
-    font-weight: 400; /* Letra mais fina */
-    text-transform: uppercase; /* Tudo em maiúsculas */
-    letter-spacing: 2px; /* Letras mais espaçadas */
+    font-weight: 400;
+    /* Letra mais fina */
+    text-transform: uppercase;
+    /* Tudo em maiúsculas */
+    letter-spacing: 2px;
+    /* Letras mais espaçadas */
     color: #111;
     margin-bottom: 0;
 }
@@ -320,27 +349,81 @@ body {
     display: none;
 }
 
-/* Ajuste para telemóveis */
-@media (max-width: 600px) {
-    .catalogo-completo {
-        padding: 50px 20px;
-    }
-    .grid-catalogo {
-        gap: 40px 15px;
-    }
+/* --- Banner de Inspiração do Instagram --- */
+.banner-instagram {
+    /* O grid-column faz a magia de forçar este bloco a ocupar a linha toda, mesmo estando dentro da grelha */
+    grid-column: 1 / -1;
+    background-color: #fafafa;
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: 40px;
+    border: 1px solid #eaeaea;
+}
+
+.banner-insta-conteudo {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.icone-insta {
+    width: 35px;
+    height: 35px;
+    stroke: #111;
+    /* Cor escura e elegante */
+    margin-bottom: 20px;
+}
+
+.banner-insta-conteudo h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+.banner-insta-conteudo p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Botão Minimalista Preto e Branco */
+.botao-insta {
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+    color: #111;
+    padding: 12px 35px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: 1px solid #111;
+    transition: all 0.3s ease;
+}
+
+.botao-insta:hover {
+    background-color: #111;
+    color: #fff;
 }
 
 .disclaimer-catalogo {
     text-align: center;
     margin-top: 60px;
     padding-top: 30px;
-    border-top: 1px solid #eaeaea; /* Uma linha fina e subtil para separar dos bolos */
+    border-top: 1px solid #eaeaea;
+    /* Uma linha fina e subtil para separar dos bolos */
 }
 
 .disclaimer-catalogo p {
     font-size: 0.85rem;
-    color: #888; /* Um tom de cinza para não roubar a atenção */
-    font-style: italic; /* Em itálico para dar aspeto de nota/aviso */
+    color: #888;
+    /* Um tom de cinza para não roubar a atenção */
+    font-style: italic;
+    /* Em itálico para dar aspeto de nota/aviso */
     max-width: 800px;
     margin: 0 auto;
     font-weight: 300;
@@ -348,4 +431,211 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
+
+/* --- Ajuste Geral Responsivo para Telemóveis (ecrãs <= 768px) --- */
+@media (max-width: 768px) {
+
+    /* Cabeçalho */
+    .cabecalho {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    .logo img {
+        height: 65px;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+        width: 100%;
+    }
+
+    .menu a {
+        margin-left: 0;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: auto;
+        min-height: 80vh;
+        padding: 60px 15px;
+    }
+
+    .hero-conteudo h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    .hero-conteudo p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .botoes-delivery {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        gap: 12px;
+    }
+
+    .botao-principal {
+        display: block;
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    .botao-secundario-container {
+        margin-top: 15px;
+        width: 100%;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .botao-secundario {
+        display: block;
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    /* Secção Destaque */
+    .destaque {
+        padding: 50px 20px;
+    }
+
+    .destaque h2 {
+        font-size: 1.25rem;
+        letter-spacing: 2px;
+    }
+
+    .destaque p {
+        font-size: 0.95rem;
+    }
+
+    /* Montra */
+    .montra {
+        padding: 50px 20px;
+        gap: 35px;
+    }
+
+    .item-montra {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .item-montra img {
+        height: 250px;
+    }
+
+    /* Catálogo Completo */
+    .catalogo-completo {
+        padding: 40px 20px;
+    }
+
+    .catalogo-completo h2 {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+    }
+
+    .grid-catalogo {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 40px 15px;
+        margin-top: 40px;
+    }
+
+    .cartao-produto img {
+        height: 240px;
+    }
+
+    /* Banner Instagram */
+    .banner-instagram {
+        padding: 40px 15px;
+        margin-top: 30px;
+    }
+
+    .banner-insta-conteudo h3 {
+        font-size: 1rem;
+    }
+
+    .banner-insta-conteudo p {
+        font-size: 0.85rem;
+    }
+
+    .botao-insta {
+        display: block;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        padding: 12px 20px;
+        font-size: 0.8rem;
+    }
+
+    /* Rodapé */
+    .rodape {
+        padding: 40px 20px 20px;
+    }
+
+    .info-rodape h4 {
+        font-size: 1.6rem;
+    }
+}
+
+/* --- Página do Menu de Imagens --- */
+.seccao-imagem-menu {
+    padding: 120px 20px 80px 20px;
+    /* Mais espaço no topo para compensar o menu fixo */
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.seccao-imagem-menu h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.container-imagens-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+}
+
+.imagem-menu {
+    max-width: 100%;
+    width: 450px;
+    height: auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.imagem-menu:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .container-imagens-menu {
+        gap: 20px;
+    }
+
+    .imagem-menu {
+        width: 100%;
+    }
 }
