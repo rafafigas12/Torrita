@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encomendar Bolo - Pastelaria Tórrita</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Oleo+Script&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.jpg" alt="Logótipo Pastelaria Tórrita">
+            </a>
+        </div>
+        <nav class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="encomendas.html">Encomende o seu bolo</a>
+            <a href="menu.html">Menu</a>
+            <a href="index.html#especialidades">Especialidades</a>
+            <a href="#contactos">Contactos</a>
+        </nav>
+    </header>
+
+    <section class="seccao-encomenda">
+        <div class="conteiner-encomenda">
+            <h2>Encomende o seu Bolo</h2>
+            <div class="linha-separadora"></div>
+            <p class="descricao-encomenda">Preencha o formulário abaixo. A nossa equipa entrará em contacto para
+                confirmar os detalhes e o pagamento da sua encomenda.</p>
+
+            <!-- O action define para onde vai o email. O method POST envia os dados de forma segura -->
+            <form action="https://formsubmit.co/torrita1@gmail.com" method="POST" class="formulario-luxo">
+
+                <!-- Campos ocultos de configuração da API -->
+                <!-- 1. Desativa o Captcha chato -->
+                <input type="hidden" name="_captcha" value="false">
+                <!-- 2. Define a página de sucesso (podes mudar para o teu site depois de publicado) -->
+                <input type="hidden" name="_next" value="https://formsubmit.co/el/thanks">
+                <!-- 3. Assunto do email que chega à pastelaria -->
+                <input type="hidden" name="_subject" value="Nova Encomenda de Bolo - Site Tórrita!">
+                <!-- 4. Resposta automática enviada para o email do cliente -->
+                <input type="hidden" name="_autoresponse"
+                    value="A sua encomenda na Pastelaria Tórrita foi recebida com sucesso! Este é um email automático para confirmar que recebemos o seu pedido. A nossa equipa vai contactá-lo muito em breve para confirmar os detalhes e o valor final. Obrigado pela preferência!">
+
+                <div class="grupo-input">
+                    <label for="nome">Nome Completo *</label>
+                    <input type="text" id="nome" name="Nome" required minlength="3" pattern="^[A-Za-zÀ-ÿ\s'-]{3,}$"
+                        placeholder="Ex: João Silva" title="Introduza um nome válido (mínimo 3 letras).">
+                </div>
+
+                <div class="grupo-input-metade">
+                    <div class="grupo-input">
+                        <label for="email">Endereço de Email *</label>
+                        <input type="email" id="email" name="Email" required
+                            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                            placeholder="Para receber a confirmação" title="Introduza um endereço de email válido.">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="telefone">Contacto Telefónico *</label>
+                        <input type="tel" id="telefone" name="Telefone" required minlength="9" maxlength="15"
+                            pattern="^(\+351\s?)?[239]\d{2}\s?\d{3}\s?\d{3}$" placeholder="Ex: 912 345 678"
+                            title="Introduza um contacto telefónico válido (ex: 912345678).">
+                    </div>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="tipo-bolo">Qual o bolo que pretende? *</label>
+                    <select id="tipo-bolo" name="Tipo de Bolo" required>
+                        <option value="" disabled selected>Selecione uma opção...</option>
+                        <option value="Bolo de Brigadeiro">Bolo de Brigadeiro</option>
+                        <option value="Bolo Kinder Bueno">Bolo Kinder Bueno</option>
+                        <option value="Bolo de Doce de Ovos">Bolo de Doce de Ovos</option>
+                        <option value="Bolo de Chantilly e Frutas">Bolo de Chantilly e Frutas</option>
+                        <option value="Outro (Especificar na mensagem)">Outro (Especificar nos "Detalhes")</option>
+                    </select>
+                </div>
+
+                <div class="grupo-input-metade">
+                    <div class="grupo-input">
+                        <label for="peso">Peso Estimado *</label>
+                        <select id="peso" name="Peso" required>
+                            <option value="" disabled selected>Selecione o peso...</option>
+                            <option value="1 kg (aprox. 8 a 10 fatias)">1 kg (aprox. 8 a 10 fatias)</option>
+                            <option value="1.5 kg (aprox. 12 a 15 fatias)">1.5 kg (aprox. 12 a 15 fatias)</option>
+                            <option value="2 kg (aprox. 18 a 22 fatias)">2 kg (aprox. 18 a 22 fatias)</option>
+                            <option value="Mais de 2 kg">Mais de 2 kg</option>
+                        </select>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="data">Data de Levantamento *</label>
+                        <input type="date" id="data" name="Data de Levantamento" required>
+                    </div>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="mensagem">Detalhes Adicionais * (Mensagem no bolo, decorações, alergias...)</label>
+                    <textarea id="mensagem" name="Mensagem/Detalhes" rows="4" required
+                        placeholder="Escreva aqui todos os pormenores da sua encomenda..."></textarea>
+                </div>
+
+                <button type="submit" id="btn-submeter" disabled class="botao-enviar-luxo">Enviar Encomenda</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="contactos" class="rodape">
+        <!-- O teu rodapé mantém-se igual -->
+        <div class="info-rodape">
+            <h4>Pastelaria Tórrita</h4>
+            <p>Av. Miguel Torga 24B/26A</p>
+            <p>2725-563 Tapada das Mercês</p>
+            <p>Telefone: <a href="tel:219166647">219 166 647</a></p>
+            <p>Email: <a href="mailto:torrita1@gmail.com">torrita1@gmail.com</a></p>
+            <br>
+            <div class="horario-detalhado">
+                <h5>Horário de Funcionamento</h5>
+                <p>Segunda a Sexta: 07:00 – 20:00</p>
+                <p>Sábado: 07:00 – 18:00</p>
+                <p>Domingo e Feriados: 07:00 – 15:00</p>
+            </div>
+        </div>
+        <div class="direitos">
+            <p>&copy; 2026 Pastelaria Tórrita. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            const dataInput = document.getElementById('data');
+            const telefoneInput = document.getElementById('telefone');
+            const nomeInput = document.getElementById('nome');
+            const emailInput = document.getElementById('email');
+            const tipoBoloInput = document.getElementById('tipo-bolo');
+            const pesoInput = document.getElementById('peso');
+            const mensagemInput = document.getElementById('mensagem');
+            const btnSubmeter = document.getElementById('btn-submeter');
+
+            // Definir a data mínima para o dia de hoje no calendário
+            const hoje = new Date();
+            const ano = hoje.getFullYear();
+            const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+            const dia = String(hoje.getDate()).padStart(2, '0');
+            const dataMinima = `${ano}-${mes}-${dia}`;
+
+            dataInput.setAttribute('min', dataMinima);
+
+            // Função para verificar se TODOS os campos estão preenchidos e válidos
+            function verificarFormularioCompleto() {
+                const nomeValido = nomeInput.value.trim().length >= 3;
+                const emailValido = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value.trim());
+                const telefoneLimpo = telefoneInput.value.replace(/\s+/g, '');
+                const telefoneValido = /^(\+351)?[239]\d{8}$/.test(telefoneLimpo);
+                const tipoBoloValido = tipoBoloInput.value !== '';
+                const pesoValido = pesoInput.value !== '';
+                const dataValida = Boolean(dataInput.value && dataInput.value >= dataMinima);
+                const mensagemValida = mensagemInput.value.trim().length > 0;
+
+                const todosValidos = nomeValido && emailValido && telefoneValido && tipoBoloValido && pesoValido && dataValida && mensagemValida;
+
+                btnSubmeter.disabled = !todosValidos;
+            }
+
+            // Escutar eventos de escrita/seleção em todos os inputs
+            form.addEventListener('input', verificarFormularioCompleto);
+            form.addEventListener('change', verificarFormularioCompleto);
+
+            // Validação customizada ao tentar submeter (se ativado)
+            form.addEventListener('submit', function (event) {
+                let valido = true;
+
+                if (!dataInput.value || dataInput.value < dataMinima) {
+                    dataInput.setCustomValidity('A data de levantamento não pode ser anterior ao dia de hoje.');
+                    valido = false;
+                } else {
+                    dataInput.setCustomValidity('');
+                }
+
+                if (nomeInput.value.trim().length < 3) {
+                    nomeInput.setCustomValidity('Por favor introduza um nome completo válido (mínimo 3 letras).');
+                    valido = false;
+                } else {
+                    nomeInput.setCustomValidity('');
+                }
+
+                const telefoneLimpo = telefoneInput.value.replace(/\s+/g, '');
+                const regexTelefone = /^(\+351)?[239]\d{8}$/;
+                if (!regexTelefone.test(telefoneLimpo)) {
+                    telefoneInput.setCustomValidity('Por favor introduza um contacto telefónico válido (ex: 912345678).');
+                    valido = false;
+                } else {
+                    telefoneInput.setCustomValidity('');
+                }
+
+                if (!valido) {
+                    form.reportValidity();
+                    event.preventDefault();
+                }
+            });
+
+            // Limpar mensagens de erro customizadas ao escrever
+            dataInput.addEventListener('change', () => dataInput.setCustomValidity(''));
+            telefoneInput.addEventListener('input', () => telefoneInput.setCustomValidity(''));
+            nomeInput.addEventListener('input', () => nomeInput.setCustomValidity(''));
+
+            // Executar verificação inicial ao carregar a página
+            verificarFormularioCompleto();
+        });
+    </script>
+
+</body>
+
+</html>
