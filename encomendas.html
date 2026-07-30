@@ -34,6 +34,12 @@
             <p class="descricao-encomenda">Preencha o formulário abaixo. A nossa equipa entrará em contacto para
                 confirmar os detalhes e o pagamento da sua encomenda.</p>
 
+            <div class="container-botao-inspiracao">
+                <a href="catalogo-bolos-aniversario.html" class="botao-inspiracao">
+                    Ver Catálogo de Bolos para Inspiração
+                </a>
+            </div>
+
             <!-- O action define para onde vai o email. O method POST envia os dados de forma segura -->
             <form action="https://formsubmit.co/torrita1@gmail.com" method="POST" class="formulario-luxo">
 
@@ -77,8 +83,68 @@
                         <option value="Bolo Kinder Bueno">Bolo Kinder Bueno</option>
                         <option value="Bolo de Doce de Ovos">Bolo de Doce de Ovos</option>
                         <option value="Bolo de Chantilly e Frutas">Bolo de Chantilly e Frutas</option>
-                        <option value="Outro (Especificar na mensagem)">Outro (Especificar nos "Detalhes")</option>
+                        <option value="Personalizado">Personalizado</option>
                     </select>
+                </div>
+
+                <div id="detalhes-bolo">
+                    <div class="grupo-input">
+                        <label for="base-bolo">Qual será a base do seu bolo? *</label>
+                        <select id="base-bolo" name="Base do Bolo">
+                            <option value="" disabled selected>Selecione uma opção...</option>
+                            <option value="Pão de Ló normal">Pão de Ló normal</option>
+                            <option value="Pão de Ló chocolate">Pão de Ló chocolate</option>
+                            <option value="Pão de ló amêndoa">Pão de ló amêndoa</option>
+                            <option value="Pão de ló pistachio">Pão de ló pistachio</option>
+                            <option value="Red Velvet">Red Velvet</option>
+                            <option value="Massa folhada">Massa folhada</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="recheio-bolo">Qual será o recheio do seu bolo? *</label>
+                        <select id="recheio-bolo" name="Recheio do Bolo">
+                            <option value="" disabled selected>Selecione uma opção...</option>
+                            <option value="Doce d´Ovos">Doce d´Ovos</option>
+                            <option value="Chantilly">Chantilly</option>
+                            <option value="Cheesecake">Cheesecake</option>
+                            <option value="Kinder Bueno">Kinder Bueno</option>
+                            <option value="Ferrero">Ferrero</option>
+                            <option value="Chocolate">Chocolate</option>
+                            <option value="Doce de Pistachio">Doce de Pistachio</option>
+                            <option value="Doce de Morango">Doce de Morango</option>
+                            <option value="Creme Russo">Creme Russo (Chantilly + Doce d´Ovos)</option>
+                            <option value="Lotus Biscoff">Lotus Biscoff</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="cobertura-bolo">Qual será a cobertura do seu bolo? *</label>
+                        <select id="cobertura-bolo" name="Cobertura do Bolo">
+                            <option value="" disabled selected>Selecione uma opção...</option>
+                            <option value="Doce d´Ovos">Doce d´Ovos</option>
+                            <option value="Chantilly">Chantilly</option>
+                            <option value="Cheesecake">Cheesecake</option>
+                            <option value="Kinder Bueno">Kinder Bueno</option>
+                            <option value="Ferrero">Ferrero</option>
+                            <option value="Chocolate">Chocolate</option>
+                            <option value="Doce de Pistachio">Doce de Pistachio</option>
+                            <option value="Doce de Morango">Doce de Morango</option>
+                            <option value="Creme Russo">Creme Russo</option>
+                            <option value="Lotus Biscoff">Lotus Biscoff</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="formato-bolo">Qual será o formato do seu bolo? *</label>
+                        <select id="formato-bolo" name="Formato do Bolo">
+                            <option value="" disabled selected>Selecione uma opção...</option>
+                            <option value="Redondo">Redondo</option>
+                            <option value="Retangular">Retangular</option>
+                            <option value="Coração">Coração</option>
+                        </select>
+                    </div>
+
                 </div>
 
                 <div class="grupo-input-metade">
@@ -142,6 +208,12 @@
             const mensagemInput = document.getElementById('mensagem');
             const btnSubmeter = document.getElementById('btn-submeter');
 
+            // Novos elementos do bolo personalizado
+            const detalhesBoloDiv = document.getElementById('detalhes-bolo');
+            const baseBoloInput = document.getElementById('base-bolo');
+            const recheioBoloInput = document.getElementById('recheio-bolo');
+            const coberturaBoloInput = document.getElementById('cobertura-bolo');
+
             // Definir a data mínima para o dia de hoje no calendário
             const hoje = new Date();
             const ano = hoje.getFullYear();
@@ -153,6 +225,21 @@
 
             // Função para verificar se TODOS os campos estão preenchidos e válidos
             function verificarFormularioCompleto() {
+                // Verificar se o tipo de bolo é Personalizado
+                const ePersonalizado = tipoBoloInput.value === 'Personalizado';
+
+                if (ePersonalizado) {
+                    detalhesBoloDiv.style.display = 'flex';
+                    baseBoloInput.required = true;
+                    recheioBoloInput.required = true;
+                    coberturaBoloInput.required = true;
+                } else {
+                    detalhesBoloDiv.style.display = 'none';
+                    baseBoloInput.required = false;
+                    recheioBoloInput.required = false;
+                    coberturaBoloInput.required = false;
+                }
+
                 const nomeValido = nomeInput.value.trim().length >= 3;
                 const emailValido = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value.trim());
                 const telefoneLimpo = telefoneInput.value.replace(/\s+/g, '');
@@ -162,7 +249,14 @@
                 const dataValida = Boolean(dataInput.value && dataInput.value >= dataMinima);
                 const mensagemValida = mensagemInput.value.trim().length > 0;
 
-                const todosValidos = nomeValido && emailValido && telefoneValido && tipoBoloValido && pesoValido && dataValida && mensagemValida;
+                // Validação adicional caso seja Bolo Personalizado
+                const detalhesValidos = !ePersonalizado || (
+                    baseBoloInput.value !== '' &&
+                    recheioBoloInput.value !== '' &&
+                    coberturaBoloInput.value !== ''
+                );
+
+                const todosValidos = nomeValido && emailValido && telefoneValido && tipoBoloValido && pesoValido && dataValida && mensagemValida && detalhesValidos;
 
                 btnSubmeter.disabled = !todosValidos;
             }

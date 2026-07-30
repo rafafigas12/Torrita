@@ -748,3 +748,38 @@ html {
         gap: 20px;
     }
 }
+
+/* --- Botão de Inspiração na Página de Encomendas --- */
+.container-botao-inspiracao {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.botao-inspiracao {
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+    color: #111;
+    padding: 12px 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: 1px solid #111;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.botao-inspiracao:hover {
+    background-color: #111;
+    color: #fff;
+}
+
+/* --- Suporte para o bloco #detalhes-bolo --- */
+#detalhes-bolo {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
