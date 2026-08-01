@@ -53,6 +53,8 @@
                 <!-- 4. Resposta automática enviada para o email do cliente -->
                 <input type="hidden" name="_autoresponse"
                     value="A sua encomenda na Pastelaria Tórrita foi recebida com sucesso! Este é um email automático para confirmar que recebemos o seu pedido. A nossa equipa vai contactá-lo muito em breve para confirmar os detalhes e o valor final. Obrigado pela preferência!">
+                <!-- 5. Define explicitamente o email de resposta para envio da auto-resposta -->
+                <input type="hidden" name="_replyto" id="replyto-hidden">
 
                 <div class="grupo-input">
                     <label for="nome">Nome Completo *</label>
@@ -268,6 +270,13 @@
             const telefoneInput = document.getElementById('telefone');
             const nomeInput = document.getElementById('nome');
             const emailInput = document.getElementById('email');
+            const replytoHidden = document.getElementById('replyto-hidden');
+
+            if (emailInput && replytoHidden) {
+                emailInput.addEventListener('input', function () {
+                    replytoHidden.value = emailInput.value;
+                });
+            }
             const tipoBoloInput = document.getElementById('tipo-bolo');
             const pesoInput = document.getElementById('peso');
             const decoracaoInput = document.getElementById('decoracao');
