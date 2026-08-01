@@ -62,6 +62,7 @@
             </a>
             <h3>Pastelaria Tradicional</h3>
             <p>Do pastel de nata estaladiço aos nossos bolos de fabrico diário.</p>
+            <a href="catalogo.html" class="botao-ver-mais">Ver +</a>
         </div>
         <div class="item-montra">
             <a href="catalogo-bolos-aniversario.html">
@@ -70,6 +71,7 @@
             </a>
             <h3>Bolos de Aniversário</h3>
             <p>Fazemos parte dos seus momentos especiais. Encomende o seu bolo connosco.</p>
+            <a href="catalogo-bolos-aniversario.html" class="botao-ver-mais">Ver +</a>
         </div>
         <div class="item-montra">
             <a href="catalogo-salgados.html">
@@ -78,6 +80,7 @@
             </a>
             <h3>Pães e Salgados</h3>
             <p>Pão fresco e uma variedade de salgados para um lanche rápido e delicioso.</p>
+            <a href="catalogo-salgados.html" class="botao-ver-mais">Ver +</a>
         </div>
         <div class="item-montra">
             <a href="catalogo-refeicoes-rapidas.html">
@@ -86,6 +89,7 @@
             </a>
             <h3>Refeições Rápidas</h3>
             <p>Hambúrgueres, tostas e cachorros confecionados com a máxima qualidade.</p>
+            <a href="catalogo-refeicoes-rapidas.html" class="botao-ver-mais">Ver +</a>
         </div>
     </section>
 
@@ -108,6 +112,49 @@
             <p>&copy; 2026 Pastelaria Tórrita. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <!-- Notificação Flutuante de Sucesso no Envio -->
+    <div id="notificacao-sucesso" class="notificacao-flutuante" role="alert">
+        <div class="notificacao-icone">✓</div>
+        <div class="notificacao-conteudo">
+            <h4>Encomenda Enviada com Sucesso!</h4>
+            <p>Recebemos o seu pedido. Foi enviado um duplicado de confirmação para o seu email.</p>
+        </div>
+        <button type="button" class="notificacao-fechar" id="fechar-notificacao" aria-label="Fechar">&times;</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('encomenda') && urlParams.get('encomenda') === 'sucesso') {
+                const notificacao = document.getElementById('notificacao-sucesso');
+                const btnFechar = document.getElementById('fechar-notificacao');
+
+                if (notificacao) {
+                    // Exibir a notificação flutuante com animação suave
+                    setTimeout(() => {
+                        notificacao.classList.add('visivel');
+                    }, 300);
+
+                    // Fechar ao clicar no botão 'X'
+                    if (btnFechar) {
+                        btnFechar.addEventListener('click', function () {
+                            notificacao.classList.remove('visivel');
+                        });
+                    }
+
+                    // Ocultar automaticamente após 8 segundos
+                    setTimeout(() => {
+                        notificacao.classList.remove('visivel');
+                    }, 8300);
+
+                    // Limpar os parâmetros da URL para uma navegação limpa
+                    const novaUrl = window.location.pathname;
+                    window.history.replaceState({}, document.title, novaUrl);
+                }
+            }
+        });
+    </script>
 
 </body>
 

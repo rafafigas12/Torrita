@@ -41,13 +41,13 @@
             </div>
 
             <!-- O action define para onde vai o email. O method POST envia os dados de forma segura -->
-            <form action="https://formsubmit.co/torrita1@gmail.com" method="POST" class="formulario-luxo">
+            <form action="https://formsubmit.co/torrita1@gmail.com" method="POST" enctype="multipart/form-data">
 
                 <!-- Campos ocultos de configuração da API -->
                 <!-- 1. Desativa o Captcha chato -->
                 <input type="hidden" name="_captcha" value="false">
-                <!-- 2. Define a página de sucesso (podes mudar para o teu site depois de publicado) -->
-                <input type="hidden" name="_next" value="https://formsubmit.co/el/thanks">
+                <!-- 2. Define a página de sucesso com notificação flutuante -->
+                <input type="hidden" name="_next" value="index.html?encomenda=sucesso">
                 <!-- 3. Assunto do email que chega à pastelaria -->
                 <input type="hidden" name="_subject" value="Nova Encomenda de Bolo - Site Tórrita!">
                 <!-- 4. Resposta automática enviada para o email do cliente -->
@@ -58,20 +58,23 @@
                     <label for="nome">Nome Completo *</label>
                     <input type="text" id="nome" name="Nome" required minlength="3" pattern="^[A-Za-zÀ-ÿ\s'-]{3,}$"
                         placeholder="Ex: João Silva" title="Introduza um nome válido (mínimo 3 letras).">
+                    <span class="mensagem-erro-inline" id="erro-nome"></span>
                 </div>
 
                 <div class="grupo-input-metade">
                     <div class="grupo-input">
                         <label for="email">Endereço de Email *</label>
-                        <input type="email" id="email" name="Email" required
+                        <input type="email" id="email" name="email" required
                             pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                             placeholder="Para receber a confirmação" title="Introduza um endereço de email válido.">
+                        <span class="mensagem-erro-inline" id="erro-email"></span>
                     </div>
                     <div class="grupo-input">
                         <label for="telefone">Contacto Telefónico *</label>
                         <input type="tel" id="telefone" name="Telefone" required minlength="9" maxlength="15"
                             pattern="^(\+351\s?)?[239]\d{2}\s?\d{3}\s?\d{3}$" placeholder="Ex: 912 345 678"
                             title="Introduza um contacto telefónico válido (ex: 912345678).">
+                        <span class="mensagem-erro-inline" id="erro-telefone"></span>
                     </div>
                 </div>
 
@@ -85,6 +88,7 @@
                         <option value="Bolo de Chantilly e Frutas">Bolo de Chantilly e Frutas</option>
                         <option value="Personalizado">Personalizado</option>
                     </select>
+                    <span class="mensagem-erro-inline" id="erro-tipo-bolo"></span>
                 </div>
 
                 <div id="detalhes-bolo">
@@ -99,6 +103,7 @@
                             <option value="Red Velvet">Red Velvet</option>
                             <option value="Massa folhada">Massa folhada</option>
                         </select>
+                        <span class="mensagem-erro-inline" id="erro-base-bolo"></span>
                     </div>
 
                     <div class="grupo-input">
@@ -116,6 +121,7 @@
                             <option value="Creme Russo">Creme Russo (Chantilly + Doce d´Ovos)</option>
                             <option value="Lotus Biscoff">Lotus Biscoff</option>
                         </select>
+                        <span class="mensagem-erro-inline" id="erro-recheio-bolo"></span>
                     </div>
 
                     <div class="grupo-input">
@@ -133,8 +139,11 @@
                             <option value="Creme Russo">Creme Russo</option>
                             <option value="Lotus Biscoff">Lotus Biscoff</option>
                         </select>
+                        <span class="mensagem-erro-inline" id="erro-cobertura-bolo"></span>
                     </div>
+                </div>
 
+                <div class="grupo-input-metade">
                     <div class="grupo-input">
                         <label for="formato-bolo">Qual será o formato do seu bolo? *</label>
                         <select id="formato-bolo" name="Formato do Bolo">
@@ -143,11 +152,8 @@
                             <option value="Retangular">Retangular</option>
                             <option value="Coração">Coração</option>
                         </select>
+                        <span class="mensagem-erro-inline" id="erro-formato-bolo"></span>
                     </div>
-
-                </div>
-
-                <div class="grupo-input-metade">
                     <div class="grupo-input">
                         <label for="peso">Peso Estimado *</label>
                         <select id="peso" name="Peso" required>
@@ -157,17 +163,69 @@
                             <option value="2 kg (aprox. 18 a 22 fatias)">2 kg (aprox. 18 a 22 fatias)</option>
                             <option value="Mais de 2 kg">Mais de 2 kg</option>
                         </select>
+                        <span class="mensagem-erro-inline" id="erro-peso"></span>
                     </div>
+                </div>
+
+                <div class="grupo-input-metade">
                     <div class="grupo-input">
-                        <label for="data">Data de Levantamento *</label>
-                        <input type="date" id="data" name="Data de Levantamento" required>
+                        <label>Deseja Velas? *</label>
+                        <div class="opcoes-radio">
+                            <label class="opcao-radio">
+                                <input type="radio" id="velas-sim" name="Velas" value="Sim" required>
+                                <span>Sim</span>
+                            </label>
+                            <label class="opcao-radio">
+                                <input type="radio" id="velas-nao" name="Velas" value="Não" required>
+                                <span>Não</span>
+                            </label>
+                        </div>
+                        <span class="mensagem-erro-inline" id="erro-velas"></span>
+                    </div>
+                    <div class="grupo-input" id="grupo-idade-velas" style="display: none;">
+                        <label for="idade-velas">Idade / Número das Velas *</label>
+                        <input type="number" id="idade-velas" name="Idade para Velas" min="0" max="150"
+                            placeholder="Ex: 25">
+                        <span class="mensagem-erro-inline" id="erro-idade-velas"></span>
                     </div>
                 </div>
 
                 <div class="grupo-input">
-                    <label for="mensagem">Detalhes Adicionais * (Mensagem no bolo, decorações, alergias...)</label>
+                    <label for="decoracao">Decoração *</label>
+                    <select id="decoracao" name="Decoração" required>
+                        <option value="" disabled selected>Selecione a decoração...</option>
+                        <option value="Ao gosto do pasteleiro">Ao gosto do pasteleiro</option>
+                        <option value="Com estampagem (+3.50€)">Com estampagem (+3.50€)</option>
+                        <option value="Igual á fotografia de referência">Igual á fotografia de referência</option>
+                    </select>
+                    <span class="mensagem-erro-inline" id="erro-decoracao"></span>
+                </div>
+
+                <div class="grupo-input-metade">
+                    <div class="grupo-input">
+                        <label for="data">Data de Levantamento *</label>
+                        <input type="date" id="data" name="Data de Levantamento" required>
+                        <span class="mensagem-erro-inline" id="erro-data"></span>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="hora">Hora de Levantamento *</label>
+                        <input type="time" id="hora" name="Hora de Levantamento" required>
+                        <span class="mensagem-erro-inline" id="erro-hora"></span>
+                    </div>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="imagem-bolo">Imagem de Referência (Opcional)</label>
+                    <input type="file" id="imagem-bolo" name="imagem_referencia"
+                        accept="image/png, image/jpeg, image/webp">
+                    <small>Anexe uma foto de inspiração para o seu bolo (PNG, JPG).</small>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="mensagem">Detalhes Adicionais * (Dizeres, decorações, alergias...)</label>
                     <textarea id="mensagem" name="Mensagem/Detalhes" rows="4" required
                         placeholder="Escreva aqui todos os pormenores da sua encomenda..."></textarea>
+                    <span class="mensagem-erro-inline" id="erro-mensagem"></span>
                 </div>
 
                 <button type="submit" id="btn-submeter" disabled class="botao-enviar-luxo">Enviar Encomenda</button>
@@ -176,7 +234,6 @@
     </section>
 
     <footer id="contactos" class="rodape">
-        <!-- O teu rodapé mantém-se igual -->
         <div class="info-rodape">
             <h4>Pastelaria Tórrita</h4>
             <p>Av. Miguel Torga 24B/26A</p>
@@ -200,32 +257,127 @@
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.querySelector('form');
             const dataInput = document.getElementById('data');
+
+            // Configurar URL de redirecionamento dinâmico pós-envio
+            const inputNext = document.querySelector('input[name="_next"]');
+            if (inputNext && window.location.href.includes('/')) {
+                const urlBase = window.location.href.substring(0, window.location.href.lastIndexOf('/'));
+                inputNext.value = urlBase + '/index.html?encomenda=sucesso';
+            }
+            const horaInput = document.getElementById('hora');
             const telefoneInput = document.getElementById('telefone');
             const nomeInput = document.getElementById('nome');
             const emailInput = document.getElementById('email');
             const tipoBoloInput = document.getElementById('tipo-bolo');
             const pesoInput = document.getElementById('peso');
+            const decoracaoInput = document.getElementById('decoracao');
             const mensagemInput = document.getElementById('mensagem');
             const btnSubmeter = document.getElementById('btn-submeter');
+
+            // Campos de Velas (Radio Buttons)
+            const velasRadios = document.querySelectorAll('input[name="Velas"]');
+            const grupoIdadeVelasDiv = document.getElementById('grupo-idade-velas');
+            const idadeVelasInput = document.getElementById('idade-velas');
+            let formTocadoRadioVelas = false;
+
+            function getVelasSelecionadas() {
+                const selecionado = document.querySelector('input[name="Velas"]:checked');
+                return selecionado ? selecionado.value : '';
+            }
 
             // Novos elementos do bolo personalizado
             const detalhesBoloDiv = document.getElementById('detalhes-bolo');
             const baseBoloInput = document.getElementById('base-bolo');
             const recheioBoloInput = document.getElementById('recheio-bolo');
             const coberturaBoloInput = document.getElementById('cobertura-bolo');
+            const formatoBoloInput = document.getElementById('formato-bolo');
 
-            // Definir a data mínima para o dia de hoje no calendário
-            const hoje = new Date();
-            const ano = hoje.getFullYear();
-            const mes = String(hoje.getMonth() + 1).padStart(2, '0');
-            const dia = String(hoje.getDate()).padStart(2, '0');
+            // Elementos de mensagem de erro inline
+            const erroNome = document.getElementById('erro-nome');
+            const erroEmail = document.getElementById('erro-email');
+            const erroTelefone = document.getElementById('erro-telefone');
+            const erroTipoBolo = document.getElementById('erro-tipo-bolo');
+            const erroBaseBolo = document.getElementById('erro-base-bolo');
+            const erroRecheioBolo = document.getElementById('erro-recheio-bolo');
+            const erroCoberturaBolo = document.getElementById('erro-cobertura-bolo');
+            const erroPeso = document.getElementById('erro-peso');
+            const erroVelas = document.getElementById('erro-velas');
+            const erroIdadeVelas = document.getElementById('erro-idade-velas');
+            const erroDecoracao = document.getElementById('erro-decoracao');
+            const erroData = document.getElementById('erro-data');
+            const erroHora = document.getElementById('erro-hora');
+            const erroMensagem = document.getElementById('erro-mensagem');
+
+            // Definir a data mínima para o dia seguinte (amanhã) no calendário
+            const amanha = new Date();
+            amanha.setDate(amanha.getDate() + 1);
+            const ano = amanha.getFullYear();
+            const mes = String(amanha.getMonth() + 1).padStart(2, '0');
+            const dia = String(amanha.getDate()).padStart(2, '0');
             const dataMinima = `${ano}-${mes}-${dia}`;
 
             dataInput.setAttribute('min', dataMinima);
 
-            // Função para verificar se TODOS os campos estão preenchidos e válidos
+            // Guardar a última mensagem de erro da hora de funcionamento
+            let mensagemErroHoraActual = '';
+
+            // Validar o horário de levantamento de acordo com o dia da semana
+            function validarHorarioFuncionamento() {
+                if (!dataInput.value || !horaInput.value) {
+                    horaInput.setCustomValidity('');
+                    mensagemErroHoraActual = 'Por favor selecione a hora de levantamento.';
+                    return false;
+                }
+
+                const [ano, mes, dia] = dataInput.value.split('-').map(Number);
+                const dataSelecionada = new Date(ano, mes - 1, dia);
+                const diaDaSemana = dataSelecionada.getDay(); // 0 = Domingo, 1-5 = Seg-Sex, 6 = Sábado
+
+                const [horasStr, minutosStr] = horaInput.value.split(':');
+                const tempoEmMinutos = Number(horasStr) * 60 + Number(minutosStr);
+
+                const minMinutos = 7 * 60; // 07:00
+                let maxMinutos = 20 * 60; // 20:00 (Segunda a Sexta)
+                let horarioTexto = '07:00 às 20:00 (Segunda a Sexta)';
+
+                if (diaDaSemana === 6) {
+                    maxMinutos = 18 * 60; // 18:00 (Sábado)
+                    horarioTexto = '07:00 às 18:00 aos Sábados';
+                } else if (diaDaSemana === 0) {
+                    maxMinutos = 15 * 60; // 15:00 (Domingo)
+                    horarioTexto = '07:00 às 15:00 aos Domingos';
+                }
+
+                if (tempoEmMinutos < minMinutos || tempoEmMinutos > maxMinutos) {
+                    mensagemErroHoraActual = `Horário indisponível! Por favor consulte o horário de funcionamento.`;
+                    horaInput.setCustomValidity(mensagemErroHoraActual);
+                    return false;
+                } else {
+                    horaInput.setCustomValidity('');
+                    mensagemErroHoraActual = '';
+                    return true;
+                }
+            }
+
+            // Função auxiliar para atualizar o estado visual e o texto de erro de um campo
+            function atualizarFeedbackCampo(input, elementoErro, estaValido, mensagemErro) {
+                if (estaValido || !input.dataset.touched) {
+                    input.classList.remove('campo-invalido');
+                    if (elementoErro) {
+                        elementoErro.textContent = '';
+                        elementoErro.classList.remove('ativo');
+                    }
+                } else {
+                    input.classList.add('campo-invalido');
+                    if (elementoErro) {
+                        elementoErro.textContent = mensagemErro;
+                        elementoErro.classList.add('ativo');
+                    }
+                }
+            }
+
+            // Função principal para verificar todos os campos e atualizar feedback
             function verificarFormularioCompleto() {
-                // Verificar se o tipo de bolo é Personalizado
                 const ePersonalizado = tipoBoloInput.value === 'Personalizado';
 
                 if (ePersonalizado) {
@@ -240,68 +392,123 @@
                     coberturaBoloInput.required = false;
                 }
 
+                // Gerir exibição do campo da idade das velas
+                const valorVelas = getVelasSelecionadas();
+                const pretendeVelas = valorVelas === 'Sim';
+
+                if (pretendeVelas) {
+                    grupoIdadeVelasDiv.style.display = 'flex';
+                    idadeVelasInput.required = true;
+                } else {
+                    grupoIdadeVelasDiv.style.display = 'none';
+                    idadeVelasInput.required = false;
+                    idadeVelasInput.classList.remove('campo-invalido');
+                    if (erroIdadeVelas) {
+                        erroIdadeVelas.textContent = '';
+                        erroIdadeVelas.classList.remove('ativo');
+                    }
+                }
+
+                // Validações individuais
                 const nomeValido = nomeInput.value.trim().length >= 3;
                 const emailValido = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value.trim());
                 const telefoneLimpo = telefoneInput.value.replace(/\s+/g, '');
                 const telefoneValido = /^(\+351)?[239]\d{8}$/.test(telefoneLimpo);
                 const tipoBoloValido = tipoBoloInput.value !== '';
                 const pesoValido = pesoInput.value !== '';
+                const decoracaoValida = decoracaoInput.value !== '';
+                const velasValidas = valorVelas !== '';
+                const idadeVelasValida = !pretendeVelas || (idadeVelasInput.value.trim() !== '' && Number(idadeVelasInput.value) >= 0);
                 const dataValida = Boolean(dataInput.value && dataInput.value >= dataMinima);
+                const horaValida = horaInput.value !== '' && validarHorarioFuncionamento();
                 const mensagemValida = mensagemInput.value.trim().length > 0;
 
-                // Validação adicional caso seja Bolo Personalizado
-                const detalhesValidos = !ePersonalizado || (
-                    baseBoloInput.value !== '' &&
-                    recheioBoloInput.value !== '' &&
-                    coberturaBoloInput.value !== ''
-                );
+                const baseValida = !ePersonalizado || baseBoloInput.value !== '';
+                const recheioValido = !ePersonalizado || recheioBoloInput.value !== '';
+                const coberturaValida = !ePersonalizado || coberturaBoloInput.value !== '';
 
-                const todosValidos = nomeValido && emailValido && telefoneValido && tipoBoloValido && pesoValido && dataValida && mensagemValida && detalhesValidos;
+                // Atualizar o feedback visual de cada campo se já tiver sido tocado
+                atualizarFeedbackCampo(nomeInput, erroNome, nomeValido, 'Por favor introduza o seu nome completo (mínimo 3 letras).');
+                atualizarFeedbackCampo(emailInput, erroEmail, emailValido, 'Por favor introduza um endereço de email válido (ex: exemplo@email.com).');
+                atualizarFeedbackCampo(telefoneInput, erroTelefone, telefoneValido, 'Por favor introduza um contacto telefónico válido em Portugal (9 dígitos).');
+                atualizarFeedbackCampo(tipoBoloInput, erroTipoBolo, tipoBoloValido, 'Por favor selecione o tipo de bolo pretendido.');
+                atualizarFeedbackCampo(pesoInput, erroPeso, pesoValido, 'Por favor selecione o peso estimado do bolo.');
+                atualizarFeedbackCampo(decoracaoInput, erroDecoracao, decoracaoValida, 'Por favor selecione a opção de decoração.');
+
+                // Feedback para os botões radio de Velas
+                if (velasValidas || !formTocadoRadioVelas) {
+                    if (erroVelas) {
+                        erroVelas.textContent = '';
+                        erroVelas.classList.remove('ativo');
+                    }
+                } else {
+                    if (erroVelas) {
+                        erroVelas.textContent = 'Por favor indique se pretende velas.';
+                        erroVelas.classList.add('ativo');
+                    }
+                }
+
+                if (pretendeVelas) {
+                    atualizarFeedbackCampo(idadeVelasInput, erroIdadeVelas, idadeVelasValida, 'Por favor indique a idade/número para as velas.');
+                }
+
+                atualizarFeedbackCampo(dataInput, erroData, dataValida, 'A data de levantamento não pode ser anterior a amanhã.');
+                atualizarFeedbackCampo(horaInput, erroHora, horaValida, mensagemErroHoraActual || 'Por favor selecione a hora de levantamento.');
+                atualizarFeedbackCampo(mensagemInput, erroMensagem, mensagemValida, 'Por favor especifique os pormenores da sua encomenda.');
+
+                if (ePersonalizado) {
+                    atualizarFeedbackCampo(baseBoloInput, erroBaseBolo, baseValida, 'Por favor selecione a base do bolo.');
+                    atualizarFeedbackCampo(recheioBoloInput, erroRecheioBolo, recheioValido, 'Por favor selecione o recheio do bolo.');
+                    atualizarFeedbackCampo(coberturaBoloInput, erroCoberturaBolo, coberturaValida, 'Por favor selecione a cobertura do bolo.');
+                }
+
+                const todosValidos = nomeValido && emailValido && telefoneValido && tipoBoloValido && pesoValido && decoracaoValida && velasValidas && idadeVelasValida && dataValida && horaValida && mensagemValida && baseValida && recheioValido && coberturaValida;
 
                 btnSubmeter.disabled = !todosValidos;
             }
 
-            // Escutar eventos de escrita/seleção em todos os inputs
+            // Adicionar evento nos radio buttons de Velas
+            velasRadios.forEach(radio => {
+                radio.addEventListener('change', function () {
+                    formTocadoRadioVelas = true;
+                    verificarFormularioCompleto();
+                });
+            });
+
+            // Marcar campos como tocados ao interagir (blur)
+            const todosCampos = [nomeInput, emailInput, telefoneInput, tipoBoloInput, baseBoloInput, recheioBoloInput, coberturaBoloInput, pesoInput, decoracaoInput, idadeVelasInput, dataInput, horaInput, mensagemInput];
+            todosCampos.forEach(campo => {
+                campo.addEventListener('blur', function () {
+                    campo.dataset.touched = 'true';
+                    verificarFormularioCompleto();
+                });
+                campo.addEventListener('input', function () {
+                    if (campo.dataset.touched) {
+                        verificarFormularioCompleto();
+                    }
+                });
+                campo.addEventListener('change', function () {
+                    if (campo.dataset.touched) {
+                        verificarFormularioCompleto();
+                    }
+                });
+            });
+
+            // Escutar eventos gerais no formulário
             form.addEventListener('input', verificarFormularioCompleto);
             form.addEventListener('change', verificarFormularioCompleto);
 
-            // Validação customizada ao tentar submeter (se ativado)
+            // Validação ao tentar submeter
             form.addEventListener('submit', function (event) {
-                let valido = true;
+                formTocadoRadioVelas = true;
+                todosCampos.forEach(campo => campo.dataset.touched = 'true');
+                verificarFormularioCompleto();
 
-                if (!dataInput.value || dataInput.value < dataMinima) {
-                    dataInput.setCustomValidity('A data de levantamento não pode ser anterior ao dia de hoje.');
-                    valido = false;
-                } else {
-                    dataInput.setCustomValidity('');
-                }
-
-                if (nomeInput.value.trim().length < 3) {
-                    nomeInput.setCustomValidity('Por favor introduza um nome completo válido (mínimo 3 letras).');
-                    valido = false;
-                } else {
-                    nomeInput.setCustomValidity('');
-                }
-
-                const telefoneLimpo = telefoneInput.value.replace(/\s+/g, '');
-                const regexTelefone = /^(\+351)?[239]\d{8}$/;
-                if (!regexTelefone.test(telefoneLimpo)) {
-                    telefoneInput.setCustomValidity('Por favor introduza um contacto telefónico válido (ex: 912345678).');
-                    valido = false;
-                } else {
-                    telefoneInput.setCustomValidity('');
-                }
-
-                if (!valido) {
-                    form.reportValidity();
+                if (btnSubmeter.disabled) {
                     event.preventDefault();
+                    form.reportValidity();
                 }
             });
-
-            // Limpar mensagens de erro customizadas ao escrever
-            dataInput.addEventListener('change', () => dataInput.setCustomValidity(''));
-            telefoneInput.addEventListener('input', () => telefoneInput.setCustomValidity(''));
-            nomeInput.addEventListener('input', () => nomeInput.setCustomValidity(''));
 
             // Executar verificação inicial ao carregar a página
             verificarFormularioCompleto();
