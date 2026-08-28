@@ -1,191 +1,143 @@
-Pastelaria/Padaria Torrita: https://tb-static.uber.com/prod/image-proc/processed_images/f1236fd08dadce2ed432ca928ab62744/ec1689ae3a25695f1b8e25c59bec5034.jpeg
-
-Sandes Mista: https://tb-static.uber.com/prod/image-proc/processed_images/7c2df8c9b1690cbec58d2507620ccc39/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Packs Sortido 500g: https://tb-static.uber.com/prod/image-proc/processed_images/de839ff839b8bf1e69000c714b0b8c7c/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Tosta Mista: https://tb-static.uber.com/prod/image-proc/processed_images/6347992d4395c9011e250630690862bd/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Pão com Chouriço: https://tb-static.uber.com/prod/image-proc/processed_images/e8e7bfbf98ee84165ca537c256c934fe/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Pão Saloio: https://tb-static.uber.com/prod/image-proc/processed_images/a8e0f7d28f0279b7bae9821a06dd25fa/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Mil Folhas: https://tb-static.uber.com/prod/image-proc/processed_images/a1620b2ba18c9cb620400dfa115239b9/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Merenda Brioche: https://tb-static.uber.com/prod/image-proc/processed_images/d0d22c48341687d9fab415c9f0eb6039/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Rim: https://tb-static.uber.com/prod/image-proc/processed_images/a962fb9c1c73f5fd4246accfd3743053/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Croisssant Chocolate: https://tb-static.uber.com/prod/image-proc/processed_images/b2be43a385fad5eb7813fd512c6d8875/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Pão Alentejano: https://tb-static.uber.com/prod/image-proc/processed_images/1163e50a19f5cc68e1e9a8404d1ca7fa/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Pastel de Nata: https://tb-static.uber.com/prod/image-proc/processed_images/c53db726c57cf2660c29508d4f39aff2/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Palmier Recheado: https://tb-static.uber.com/prod/image-proc/processed_images/0f773c57ecad5a44a3515fe12ab3ca4d/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Xadrez: https://tb-static.uber.com/prod/image-proc/processed_images/e7eb81f492480281effbdd5e662bffe7/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Bola de Berlim Com Creme: https://tb-static.uber.com/prod/image-proc/processed_images/b869852caca0db753768583bc52c5d18/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Bola de Berlim Kinder Bueno: https://tb-static.uber.com/prod/image-proc/processed_images/e66981a439eaf5a49b354cf42f8c172e/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Croissant Kinder Bueno: https://tb-static.uber.com/prod/image-proc/processed_images/ada27b0c494a08cccc7e6b913fae3ea3/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Mil Folhas: https://tb-static.uber.com/prod/image-proc/processed_images/a1620b2ba18c9cb620400dfa115239b9/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Croisssant Chocolate: https://tb-static.uber.com/prod/image-proc/processed_images/b2be43a385fad5eb7813fd512c6d8875/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Croissant Simples: https://tb-static.uber.com/prod/image-proc/processed_images/02f5fc81fd3f46a2c6ad547b248399b9/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Queque: https://tb-static.uber.com/prod/image-proc/processed_images/99ac047fd165162c5a7f059c15ba4abd/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Delícia Folhada: https://tb-static.uber.com/prod/image-proc/processed_images/15003ed3e28efc41801317133aa9f56f/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Croissant Doce D'Ovos: https://tb-static.uber.com/prod/image-proc/processed_images/cb3447caebd75e60b5a31a5c406de381/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Pão de Leite: https://tb-static.uber.com/prod/image-proc/processed_images/2368f11a0a096d2f8a4848db545435b3/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Bola de Berlim Simples: https://tb-static.uber.com/prod/image-proc/processed_images/0e8587595666ce9155a5506352a55c35/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Rim: https://tb-static.uber.com/prod/image-proc/processed_images/a962fb9c1c73f5fd4246accfd3743053/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Broas de Mel: https://tb-static.uber.com/prod/image-proc/processed_images/9c7ecddaace444688d8116ad1740518f/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Macarrons: https://tb-static.uber.com/prod/image-proc/processed_images/d001ba9d0c30aa2dda35c70a94ab8122/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Bolo de Arroz: https://tb-static.uber.com/prod/image-proc/processed_images/a995f5da1744068ae205a8f459860bfd/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Bom Bocado: https://tb-static.uber.com/prod/image-proc/processed_images/5e1a2532d1b7f3fd12d23ad8074fc96a/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Queijada de Leite: https://tb-static.uber.com/prod/image-proc/processed_images/d03bf7dd92f2123c80b55ea3207d1f6d/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Queijada de Coco: https://tb-static.uber.com/prod/image-proc/processed_images/5021f0190f63d443bb18312bbe2c512b/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Palmier Simples: https://tb-static.uber.com/prod/image-proc/processed_images/02f1552570088e136049aceb099942df/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Queijada de Laranja: https://tb-static.uber.com/prod/image-proc/processed_images/737b3e4842b9ca598d9130307db48de1/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Croissant Pistachio: https://tb-static.uber.com/prod/image-proc/processed_images/865fea12855596862981c8b01e99090f/bc9c318a9c96996e2d990faf2b0c65f6.jpeg
-
-Merenda Brioche: https://tb-static.uber.com/prod/image-proc/processed_images/d0d22c48341687d9fab415c9f0eb6039/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Milanesa: https://tb-static.uber.com/prod/image-proc/processed_images/5dab133636afa1e987b2e0409a9a4ab1/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Pão com Chouriço: https://tb-static.uber.com/prod/image-proc/processed_images/e8e7bfbf98ee84165ca537c256c934fe/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Pão de Queijo: https://tb-static.uber.com/prod/image-proc/processed_images/930c35f7976b4711afab7cf834d31674/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Coxinha: https://tb-static.uber.com/prod/image-proc/processed_images/81ea0ca49df91eb5156bd736c35114f1/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Croquete: https://tb-static.uber.com/prod/image-proc/processed_images/65d3426c6900558231107d982295583c/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Rissol de Camarão: https://tb-static.uber.com/prod/image-proc/processed_images/b8685aaa452431e87a2b11711f83e4c0/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Empada de galinha: https://tb-static.uber.com/prod/image-proc/processed_images/c5778852638bed23d642f1d6a783962d/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Empadilha de Legumes: https://tb-static.uber.com/prod/image-proc/processed_images/7c66db0989052539251c72ff8c16aa47/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Bola: https://tb-static.uber.com/prod/image-proc/processed_images/c1618ab5dabec47235e73db06acf282f/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Bola D'Avó: https://tb-static.uber.com/prod/image-proc/processed_images/1977f0d9fd6552221b83f1330b75e1c8/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Carcaça: https://tb-static.uber.com/prod/image-proc/processed_images/c877007486310dcbb9d8ffb2fc566472/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Pão Alentejano: https://tb-static.uber.com/prod/image-proc/processed_images/1163e50a19f5cc68e1e9a8404d1ca7fa/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Pão Saloio: https://tb-static.uber.com/prod/image-proc/processed_images/a8e0f7d28f0279b7bae9821a06dd25fa/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Pão de Forma Grande: https://tb-static.uber.com/prod/image-proc/processed_images/55d06e0700ffef3699657dfa17433a13/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Baguete: https://tb-static.uber.com/prod/image-proc/processed_images/4a3dccf1186fa1db9dd902f3390bdfad/58f691da9eaef86b0b51f9b2c483fe63.jpeg
-
-Pão de Cereais: https://tb-static.uber.com/prod/image-proc/processed_images/e17672773f9be7684f49385c97b106d7/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Pão Integral: https://tb-static.uber.com/prod/image-proc/processed_images/ff4b756ca3a6310f78744d8e3f910e05/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Sandes Mista: https://tb-static.uber.com/prod/image-proc/processed_images/7c2df8c9b1690cbec58d2507620ccc39/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Sandes Mista com Presunto: https://tb-static.uber.com/prod/image-proc/processed_images/5dc3f419802c7677263e02c0a54a7f7f/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Sandes de Queijo: https://tb-static.uber.com/prod/image-proc/processed_images/22ea8434a9bb0bdb6dce869aea5b3ce0/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Pão com Manteiga: https://tb-static.uber.com/prod/image-proc/processed_images/d68c74cd35c0aaa20585f4e96f50072d/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Sandes de Fiambre: https://tb-static.uber.com/prod/image-proc/processed_images/8c63fc982ff1e6230325d6c365b7e27d/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Sandes de Presunto: https://tb-static.uber.com/prod/image-proc/processed_images/2f8db2a086a5d92b57ab820bcf09b9f3/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Tosta Mista: https://tb-static.uber.com/prod/image-proc/processed_images/6347992d4395c9011e250630690862bd/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Tosta Mista XL: https://tb-static.uber.com/prod/image-proc/processed_images/8b5285ed85e51db835bf32a770a9fcf5/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Cachorro: https://tb-static.uber.com/prod/image-proc/processed_images/62ae67eac9508a9c5230bef9fbb1526b/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Tosta de Frango XL: https://tb-static.uber.com/prod/image-proc/processed_images/8b5285ed85e51db835bf32a770a9fcf5/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Torrada XL: https://tb-static.uber.com/prod/image-proc/processed_images/1ef1cdc10ed2e2e4b82a5067d0148462/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Cachorro XL: https://tb-static.uber.com/prod/image-proc/processed_images/8b5285ed85e51db835bf32a770a9fcf5/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Torrada: https://tb-static.uber.com/prod/image-proc/processed_images/656a09434de86ffcdc37d8a7ecc47839/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Tosta de Frango: https://tb-static.uber.com/prod/image-proc/processed_images/58718175406ff803ce0ca2fbad3409f5/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Packs Sortido 500g: https://tb-static.uber.com/prod/image-proc/processed_images/de839ff839b8bf1e69000c714b0b8c7c/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Packs 6 Pastéis de Nata: https://tb-static.uber.com/prod/image-proc/processed_images/c53db726c57cf2660c29508d4f39aff2/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Doces do Algarve 300g: https://tb-static.uber.com/prod/image-proc/processed_images/6ef3c8a34425ffac7c74b6a8ab62b0c8/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Ovo Rijo 300g: https://tb-static.uber.com/prod/image-proc/processed_images/c4a39272a55da1c62efda67c69abc54f/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Bolo de Chantilly e Ananás: https://tb-static.uber.com/prod/image-proc/processed_images/183fd2a66ab19c8be740828755873a50/c67fc65e9b4e16a553eb7574fba090f1.jpeg
-
-Bolo Kinder Bueno: https://tb-static.uber.com/prod/image-proc/processed_images/d718070ef8419ffa4f7418590d999e16/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Bolo Brigadeiro: https://tb-static.uber.com/prod/image-proc/processed_images/83c4b3f09dc3735133f3c7e811183fce/c67fc65e9b4e16a553eb7574fba090f1.jpeg
-
-Bolo de Bolacha: https://tb-static.uber.com/prod/image-proc/processed_images/134d9ebec7430050df6c6f7251b16a6d/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Bolo de doce d’ovos: https://tb-static.uber.com/prod/image-proc/processed_images/1c5677c16b508f84a9df0cb2e9dc1c44/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Tarte de Amêndoa: https://tb-static.uber.com/prod/image-proc/processed_images/f02a36758e13fda03af816c73db4b96c/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Bolo de Lótus Biscoff: https://tb-static.uber.com/prod/image-proc/processed_images/d4de528692077179280a7d4ad5025a11/bc9c318a9c96996e2d990faf2b0c65f6.jpeg
-
-Hambúrguer Especial: https://tb-static.uber.com/prod/image-proc/processed_images/393a99e98d42a9a2820869fa73612b8b/a1681d67ebe55c76c3af5f401619c278.jpeg
-
-Hambúrguer de Frango e Bacon: https://tb-static.uber.com/prod/image-proc/processed_images/87565e0870322d25f2903a5bb58a8aff/a1681d67ebe55c76c3af5f401619c278.jpeg
-
-Cachorro: https://tb-static.uber.com/prod/image-proc/processed_images/17b1b7f9340be336978c8a9a9487322a/a1681d67ebe55c76c3af5f401619c278.jpeg
-
-Sandes de Ovo Mexido: https://tb-static.uber.com/prod/image-proc/processed_images/9ccd9e89553df48031f51443da725b9f/a1681d67ebe55c76c3af5f401619c278.jpeg
-
-Sandes de Panado: https://tb-static.uber.com/prod/image-proc/processed_images/1b50d50c60f15011c55769c861fa4f5f/a1681d67ebe55c76c3af5f401619c278.jpeg
-
-Tosta Mista: https://tb-static.uber.com/prod/image-proc/processed_images/48666749c2e3f8eaacd36ddfa7d3583b/a1681d67ebe55c76c3af5f401619c278.jpeg
-
-Tosta de Frango: https://tb-static.uber.com/prod/image-proc/processed_images/52dfde3ef31a96dedf0d3383df8a948e/a1681d67ebe55c76c3af5f401619c278.jpeg
-
-Tosta Serrana: https://tb-static.uber.com/prod/image-proc/processed_images/76b5240b1c24383a480afb62656b122b/a1681d67ebe55c76c3af5f401619c278.jpeg
-
-Tosta de Atum: https://tb-static.uber.com/prod/image-proc/processed_images/bea841bdf3fa31b7b14213b79dad2b5d/a1681d67ebe55c76c3af5f401619c278.jpeg
-
-Tosta Portuguesa: https://tb-static.uber.com/prod/image-proc/processed_images/0911ff6c9a52b7b62603162166823c18/a1681d67ebe55c76c3af5f401619c278.jpeg
-
-Tosta Inglesa: https://tb-static.uber.com/prod/image-proc/processed_images/ceac6af6b8adcc577fd4aa8aba5dae90/a1681d67ebe55c76c3af5f401619c278.jpeg
-
-Tosta Francesa: https://tb-static.uber.com/prod/image-proc/processed_images/1b5332fcfb66078c70089a8f52429584/a1681d67ebe55c76c3af5f401619c278.jpeg
-
-Tosta Tórrita: https://tb-static.uber.com/prod/image-proc/processed_images/e9cd415f102bc6ff2230656c2efc6b82/a1681d67ebe55c76c3af5f401619c278.jpeg
-
-Bolo de Chantilly e Ananás: https://tb-static.uber.com/prod/image-proc/processed_images/183fd2a66ab19c8be740828755873a50/c67fc65e9b4e16a553eb7574fba090f1.jpeg
-
-Bolo Kinder Bueno: https://tb-static.uber.com/prod/image-proc/processed_images/d718070ef8419ffa4f7418590d999e16/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Bolo Brigadeiro: https://tb-static.uber.com/prod/image-proc/processed_images/83c4b3f09dc3735133f3c7e811183fce/c67fc65e9b4e16a553eb7574fba090f1.jpeg
-
-Bolo de doce d’ovos: https://tb-static.uber.com/prod/image-proc/processed_images/1c5677c16b508f84a9df0cb2e9dc1c44/a19bb09692310dfd41e49a96c424b3a6.jpeg
-
-Bolo de Lótus Biscoff: https://tb-static.uber.com/prod/image-proc/processed_images/d4de528692077179280a7d4ad5025a11/bc9c318a9c96996e2d990faf2b0c65f6.jpeg
+[
+  { "Nome": "Artigos em destaque", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/9ccd9e89553df48031f51443da725b9f/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Os 1mais apreciados", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/9ccd9e89553df48031f51443da725b9f/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Os 2mais apreciados", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/1a93219bce294dac8cd0d92e7d12cf7c/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Os 3mais apreciados", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/0ae37af5be14f38decb8aeb71116608f/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Pão Saloio", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/de18ed5c971afe1612d00b55bd1943c7/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sandes de Panado", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/1b50d50c60f15011c55769c861fa4f5f/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Compal 200ml", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/5b8ca8f77bfbad0b43edaee2a5eed822/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Refrigerantes  330ml", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/9733c7b041fb57d75abf69a8abf1bbe3/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Línguas de Veado 200g", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/2bd29a93c4f6ea09adaeb55b35ca0325/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Croquete", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/b7a71f8bdc771f366c3535e86bf75ced/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta Mista XL", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/f51f0bff817c57fdd60c68ebdf3c74bc/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Torrada", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/b4770a4729163b689a882b7a2482aeb2/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sortido Húngaro sem Recheio 200g", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/8471b6e22fc9f27c582b2ac3864eef48/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Pão com Chouriço", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/6bdffa6768459636861b4a8da69dec4a/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta Mista", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/48666749c2e3f8eaacd36ddfa7d3583b/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Pastelaria", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/1281161fc1f2f9f385870ed8200e4576/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Xadrez", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/1281161fc1f2f9f385870ed8200e4576/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Pastel de Nata", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/b85e5eee7ace4e1f6d6fc7e365f44974/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Pão de Deus", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/9e75cbb71abbcd828f8e41970bcfb8f4/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Bola de Berlim Com Creme", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/a7552f853923768d41c5d5e3b62a1ae2/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Bola de Berlim Kinder Bueno", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/7ebf0e06e99f88a3909eaf558e177c85/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Palmier Coberto", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/53915b845883015ec1900497b6d9f2e3/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Croissant Kinder Bueno", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/c31d90bf93fd7f89536f1d8a101b5f6c/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Mil Folhas", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/5e6913353f70a5b60764e1ec0c0a3314/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Croisssant Chocolate", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/fe492e905d5ab2c8afed84dad8964cdb/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Bola de Berlim Lotus Biscoff", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/1cc2c9b49591e41b0c65c71c9266398f/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Jesuíta", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/60c545329a10c1dd290fe8fc043adb0e/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Croissant Simples", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/5917937e42b47fe8bf8d989e3a87b308/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Croissant Lotus Biscoff", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/cbdf0abf91739e0aa8ba8d4ea56289f3/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Delícia Folhada", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/d65950efae7f26e25161d402693b114b/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Croissant Doce D'Ovos", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/b492eded0b6cf990f5c19695566fc084/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Travesseiro", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/7089a9e2478780bb0429b9e26402ee7a/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Pão de Leite", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/86df12ffeee8859e066c59668d1978b8/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Bola de Berlim Simples", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/c367438df9c16bcb17f549f57847d99b/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Rim", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/d03ce9740dc33ca9beceb6baa7fda34f/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Broas de Mel", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/d17fb75cd1748e58bc3bd74f973fcbfc/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Macarrons", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/4d30e3268b684f8e2e6e1ac30283cb9a/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Bolo de Arroz", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/3b6ec4a58d55ffdaed8655646841ab66/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Bom Bocado", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/16582999ab3bef714b4f3dbb515a06ac/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Queijada de Leite", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/9a3849f7093ca25c372d52595fa8c151/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Bola de Berlim Doce de Leite", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/867682686efbbe7490ce3b4241f967c6/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Queijada de Coco", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/b5f7da80881ffbb1e693783feee3e26c/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Palmier Simples", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/d15f5b7bfe01bc0646c60232f4fd288c/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Duchese", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/c6a5ae69490c5382c0d2e31f2987b45e/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tigelada", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/35758fca6d633b426b3fc6ff92a51cf2/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Queijada de Laranja", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/188548e074aef8073283c91102f412f8/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Parra", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/52fd00306894e88bf35c49e8b08778b6/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Côco e nata", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/6f915ae39ae8fe852a8b6569a6a0df9d/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Croissant Pistachio", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/b461ff00e460583bf322e6568e93ffb1/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Bola de Berlim de Pistachio", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/52c2d8e99fb2de202a2fc2dab9f21887/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Eclair de Café", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/3d288cc67a82a62ce832a70c68f2e5cc/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Eclair de Chocolate", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/47b23e47dec8c0b172356a249dbad740/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Salgados", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/40619eae015cac4551ccb6e8e0722262/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Merenda Brioche", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/40619eae015cac4551ccb6e8e0722262/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Milanesa", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/e401f4991e496a56e8d74da3836047f8/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Pão com Chouriço", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/6bdffa6768459636861b4a8da69dec4a/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Massa Tenra de Frango", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/abb67086d5268969f88ede969c188c49/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Pão de Queijo", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/a946453f095dda0743a0e356bdca0da5/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Coxinha", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/29b41c92516fd6212b49d8e15595e4c3/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Croquete", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/b7a71f8bdc771f366c3535e86bf75ced/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Rissol de Camarão", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/1a93219bce294dac8cd0d92e7d12cf7c/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Massa Tenra de Vitela", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/19675d3503bb7985844cad4992097bdc/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Quiche", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/bf93de281b672734692aabe7042c0313/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Empadilha de Legumes", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/7c66db0989052539251c72ff8c16aa47/a19bb09692310dfd41e49a96c424b3a6.jpeg" },
+  { "Nome": "Empadilha de Atum", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/fc57e7728b8c60b3378626ffdc1f9c71/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Padaria", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/ff00705bbca21e5cca6d84890e2f602d/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Bola", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/ff00705bbca21e5cca6d84890e2f602d/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Carcaça", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/94eec2c8c7d96321d2c277c857e50d42/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Pão Alentejano", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/f8fec39dd348e87c04bfa68f2560adce/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Pão Saloio", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/de18ed5c971afe1612d00b55bd1943c7/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Pão de Milho", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/e597be4bf16a0c31fd3e158e0a2fad47/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Pão de Forma Grande", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/b1c9ef548ce93ae29cc70394c2a3223d/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Baguete", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/ea55c103ba0ff8b4968754174d865fe8/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Pão de Cereais", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/27cbfa634e6e5a0e09f3308fb876a85a/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Pão Integral", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/3c3ca463907b227cbb4fa29541500f86/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Bola de Centeio", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/23bbddbdb2371abf697b6ea53d903c94/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tigrinho", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/8676e712f7d89a1bc59acf0d64decfaf/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sandes", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/0ae37af5be14f38decb8aeb71116608f/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sandes Mista", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/0ae37af5be14f38decb8aeb71116608f/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sandes de Queijo e Presunto", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/12e5d281fe07ab3e74c1174bd6d1af3d/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sandes de Queijo", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/ed430924c6f401a6f75a29a29d239e2b/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Pão com Manteiga", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/7e50263ee65bfafd124ac6cb749b72f0/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sandes de Fiambre", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/facd1961b660602f49a4a29c3e95644a/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sandes de Presunto", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/0e2aea1ea5d862e1f875d53c0c01b1ab/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sandes de Fiambre de Peru", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/c4637a7f208cd79cff9897a5ef3a874c/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sandes Mista de Peru", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/9bcca58c7ce50ed31e6719f42aa24e1e/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tostas/ Torradas", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/48666749c2e3f8eaacd36ddfa7d3583b/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta Mista", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/48666749c2e3f8eaacd36ddfa7d3583b/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta Mista XL", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/f51f0bff817c57fdd60c68ebdf3c74bc/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta de Frango XL", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/1d728a15095f8ed4220e1bd4455a6fb0/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Torrada XL", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/cf5f6c5a5e5554f48056e9d825d552bc/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Torrada", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/b4770a4729163b689a882b7a2482aeb2/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta de Frango", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/52dfde3ef31a96dedf0d3383df8a948e/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta Serrana", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/76b5240b1c24383a480afb62656b122b/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta Serrana XL", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/4b173140833f57ee236b5eea607349f8/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta de Atum", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/bea841bdf3fa31b7b14213b79dad2b5d/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta de Atum XL", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/a14adbf9afd3ac4584e4fcfed693af49/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta Portuguesa", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/0911ff6c9a52b7b62603162166823c18/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta Portuguesa XL", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/54e6c139c2ca25afea5cb51a478668a6/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta Inglesa", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/ceac6af6b8adcc577fd4aa8aba5dae90/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta Inglesa XL", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/aad1f0881f40c0b56aadf0910bb13760/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta Francesa", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/1b5332fcfb66078c70089a8f52429584/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta Francesa XL", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/7cce5b39a705ed4777114d852e54639f/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta Tórrita", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/e9cd415f102bc6ff2230656c2efc6b82/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Tosta Tórrita XL", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/b10180fc0fef814d98541e87b56415d2/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Refeições Rápidas", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/393a99e98d42a9a2820869fa73612b8b/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Hambúrguer Especial", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/393a99e98d42a9a2820869fa73612b8b/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Hambúrguer de Frango e Bacon", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/87565e0870322d25f2903a5bb58a8aff/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Cachorro", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/17b1b7f9340be336978c8a9a9487322a/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sandes de Ovo Mexido", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/9ccd9e89553df48031f51443da725b9f/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sandes de Panado", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/1b50d50c60f15011c55769c861fa4f5f/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sortido", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/74988d6d05cf7efec074896411d667bc/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sortido 300g", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/74988d6d05cf7efec074896411d667bc/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sortido 500g", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/4cfb17083bb710be9f3d63b9165cee00/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Pack 6 Pastéis de Nata", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/c53db726c57cf2660c29508d4f39aff2/a19bb09692310dfd41e49a96c424b3a6.jpeg" },
+  { "Nome": "Doces do Algarve 300g", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/733bbacf39f42edd2aec8c1cf920710a/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Ovo Rijo 300g", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/a474d670161bff8dbd1f12b75da600a9/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Línguas de Veado 200g", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/2bd29a93c4f6ea09adaeb55b35ca0325/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sortido Dourado 300g", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/55da34d46f9214fb831c9b6f40ee5296/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sortido Húngaro com Recheio 200g", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/7c0e7d603fbffbfe2e1f404dad92eedf/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sortido Húngaro sem Recheio 200g", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/8471b6e22fc9f27c582b2ac3864eef48/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sortido de Húngaro 500g", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/3df054f634b456ea91607534efe96b5a/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Brigadeiros 4 Uni.", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/20c4ff5f25d391b2018fd8b842cc1791/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Bolachas de Morango 4 Uni.", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/a1de3ee9b0be73c160172b86ee98ae04/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Noz Dourada 3 Uni.", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/1afaf40fba9bb435ceb8f223be30bf4b/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sobremesas", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/183fd2a66ab19c8be740828755873a50/c67fc65e9b4e16a553eb7574fba090f1.jpeg" },
+  { "Nome": "Bolo de Chantilly e Ananás", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/183fd2a66ab19c8be740828755873a50/c67fc65e9b4e16a553eb7574fba090f1.jpeg" },
+  { "Nome": "Bolo Kinder Bueno", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/d718070ef8419ffa4f7418590d999e16/a19bb09692310dfd41e49a96c424b3a6.jpeg" },
+  { "Nome": "Bolo Brigadeiro", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/83c4b3f09dc3735133f3c7e811183fce/c67fc65e9b4e16a553eb7574fba090f1.jpeg" },
+  { "Nome": "Bolo de Bolacha", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/134d9ebec7430050df6c6f7251b16a6d/a19bb09692310dfd41e49a96c424b3a6.jpeg" },
+  { "Nome": "Bolo de doce d’ovos", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/1c5677c16b508f84a9df0cb2e9dc1c44/a19bb09692310dfd41e49a96c424b3a6.jpeg" },
+  { "Nome": "Tarte de Amêndoa", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/f02a36758e13fda03af816c73db4b96c/a19bb09692310dfd41e49a96c424b3a6.jpeg" },
+  { "Nome": "Bolo de Lótus Biscoff", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/d4de528692077179280a7d4ad5025a11/bc9c318a9c96996e2d990faf2b0c65f6.jpeg" },
+  { "Nome": "Bebidas", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/a732cafd6d3ee2eca10291c3e057f024/a19bb09692310dfd41e49a96c424b3a6.jpeg" },
+  { "Nome": "Sumo de Laranja Natural 240ml", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/a732cafd6d3ee2eca10291c3e057f024/a19bb09692310dfd41e49a96c424b3a6.jpeg" },
+  { "Nome": "Refrigerantes  330ml", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/9733c7b041fb57d75abf69a8abf1bbe3/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Compal 200ml", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/5b8ca8f77bfbad0b43edaee2a5eed822/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Sumo de Fruta Natural", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/e132e47d7c53eefb5c21f89c33422f93/a19bb09692310dfd41e49a96c424b3a6.jpeg" },
+  { "Nome": "B! 330ml", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/06304089abc40abc660a72ab20f7725f/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Bongo 8 Frutos 200ml", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/25fbb3e12698250cbf1e32228cf2eac1/a1681d67ebe55c76c3af5f401619c278.jpeg" },
+  { "Nome": "Red Bull 250ml", "Imagem": "https://tb-static.uber.com/prod/image-proc/processed_images/508ed597719806550020283127344cba/c67fc65e9b4e16a553eb7574fba090f1.jpeg" }
+]

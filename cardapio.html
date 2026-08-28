@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Pastelaria Tórrita</title>
+    <meta name="description"
+        content="Consulte o menu completo da Pastelaria Tórrita. Sandes, tostas, refeições rápidas e muito mais.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Oleo+Script&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="index.html">
+                <img src="fotos/logo.jpg" alt="Logótipo Pastelaria Tórrita">
+            </a>
+        </div>
+        <nav class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="encomendas.html">Encomende o seu bolo</a>
+            <a href="cardapio.html">Menu</a>
+            <a href="menu.html">Bebidas</a>
+            <a href="#contactos">Contactos</a>
+        </nav>
+    </header>
+
+    <!-- Hero do Menu -->
+    <section class="menu-hero">
+        <div class="menu-hero-conteudo">
+            <h1>O Nosso Cardápio</h1>
+        </div>
+    </section>
+
+    <!-- Filtros de Categoria -->
+    <div class="menu-filtros">
+        <button class="filtro-btn ativo" data-categoria="todos">Todos</button>
+        <button class="filtro-btn" data-categoria="sandes">Sandes</button>
+        <button class="filtro-btn" data-categoria="torradas">Torradas & Tostas</button>
+        <button class="filtro-btn" data-categoria="refeicoes">Refeições Rápidas</button>
+        <button class="filtro-btn" data-categoria="especiais">Tostas Especiais</button>
+        <button class="filtro-btn" data-categoria="extras">Extras</button>
+    </div>
+
+    <!-- Conteúdo do Menu -->
+    <main class="menu-conteudo">
+
+        <!-- ==================== SANDES ==================== -->
+        <section class="menu-categoria" id="sandes">
+            <div class="categoria-titulo">
+                <h2>Sandes</h2>
+                <div class="linha-separadora"></div>
+            </div>
+
+            <div class="menu-grid">
+
+                <div class="menu-item" data-categoria="sandes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/7e50263ee65bfafd124ac6cb749b72f0/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Sandes com Manteiga" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Com Manteiga</h3>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="sandes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/facd1961b660602f49a4a29c3e95644a/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Sandes de Fiambre/Queijo" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Fiambre / Queijo</h3>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="sandes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/0ae37af5be14f38decb8aeb71116608f/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Sandes Mista" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Mista</h3>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="sandes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/0e2aea1ea5d862e1f875d53c0c01b1ab/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Sandes de Presunto" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Presunto</h3>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="sandes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/12e5d281fe07ab3e74c1174bd6d1af3d/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Sandes de Queijo e Presunto" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Queijo e Presunto</h3>
+                    </div>
+                </div>
+                <!--
+                
+                <div class="menu-item" data-categoria="sandes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/7e50263ee65bfafd124ac6cb749b72f0/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Brioche Manteiga" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Brioche Manteiga</h3>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="sandes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/facd1961b660602f49a4a29c3e95644a/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Brioche Fiambre/Queijo" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Brioche Fiambre / Queijo</h3>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="sandes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/0ae37af5be14f38decb8aeb71116608f/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Brioche Misto" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Brioche Misto</h3>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="sandes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/0e2aea1ea5d862e1f875d53c0c01b1ab/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Brioche Presunto" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Brioche Presunto</h3>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="sandes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/12e5d281fe07ab3e74c1174bd6d1af3d/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Brioche Queijo e Presunto" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Brioche Queijo e Presunto</h3>
+                    </div>
+                </div>
+-->
+            </div>
+        </section>
+
+        <!-- ==================== TORRADAS & TOSTAS ==================== -->
+        <section class="menu-categoria" id="torradas">
+            <div class="categoria-titulo">
+                <h2>Torradas & Tostas</h2>
+                <div class="linha-separadora"></div>
+            </div>
+
+            <div class="menu-grid">
+
+                <div class="menu-item" data-categoria="torradas">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/b4770a4729163b689a882b7a2482aeb2/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Meia Torrada" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Torrada</h3>
+                        <p class="menu-item-nota">Tamanho XL por +€0,65</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="torradas">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/cf5f6c5a5e5554f48056e9d825d552bc/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Torrada" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Torrada XL</h3>
+                        <p class="menu-item-nota">Tamanho XL por +€0,65</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="torradas">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/48666749c2e3f8eaacd36ddfa7d3583b/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Tosta Mista" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Tosta Mista</h3>
+                        <p class="menu-item-nota">Tamanho XL por +€1,30</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="torradas">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/76b5240b1c24383a480afb62656b122b/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Tosta Serrana" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Tosta Serrana</h3>
+                        <p class="menu-item-nota">Tamanho XL por +€1,30</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="torradas">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/52dfde3ef31a96dedf0d3383df8a948e/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Tosta Frango/Atum" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Tosta Frango / Atum</h3>
+                        <p class="menu-item-nota">Tamanho XL por +€1,30</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== REFEIÇÕES RÁPIDAS ==================== -->
+        <section class="menu-categoria" id="refeicoes">
+            <div class="categoria-titulo">
+                <h2>Refeições Rápidas</h2>
+                <div class="linha-separadora"></div>
+                <p class="categoria-subtitulo">Pastelaria · Padaria · Comidas</p>
+            </div>
+
+            <div class="menu-grid">
+                <!--
+                
+                <div class="menu-item" data-categoria="refeicoes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/393a99e98d42a9a2820869fa73612b8b/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Sopa" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Sopa</h3>
+                    </div>
+                </div>
+-->
+                <div class="menu-item" data-categoria="refeicoes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/393a99e98d42a9a2820869fa73612b8b/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Hambúrguer Simples/Queijo" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Hambúrguer Simples / Queijo</h3>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="refeicoes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/87565e0870322d25f2903a5bb58a8aff/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Hambúrguer Frango e Bacon" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Frango e Bacon</h3>
+                        <p class="menu-item-descricao">Molho especial, queijo, bacon e cebola crispy</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="refeicoes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/393a99e98d42a9a2820869fa73612b8b/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Hambúrguer Tórrita" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Tórrita</h3>
+                        <p class="menu-item-descricao">Molho especial, queijo, alface, tomate e cebola</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="refeicoes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/17b1b7f9340be336978c8a9a9487322a/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Cachorro" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Cachorro</h3>
+                        <p class="menu-item-descricao">Salsicha, queijo, cebola crispy e batata palha (pão baguete)</p>
+                    </div>
+                </div>
+                <!--
+                
+                <div class="menu-item" data-categoria="refeicoes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/393a99e98d42a9a2820869fa73612b8b/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Ovos no Prato" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Ovos no Prato</h3>
+                    </div>
+                </div>
+-->
+                <div class="menu-item" data-categoria="refeicoes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/9ccd9e89553df48031f51443da725b9f/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Sandes Ovo Mexido" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Sandes Ovo Mexido</h3>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="refeicoes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/1b50d50c60f15011c55769c861fa4f5f/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Sandes Panado" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Sandes Panado</h3>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="refeicoes">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/ea55c103ba0ff8b4968754174d865fe8/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Baguete Atum/Frango" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Baguete Atum / Frango</h3>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== TOSTAS ESPECIAIS ==================== -->
+        <section class="menu-categoria" id="especiais">
+            <div class="categoria-titulo">
+                <h2>Tostas Especiais</h2>
+                <div class="linha-separadora"></div>
+                <p class="categoria-subtitulo">Por defeito em pão saloio · Tamanho XL por +€1,30</p>
+            </div>
+
+            <div class="menu-grid">
+
+                <div class="menu-item" data-categoria="especiais">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/0911ff6c9a52b7b62603162166823c18/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Tosta Portuguesa" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Portuguesa</h3>
+                        <p class="menu-item-descricao">Queijo, chourição e orégãos</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="especiais">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/ceac6af6b8adcc577fd4aa8aba5dae90/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Tosta Inglesa" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Inglesa</h3>
+                        <p class="menu-item-descricao">Queijo, fiambre, bacon, cebola crispy, batata palha e orégãos</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="especiais">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/1b5332fcfb66078c70089a8f52429584/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Tosta Francesa" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Francesa</h3>
+                        <p class="menu-item-descricao">Queijo, fiambre, chourição, cebola crispy, batata palha e orégãos
+                        </p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-categoria="especiais">
+                    <div class="menu-item-imagem">
+                        <img src="https://tb-static.uber.com/prod/image-proc/processed_images/e9cd415f102bc6ff2230656c2efc6b82/a1681d67ebe55c76c3af5f401619c278.jpeg"
+                            alt="Tosta Tórrita" loading="lazy">
+                    </div>
+                    <div class="menu-item-info">
+                        <h3>Tórrita</h3>
+                        <p class="menu-item-descricao">Queijo, fiambre, chourição, salsicha, cebola crispy, batata palha
+                            e orégãos</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== EXTRAS ==================== -->
+        <section class="menu-categoria" id="extras">
+            <div class="categoria-titulo">
+                <h2>Extras</h2>
+                <div class="linha-separadora"></div>
+            </div>
+
+            <div class="menu-grid menu-grid-extras">
+
+                <div class="menu-item menu-item-extra" data-categoria="extras">
+                    <div class="menu-item-info">
+                        <h3>Aquecer / Prensar / Aparar</h3>
+                    </div>
+                </div>
+
+                <div class="menu-item menu-item-extra" data-categoria="extras">
+                    <div class="menu-item-info">
+                        <h3>Queijo / Fiambre / Bacon / Chourição / Presunto</h3>
+                    </div>
+                </div>
+
+                <div class="menu-item menu-item-extra" data-categoria="extras">
+                    <div class="menu-item-info">
+                        <h3>Dose Extra de Batatas</h3>
+                    </div>
+                </div>
+
+                <div class="menu-item menu-item-extra" data-categoria="extras">
+                    <div class="menu-item-info">
+                        <h3>Condimentos</h3>
+                        <p class="menu-item-descricao">Ketchup / Mostarda / Maionese</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contactos" class="rodape">
+        <div class="info-rodape">
+            <h4>Pastelaria Tórrita</h4>
+            <p>Av. Miguel Torga 24B/26A</p>
+            <p>2725-563 Tapada das Mercês</p>
+            <p>Telefone: <a href="tel:219166647">219 166 647</a></p>
+            <p>Email: <a href="mailto:torrita1@gmail.com">torrita1@gmail.com</a></p>
+            <br>
+            <div class="horario-detalhado">
+                <h5>Horário de Funcionamento</h5>
+                <p>Segunda a Sexta: 07:00 – 20:00</p>
+                <p>Sábado: 07:00 – 18:00</p>
+                <p>Domingo e Feriados: 07:00 – 15:00</p>
+            </div>
+        </div>
+        <div class="direitos">
+            <p>&copy; 2026 Pastelaria Tórrita. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filtros = document.querySelectorAll('.filtro-btn');
+            const categorias = document.querySelectorAll('.menu-categoria');
+            const itens = document.querySelectorAll('.menu-item');
+
+            filtros.forEach(filtro => {
+                filtro.addEventListener('click', function () {
+                    // Remover classe ativo de todos
+                    filtros.forEach(f => f.classList.remove('ativo'));
+                    this.classList.add('ativo');
+
+                    const categoriaSelecionada = this.dataset.categoria;
+
+                    if (categoriaSelecionada === 'todos') {
+                        // Mostrar todas as categorias
+                        categorias.forEach(cat => {
+                            cat.style.display = 'block';
+                        });
+                        itens.forEach(item => {
+                            item.style.display = '';
+                        });
+                    } else {
+                        // Mostrar apenas a categoria selecionada
+                        categorias.forEach(cat => {
+                            if (cat.id === categoriaSelecionada) {
+                                cat.style.display = 'block';
+                            } else {
+                                cat.style.display = 'none';
+                            }
+                        });
+                    }
+
+                    // Scroll suave mantendo a barra de filtros e o cabeçalho fixos
+                    const menuConteudo = document.querySelector('.menu-conteudo');
+                    if (menuConteudo) {
+                        const filtrosBar = document.querySelector('.menu-filtros');
+                        const filtrosAltura = filtrosBar ? filtrosBar.offsetHeight : 60;
+                        const topOffset = menuConteudo.getBoundingClientRect().top + window.scrollY - 85 - filtrosAltura;
+                        window.scrollTo({
+                            top: Math.max(0, topOffset),
+                            behavior: 'smooth'
+                        });
+                    }
+
+                });
+            });
+
+            // Animação de entrada dos cards ao scroll
+            const observador = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visivel');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            itens.forEach(item => {
+                observador.observe(item);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
