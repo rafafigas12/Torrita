@@ -18,7 +18,12 @@
                 <img src="fotos/logo.jpg" alt="Logótipo Pastelaria Tórrita">
             </a>
         </div>
-        <nav class="menu">
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="menu" id="menu-nav">
             <a href="index.html">Inicio</a>
             <a href="encomendas.html">Encomende o seu bolo</a>
             <a href="menu.html">Menu</a>
@@ -177,7 +182,26 @@
         <div class="direitos">
             <p>&copy; 2026 Pastelaria Tórrita. Todos os direitos reservados.</p>
         </div>
-    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const menuNav = document.getElementById('menu-nav');
+
+            if (hamburgerBtn && menuNav) {
+                hamburgerBtn.addEventListener('click', function () {
+                    hamburgerBtn.classList.toggle('ativo');
+                    menuNav.classList.toggle('ativo');
+                });
+
+                menuNav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function () {
+                        hamburgerBtn.classList.remove('ativo');
+                        menuNav.classList.remove('ativo');
+                    });
+                });
+            }
+        });
+    </script>
 
 </body>
 
