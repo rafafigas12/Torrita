@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Pastelaria Tórrita</title>
+    <title>Encomenda Recebida - Pastelaria Tórrita</title>
+    <meta name="description"
+        content="Obrigado pela sua encomenda na Pastelaria Tórrita. Recebemos o seu pedido com sucesso!">
     <link rel="icon" type="image/jpeg" href="fotos/logo.jpg">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Oleo+Script&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Oleo+Script&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -33,21 +36,20 @@
         </nav>
     </header>
 
-    <section class="seccao-imagem-menu" style="min-height: 70vh;">
-        <h2>As nossas bebidas</h2>
-        <div class="linha-separadora"></div>
+    <main class="seccao-agradecimento">
+        <div class="cartao-agradecimento">
+            <div class="icone-sucesso-animado">✓</div>
+            <h1>Obrigado pela sua Encomenda!</h1>
+            <p>
+                A sua encomenda foi enviada com sucesso para a <strong>Pastelaria Tórrita</strong>.<br>
+            </p>
 
-        <div class="container-imagens-menu">
-            <!-- Primeira página do menu -->
-            <img src="fotos/menu_bebidas.png" alt="Página 1 do Menu da Pastelaria Tórrita" class="imagem-menu">
+            <div class="botoes-agradecimento">
+                <a href="index.html" class="btn-agradecimento-principal">Voltar à Página Inicial</a>
+                <a href="cardapio.html" class="btn-agradecimento-secundario">Ver o Nosso Menu</a>
+            </div>
         </div>
-
-        <div class="disclaimer-catalogo">
-            <p>* Os preços e produtos apresentados no menu são meramente informativos e podem não estar atualizados ou
-                sofrer alterações sem aviso prévio. A confirmação dos valores atualizados encontra-se disponível na
-                nossa loja física.</p>
-        </div>
-    </section>
+    </main>
 
     <footer id="contactos" class="rodape">
         <div class="info-rodape">
@@ -57,8 +59,10 @@
             <p>Telefone: <a href="tel:219166647">219 166 647</a></p>
             <p>Email: <a href="mailto:torrita1@gmail.com">torrita1@gmail.com</a></p>
             <div class="redes-sociais-rodape">
-                <a href="https://www.instagram.com/torrita1/" target="_blank" rel="noopener noreferrer" class="link-instagram-rodape" aria-label="Siga-nos no Instagram">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <a href="https://www.instagram.com/torrita1/" target="_blank" rel="noopener noreferrer"
+                    class="link-instagram-rodape" aria-label="Siga-nos no Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
@@ -77,6 +81,8 @@
         <div class="direitos">
             <p>&copy; 2026 Pastelaria Tórrita. Todos os direitos reservados.</p>
         </div>
+    </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const hamburgerBtn = document.getElementById('hamburger-btn');

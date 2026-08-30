@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encomendar Bolo - Pastelaria Tórrita</title>
+    <link rel="icon" type="image/jpeg" href="fotos/logo.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Oleo+Script&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -51,8 +52,8 @@
                 <!-- Campos ocultos de configuração da API -->
                 <!-- 1. Desativa o Captcha chato -->
                 <input type="hidden" name="_captcha" value="false">
-                <!-- 2. Define a página de sucesso com notificação flutuante -->
-                <input type="hidden" name="_next" value="index.html?encomenda=sucesso">
+                <!-- 2. Redireciona diretamente para o pagamento do sinal no Stripe -->
+                <input type="hidden" name="_next" value="https://buy.stripe.com/test_aFa5kw2WR8px9SP1GJ7AI00">
                 <!-- 3. Assunto do email que chega à pastelaria -->
                 <input type="hidden" name="_subject" value="Nova Encomenda de Bolo - Site Tórrita!">
                 <!-- 4. Resposta automática enviada para o email do cliente -->
@@ -235,7 +236,18 @@
                     <span class="mensagem-erro-inline" id="erro-mensagem"></span>
                 </div>
 
-                <button type="submit" id="btn-submeter" disabled class="botao-enviar-luxo">Enviar Encomenda</button>
+                <div class="grupo-input grupo-checkbox-sinal">
+                    <label class="opcao-checkbox" for="confirmar-sinal">
+                        <input type="checkbox" id="confirmar-sinal" name="Confirmacao_Sinal"
+                            value="Concordo com o pagamento do sinal" required>
+                        <span>Declaro que tenho conhecimento de que para validar a minha encomenda é necessário efetuar
+                            o pagamento de um sinal de 10€ a seguir via Stripe. *</span>
+                    </label>
+                    <span class="mensagem-erro-inline" id="erro-confirmar-sinal"></span>
+                </div>
+
+                <button type="submit" id="btn-submeter" disabled class="botao-enviar-luxo">Enviar Encomenda e Pagar
+                    Sinal</button>
             </form>
         </div>
     </section>
@@ -247,6 +259,18 @@
             <p>2725-563 Tapada das Mercês</p>
             <p>Telefone: <a href="tel:219166647">219 166 647</a></p>
             <p>Email: <a href="mailto:torrita1@gmail.com">torrita1@gmail.com</a></p>
+            <div class="redes-sociais-rodape">
+                <a href="https://www.instagram.com/torrita1/" target="_blank" rel="noopener noreferrer"
+                    class="link-instagram-rodape" aria-label="Siga-nos no Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    <span>Instagram</span>
+                </a>
+            </div>
             <br>
             <div class="horario-detalhado">
                 <h5>Horário de Funcionamento</h5>
@@ -281,13 +305,6 @@
 
             const form = document.querySelector('form');
             const dataInput = document.getElementById('data');
-
-            // Configurar URL de redirecionamento dinâmico pós-envio
-            const inputNext = document.querySelector('input[name="_next"]');
-            if (inputNext && window.location.href.includes('/')) {
-                const urlBase = window.location.href.substring(0, window.location.href.lastIndexOf('/'));
-                inputNext.value = urlBase + '/index.html?encomenda=sucesso';
-            }
             const horaInput = document.getElementById('hora');
             const telefoneInput = document.getElementById('telefone');
             const nomeInput = document.getElementById('nome');
@@ -303,6 +320,8 @@
             const pesoInput = document.getElementById('peso');
             const decoracaoInput = document.getElementById('decoracao');
             const mensagemInput = document.getElementById('mensagem');
+            const confirmarSinalInput = document.getElementById('confirmar-sinal');
+            const erroConfirmarSinal = document.getElementById('erro-confirmar-sinal');
             const btnSubmeter = document.getElementById('btn-submeter');
 
             // Campos de Velas (Radio Buttons)
@@ -453,6 +472,7 @@
                 const dataValida = Boolean(dataInput.value && dataInput.value >= dataMinima);
                 const horaValida = horaInput.value !== '' && validarHorarioFuncionamento();
                 const mensagemValida = mensagemInput.value.trim().length > 0;
+                const sinalConfirmado = confirmarSinalInput.checked;
 
                 const baseValida = !ePersonalizado || baseBoloInput.value !== '';
                 const recheioValido = !ePersonalizado || recheioBoloInput.value !== '';
@@ -486,6 +506,7 @@
                 atualizarFeedbackCampo(dataInput, erroData, dataValida, 'A data de levantamento não pode ser anterior a amanhã.');
                 atualizarFeedbackCampo(horaInput, erroHora, horaValida, mensagemErroHoraActual || 'Por favor selecione a hora de levantamento.');
                 atualizarFeedbackCampo(mensagemInput, erroMensagem, mensagemValida, 'Por favor especifique os pormenores da sua encomenda.');
+                atualizarFeedbackCampo(confirmarSinalInput, erroConfirmarSinal, sinalConfirmado, 'É obrigatório declarar conhecimento do pagamento do sinal.');
 
                 if (ePersonalizado) {
                     atualizarFeedbackCampo(baseBoloInput, erroBaseBolo, baseValida, 'Por favor selecione a base do bolo.');
@@ -493,7 +514,7 @@
                     atualizarFeedbackCampo(coberturaBoloInput, erroCoberturaBolo, coberturaValida, 'Por favor selecione a cobertura do bolo.');
                 }
 
-                const todosValidos = nomeValido && emailValido && telefoneValido && tipoBoloValido && pesoValido && decoracaoValida && velasValidas && idadeVelasValida && dataValida && horaValida && mensagemValida && baseValida && recheioValido && coberturaValida;
+                const todosValidos = nomeValido && emailValido && telefoneValido && tipoBoloValido && pesoValido && decoracaoValida && velasValidas && idadeVelasValida && dataValida && horaValida && mensagemValida && baseValida && recheioValido && coberturaValida && sinalConfirmado;
 
                 btnSubmeter.disabled = !todosValidos;
             }
@@ -507,7 +528,7 @@
             });
 
             // Marcar campos como tocados ao interagir (blur)
-            const todosCampos = [nomeInput, emailInput, telefoneInput, tipoBoloInput, baseBoloInput, recheioBoloInput, coberturaBoloInput, pesoInput, decoracaoInput, idadeVelasInput, dataInput, horaInput, mensagemInput];
+            const todosCampos = [nomeInput, emailInput, telefoneInput, tipoBoloInput, baseBoloInput, recheioBoloInput, coberturaBoloInput, pesoInput, decoracaoInput, idadeVelasInput, dataInput, horaInput, mensagemInput, confirmarSinalInput];
             todosCampos.forEach(campo => {
                 campo.addEventListener('blur', function () {
                     campo.dataset.touched = 'true';

@@ -599,6 +599,44 @@ html {
     user-select: none;
 }
 
+/* --- Checkbox de Confirmação do Sinal --- */
+.grupo-checkbox-sinal {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.opcao-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--color-text-main);
+    line-height: 1.5;
+    background-color: var(--bg-card);
+    padding: 16px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.opcao-checkbox:hover {
+    border-color: var(--color-primary);
+    background-color: #fff;
+}
+
+.opcao-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: var(--color-primary);
+}
+
 .opcao-radio input[type="radio"] {
     accent-color: var(--color-primary);
     width: 18px;
@@ -920,6 +958,18 @@ html {
     font-style: italic;
 }
 
+.menu-item-preco {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    background-color: var(--color-primary-light);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-top: 8px;
+}
+
 /* --- Rodapé --- */
 .rodape {
     background-color: var(--color-primary-dark);
@@ -974,6 +1024,176 @@ html {
     color: rgba(247, 235, 225, 0.7);
     border-top: 1px solid rgba(247, 235, 225, 0.2);
     padding-top: 20px;
+}
+
+/* --- Redes Sociais no Rodapé --- */
+.redes-sociais-rodape {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-rodape a.link-instagram-rodape {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-primary-dark);
+    background-color: var(--color-primary-light);
+    border: 1px solid rgba(60, 159, 123, 0.3);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 9px 22px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.info-rodape a.link-instagram-rodape:hover {
+    background-color: #ffffff;
+    color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.info-rodape a.link-instagram-rodape svg {
+    stroke: currentColor;
+    flex-shrink: 0;
+}
+
+/* --- Página de Agradecimento --- */
+.seccao-agradecimento {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.cartao-agradecimento {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 50px 40px;
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.icone-sucesso-animado {
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 2.5rem;
+    box-shadow: 0 4px 15px rgba(60, 159, 123, 0.25);
+    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.cartao-agradecimento h1 {
+    font-family: 'Oleo Script', cursive;
+    font-size: 2.8rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 15px;
+}
+
+.cartao-agradecimento p {
+    font-size: 1.05rem;
+    color: var(--color-text-main);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.passos-encomenda {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+    margin: 30px 0;
+    padding: 20px 15px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.passo-item {
+    text-align: center;
+}
+
+.passo-numero {
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.passo-texto {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+}
+
+.botoes-agradecimento {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.btn-agradecimento-principal {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: #fff !important;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(60, 159, 123, 0.3);
+}
+
+.btn-agradecimento-principal:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(10, 74, 51, 0.4);
+}
+
+.btn-agradecimento-secundario {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--color-primary-dark) !important;
+    border: 2px solid var(--color-primary-dark);
+    padding: 10px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-agradecimento-secundario:hover {
+    background-color: var(--color-primary-dark);
+    color: #fff !important;
+    transform: translateY(-2px);
 }
 
 /* --- Media Queries Responsivas --- */
