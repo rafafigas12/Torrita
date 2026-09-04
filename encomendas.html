@@ -29,7 +29,9 @@
             <a href="encomendas.html">Encomende o seu bolo</a>
             <a href="cardapio.html">Menu</a>
             <a href="menu.html">Bebidas</a>
+            <a href="delivery.html">Delivery</a>
             <a href="#contactos">Contactos</a>
+            <a href="politicas.html">Políticas</a>
         </nav>
     </header>
 
@@ -46,14 +48,21 @@
                 </a>
             </div>
 
+            <div class="container-veja-politicas">
+                <a href="politicas.html" class="botao-politicas">
+                    Veja as politicas de encomendas antes de começar
+                </a>
+            </div>
+
             <!-- O action define para onde vai o email. O method POST envia os dados de forma segura -->
-            <form action="https://formsubmit.co/torrita1@gmail.com" method="POST" enctype="multipart/form-data">
+            <form action="https://formsubmit.co/torritaencomendas@gmail.com" method="POST"
+                enctype="multipart/form-data">
 
                 <!-- Campos ocultos de configuração da API -->
                 <!-- 1. Desativa o Captcha chato -->
                 <input type="hidden" name="_captcha" value="false">
                 <!-- 2. Redireciona diretamente para o pagamento do sinal no Stripe -->
-                <input type="hidden" name="_next" value="https://buy.stripe.com/test_aFa5kw2WR8px9SP1GJ7AI00">
+                <input type="hidden" name="_next" value="https://buy.stripe.com/6oU3co0XF77f9XFcXyfYY00">
                 <!-- 3. Assunto do email que chega à pastelaria -->
                 <input type="hidden" name="_subject" value="Nova Encomenda de Bolo - Site Tórrita!">
                 <!-- 4. Resposta automática enviada para o email do cliente -->
@@ -280,7 +289,8 @@
             </div>
         </div>
         <div class="direitos">
-            <p>&copy; 2026 Pastelaria Tórrita. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Pastelaria Tórrita. Todos os direitos reservados. | <a href="politicas.html"
+                    style="color: inherit; text-decoration: underline;">Políticas da Loja</a></p>
         </div>
     </footer>
 

@@ -738,7 +738,7 @@ html {
 
 .container-botao-inspiracao {
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
 }
 
 .botao-inspiracao {
@@ -760,6 +760,36 @@ html {
 .botao-inspiracao:hover {
     background-color: var(--color-primary);
     color: #fff;
+}
+
+.container-veja-politicas {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.botao-politicas {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    background-color: rgba(46, 89, 69, 0.07);
+    color: var(--color-primary);
+    padding: 10px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border: 1.5px solid rgba(46, 89, 69, 0.4);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.botao-politicas:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 89, 69, 0.15);
 }
 
 #detalhes-bolo {
@@ -1196,6 +1226,339 @@ html {
     transform: translateY(-2px);
 }
 
+/* ============================================== */
+/* --- Página de Políticas da Loja --- */
+/* ============================================== */
+.seccao-politicas {
+    padding: 120px 20px 80px 20px;
+    background-color: var(--bg-main);
+    min-height: 80vh;
+}
+
+.container-politicas {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.container-politicas h2 {
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--color-primary);
+}
+
+.descricao-politicas {
+    text-align: center;
+    color: var(--color-text-muted);
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.grid-politicas {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.cartao-politica {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.cartao-politica:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cabecalho-cartao-politica {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.icone-politica {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.cabecalho-cartao-politica h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-primary-dark);
+    margin: 0;
+}
+
+.lista-politica {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lista-politica li {
+    position: relative;
+    padding-left: 24px;
+    font-size: 0.95rem;
+    color: var(--color-text-main);
+    line-height: 1.6;
+}
+
+.lista-politica li::before {
+    content: "•";
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.caixa-conclusao-politicas {
+    margin-top: 45px;
+    background-color: var(--bg-alt);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 25px 30px;
+    text-align: center;
+}
+
+.caixa-conclusao-politicas p {
+    font-size: 0.98rem;
+    color: var(--color-text-main);
+    line-height: 1.6;
+}
+
+/* ============================================== */
+/* --- Secção Delivery --- */
+/* ============================================== */
+.seccao-delivery {
+    padding: 120px 20px 80px 20px;
+    background-color: var(--bg-main);
+    min-height: 80vh;
+}
+
+.container-delivery {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.container-delivery h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.descricao-delivery {
+    text-align: center;
+    max-width: 700px;
+    margin: 20px auto 45px auto;
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.grid-delivery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.cartao-delivery {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.cartao-delivery:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.1);
+}
+
+.topo-cartao-delivery {
+    width: 100%;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    background-color: #f4f6f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartao-delivery.uber-eats .topo-cartao-delivery {
+    background: linear-gradient(135deg, #111111 0%, #06C167 100%);
+}
+
+.cartao-delivery.bolt-food .topo-cartao-delivery {
+    background: linear-gradient(135deg, #288f54 0%, #34B46B 100%);
+}
+
+.cartao-delivery.glovo .topo-cartao-delivery {
+    background: linear-gradient(135deg, #e09b0d 0%, #FFC244 100%);
+}
+
+.imagem-fundo-plataforma {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 25px;
+    transition: transform 0.4s ease;
+}
+
+.cartao-delivery:hover .imagem-fundo-plataforma {
+    transform: scale(1.08);
+}
+
+.conteudo-cartao-delivery {
+    padding: 25px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.cartao-delivery h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 12px;
+}
+
+.cartao-delivery p {
+    font-size: 0.95rem;
+    color: var(--color-text-main);
+    line-height: 1.5;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.btn-plataforma {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-ubereats {
+    background-color: #06C167;
+    color: #ffffff;
+}
+
+.btn-ubereats:hover {
+    background-color: #05a256;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(6, 193, 103, 0.3);
+}
+
+.btn-bolt {
+    background-color: #34B46B;
+    color: #ffffff;
+}
+
+.btn-bolt:hover {
+    background-color: #2b995a;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(52, 180, 107, 0.3);
+}
+
+.btn-glovo {
+    background-color: #FFC244;
+    color: #333333;
+}
+
+.btn-glovo:hover {
+    background-color: #e6ab35;
+    color: #111111;
+    box-shadow: 0 4px 12px rgba(255, 194, 68, 0.4);
+}
+
+.caixa-toogoodtogo {
+    background-color: #005B48;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 6px 20px rgba(0, 91, 72, 0.15);
+}
+
+.conteudo-toogoodtogo h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.conteudo-toogoodtogo p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.btn-toogoodtogo {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #005B48;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.btn-toogoodtogo:hover {
+    background-color: var(--bg-alt);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 /* --- Media Queries Responsivas --- */
 @media (max-width: 768px) {
     .cabecalho {
@@ -1416,5 +1779,38 @@ html {
     .grupo-input-metade {
         flex-direction: column;
         gap: 20px;
+    }
+
+    .seccao-politicas {
+        padding: 90px 15px 50px 15px;
+    }
+
+    .container-politicas h2 {
+        font-size: 1.5rem;
+    }
+
+    .cartao-politica {
+        padding: 20px 18px;
+    }
+
+    .caixa-conclusao-politicas {
+        padding: 20px 18px;
+    }
+
+    .seccao-delivery {
+        padding: 90px 15px 50px 15px;
+    }
+
+    .container-delivery h2 {
+        font-size: 1.5rem;
+    }
+
+    .caixa-toogoodtogo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn-toogoodtogo {
+        width: 100%;
     }
 }
