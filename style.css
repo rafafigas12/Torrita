@@ -233,6 +233,61 @@ html {
     color: var(--color-text-muted);
 }
 
+/* --- Secção De Onde Viemos (História) --- */
+.seccao-historia {
+    padding: 80px 20px;
+    background-color: var(--bg-alt);
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.container-historia {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.seccao-historia h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.texto-destaque-historia {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--color-primary-dark);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.conteudo-historia {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.conteudo-historia p {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--color-text-main);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.mensagem-final-historia {
+    font-size: 1.15rem !important;
+    font-weight: 600 !important;
+    color: var(--color-primary) !important;
+    margin-top: 15px !important;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(46, 89, 69, 0.25);
+}
+
 /* --- Montra / Grid de Bolos --- */
 .montra {
     display: flex;
@@ -1812,5 +1867,17 @@ html {
 
     .btn-toogoodtogo {
         width: 100%;
+    }
+
+    .seccao-historia {
+        padding: 50px 15px;
+    }
+
+    .seccao-historia h2 {
+        font-size: 1.4rem;
+    }
+
+    .texto-destaque-historia {
+        font-size: 1.1rem;
     }
 }
