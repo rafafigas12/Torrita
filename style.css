@@ -467,8 +467,18 @@ html {
     margin-bottom: 30px;
 }
 
+.botoes-insta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
 .botao-insta {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     background-color: transparent;
     color: var(--color-primary);
@@ -1811,8 +1821,13 @@ html {
         font-size: 0.85rem;
     }
 
+    .botoes-insta {
+        flex-direction: column;
+        gap: 12px;
+    }
+
     .botao-insta {
-        display: block;
+        display: inline-flex;
         width: 100%;
         max-width: 280px;
         margin: 0 auto;
