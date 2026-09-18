@@ -1130,9 +1130,11 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 12px;
 }
 
-.info-rodape a.link-instagram-rodape {
+.info-rodape a.link-instagram-rodape,
+.info-rodape a.link-facebook-rodape {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -1148,14 +1150,16 @@ html {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
-.info-rodape a.link-instagram-rodape:hover {
+.info-rodape a.link-instagram-rodape:hover,
+.info-rodape a.link-facebook-rodape:hover {
     background-color: #ffffff;
     color: var(--color-primary-dark);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.info-rodape a.link-instagram-rodape svg {
+.info-rodape a.link-instagram-rodape svg,
+.info-rodape a.link-facebook-rodape svg {
     stroke: currentColor;
     flex-shrink: 0;
 }
