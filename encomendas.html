@@ -376,12 +376,12 @@
             const erroHora = document.getElementById('erro-hora');
             const erroMensagem = document.getElementById('erro-mensagem');
 
-            // Definir a data mínima para o dia seguinte (amanhã) no calendário
-            const amanha = new Date();
-            amanha.setDate(amanha.getDate() + 1);
-            const ano = amanha.getFullYear();
-            const mes = String(amanha.getMonth() + 1).padStart(2, '0');
-            const dia = String(amanha.getDate()).padStart(2, '0');
+            // Definir a data mínima para 48 horas depois da data atual
+            const dataMinimaCalendario = new Date();
+            dataMinimaCalendario.setDate(dataMinimaCalendario.getDate() + 2);
+            const ano = dataMinimaCalendario.getFullYear();
+            const mes = String(dataMinimaCalendario.getMonth() + 1).padStart(2, '0');
+            const dia = String(dataMinimaCalendario.getDate()).padStart(2, '0');
             const dataMinima = `${ano}-${mes}-${dia}`;
 
             dataInput.setAttribute('min', dataMinima);
@@ -521,7 +521,7 @@
                     atualizarFeedbackCampo(idadeVelasInput, erroIdadeVelas, idadeVelasValida, 'Por favor indique a idade/número para as velas.');
                 }
 
-                atualizarFeedbackCampo(dataInput, erroData, dataValida, 'A data de levantamento não pode ser anterior a amanhã.');
+                atualizarFeedbackCampo(dataInput, erroData, dataValida, 'A data de levantamento deve ser agendada com pelo menos 48 horas de antecedência.');
                 atualizarFeedbackCampo(horaInput, erroHora, horaValida, mensagemErroHoraActual || 'Por favor selecione a hora de levantamento.');
                 atualizarFeedbackCampo(mensagemInput, erroMensagem, mensagemValida, 'Por favor especifique os pormenores da sua encomenda.');
                 atualizarFeedbackCampo(confirmarSinalInput, erroConfirmarSinal, sinalConfirmado, 'É obrigatório declarar conhecimento do pagamento do sinal.');
