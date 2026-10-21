@@ -69,7 +69,7 @@
 
                 <!-- Grelha de Produtos -->
                 <div class="grid-halloween" id="grid-halloween">
-                    <article class="cartao-halloween" data-produto="Bolo Abóbora" data-preco="14">
+                    <article class="cartao-halloween" data-produto="Bolo Abóbora" data-campo="Bolo Abóbora" data-preco="14">
                         <div class="cartao-halloween-imagem">
                             <img src="fotos/Halloween/bolo_abobora.PNG" alt="Bolo em forma de abóbora de Halloween"
                                 loading="lazy">
@@ -91,7 +91,7 @@
                         </div>
                     </article>
 
-                    <article class="cartao-halloween" data-produto="Bolo Fantasma" data-preco="14">
+                    <article class="cartao-halloween" data-produto="Bolo Fantasma" data-campo="Bolo Fantasma" data-preco="14">
                         <div class="cartao-halloween-imagem">
                             <img src="fotos/Halloween/bolo_fantasma.PNG" alt="Bolo em forma de fantasma" loading="lazy">
                         </div>
@@ -112,7 +112,7 @@
                         </div>
                     </article>
 
-                    <article class="cartao-halloween" data-produto="Bolo Jack Skellington" data-preco="14">
+                    <article class="cartao-halloween" data-produto="Bolo Jack Skellington" data-campo="Bolo Jack Skellington" data-preco="14">
                         <div class="cartao-halloween-imagem">
                             <img src="fotos/Halloween/bolo_esqueleto.jpg" alt="Bolo Jack Skellington" loading="lazy">
                         </div>
@@ -133,7 +133,7 @@
                         </div>
                     </article>
 
-                    <article class="cartao-halloween" data-produto="Bolo Fantasma Laranja" data-preco="14">
+                    <article class="cartao-halloween" data-produto="Bolo Fantasma Laranja" data-campo="Bolo Fantasma Laranja" data-preco="14">
                         <div class="cartao-halloween-imagem">
                             <img src="fotos/Halloween/bolo_laranja.jpg"
                                 alt="Bolo laranja decorado com fantasmas, morcegos e teia de aranha" loading="lazy">
@@ -155,7 +155,7 @@
                         </div>
                     </article>
 
-                    <article class="cartao-halloween" data-produto="Cupcakes Assombrados" data-preco="3">
+                    <article class="cartao-halloween" data-produto="Cupcakes Assombrados" data-campo="Cupcake" data-preco="3">
                         <div class="cartao-halloween-imagem">
                             <img src="fotos/Halloween/cupcake.jpg"
                                 alt="Cupcakes com chantilly, pão de ló de chocolate e doce de morango" loading="lazy">
@@ -177,7 +177,7 @@
                         </div>
                     </article>
 
-                    <article class="cartao-halloween" data-produto="Bolachas Decoradas" data-preco="1.75">
+                    <article class="cartao-halloween" data-produto="Bolachas Decoradas" data-campo="Bolachas Decoradas" data-preco="1.75">
                         <div class="cartao-halloween-imagem">
                             <img src="fotos/Halloween/bolachas.jpg"
                                 alt="Bolachas decoradas de fantasma, gato preto e monstro verde" loading="lazy">
@@ -211,8 +211,6 @@
                     <input type="hidden" name="_autoresponse"
                         value="A sua encomenda de Halloween na Pastelaria Tórrita foi recebida com sucesso! Este é um email automático para confirmar que recebemos o seu pedido. A nossa equipa vai contactá-lo muito em breve para confirmar os detalhes. Para validar a sua encomenda é necessário efetuar o pagamento do sinal de 10€ via Stripe. Obrigado pela preferência!">
                     <input type="hidden" name="_replyto" id="replyto-hidden">
-                    <input type="hidden" name="Produtos Encomendados" id="produtos-hidden">
-                    <input type="hidden" name="Total Estimado" id="total-hidden">
 
                     <div class="resumo-halloween" id="resumo-halloween" aria-live="polite">
                         <h3>&#127875; O seu pedido</h3>
@@ -262,6 +260,15 @@
                             <span class="mensagem-erro-inline" id="erro-hora"></span>
                         </div>
                     </div>
+
+                    <!-- Quantidades individuais de cada produto enviadas no email -->
+                    <input type="hidden" name="Bolo Abóbora" value="0">
+                    <input type="hidden" name="Bolo Fantasma" value="0">
+                    <input type="hidden" name="Bolo Jack Skellington" value="0">
+                    <input type="hidden" name="Bolo Fantasma Laranja" value="0">
+                    <input type="hidden" name="Cupcake" value="0">
+                    <input type="hidden" name="Bolachas Decoradas" value="0">
+                    <input type="hidden" name="Total Estimado" id="total-hidden" value="0,00€">
 
                     <div class="grupo-input">
                         <label for="mensagem">Observações (Opcional)</label>
@@ -354,7 +361,6 @@
             const resumoTotalLinha = document.getElementById('resumo-total-linha');
             const resumoTotalValor = document.getElementById('resumo-total-valor');
             const avisoMinimo = document.getElementById('aviso-minimo');
-            const produtosHidden = document.getElementById('produtos-hidden');
             const totalHidden = document.getElementById('total-hidden');
             const nomeInput = document.getElementById('nome');
             const emailInput = document.getElementById('email');
@@ -413,7 +419,6 @@
                     if (resumoTotalLinha) resumoTotalLinha.style.display = 'none';
                     if (resumoTotalValor) resumoTotalValor.textContent = '0,00€';
                     if (avisoMinimo) avisoMinimo.style.display = 'none';
-                    produtosHidden.value = '';
                     if (totalHidden) totalHidden.value = '0,00€';
                 } else {
                     let total = 0;
@@ -442,11 +447,17 @@
                         }
                     }
 
-                    produtosHidden.value = selecionados.map(p => `${p.qtd}x ${p.nome} (${formatarMoeda(p.subtotal)})`).join(' | ');
                     if (totalHidden) totalHidden.value = formatarMoeda(total);
                 }
+
+                // Atualizar no formulário as quantidades individuais de cada produto enviadas no email
                 cartoes.forEach(cartao => {
+                    const nomeCampo = cartao.dataset.campo || cartao.dataset.produto;
                     const qtd = parseInt(cartao.querySelector('.qtd-input').value, 10) || 0;
+                    const campoOculto = form.querySelector(`input[type="hidden"][name="${nomeCampo}"]`);
+                    if (campoOculto) {
+                        campoOculto.value = String(qtd);
+                    }
                     cartao.classList.toggle('selecionado', qtd > 0);
                 });
             }
@@ -463,6 +474,7 @@
                 cartao.querySelector('.qtd-mais').addEventListener('click', () => definir((parseInt(input.value, 10) || 0) + 1));
                 cartao.querySelector('.qtd-menos').addEventListener('click', () => definir((parseInt(input.value, 10) || 0) - 1));
                 input.addEventListener('change', () => definir(parseInt(input.value, 10) || 0));
+                input.addEventListener('input', () => definir(parseInt(input.value, 10) || 0));
             });
 
             // --- Validações ---
