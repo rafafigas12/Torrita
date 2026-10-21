@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encomendas de Halloween - Pastelaria Tórrita</title>
+    <meta name="description"
+        content="Encomende os doces de Halloween da Pastelaria Tórrita: bolos de abóbora, fantasma e esqueleto, cupcakes e bolachas decoradas. Fabrico próprio na Tapada das Mercês.">
+    <link rel="icon" type="image/jpeg" href="fotos/logo.jpg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Oleo+Script&family=Creepster&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="pagina-halloween">
+
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="index.html">
+                <img src="fotos/logo.jpg" alt="Logótipo Pastelaria Tórrita">
+            </a>
+        </div>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="menu" id="menu-nav">
+            <a href="index.html">Inicio</a>
+            <a href="encomendas.html">Encomende o seu bolo</a>
+            <a href="halloween.html" class="menu-halloween ativo">Halloween &#127875;</a>
+            <a href="cardapio.html">Menu</a>
+            <a href="menu.html">Bebidas</a>
+            <a href="delivery.html">Entregas</a>
+            <a href="#contactos">Contactos</a>
+            <a href="politicas.html">Políticas</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero de Halloween -->
+        <section class="halloween-hero">
+            <div class="halloween-morcegos" aria-hidden="true">
+                <span>&#129415;</span><span>&#129415;</span><span>&#129415;</span>
+            </div>
+            <div class="halloween-hero-conteudo">
+                <span class="halloween-etiqueta">Edição Limitada</span>
+                <h1>Doces de Halloween</h1>
+                <p>Bolos, cupcakes e bolachas assustadoramente deliciosos, feitos à mão na nossa pastelaria.
+                    Escolha os seus favoritos e faça já a sua encomenda!</p>
+                <a href="#produtos-halloween" class="botao-halloween">Escolher Doces &#127875;</a>
+            </div>
+        </section>
+
+        <section class="seccao-halloween" id="produtos-halloween">
+            <div class="conteiner-halloween">
+                <h2>Escolha os seus doces</h2>
+                <div class="linha-separadora linha-halloween"></div>
+                <p class="descricao-encomenda">Use os botões <strong>+</strong> e <strong>&minus;</strong> para indicar
+                    as quantidades. A nossa equipa entrará em contacto para confirmar os detalhes e o valor final.</p>
+
+                <div class="container-veja-politicas">
+                    <a href="politicas.html" class="botao-politicas">
+                        Veja as políticas de encomendas antes de começar
+                    </a>
+                </div>
+
+                <!-- Grelha de Produtos -->
+                <div class="grid-halloween" id="grid-halloween">
+                    <article class="cartao-halloween" data-produto="Bolo Abóbora" data-preco="14">
+                        <div class="cartao-halloween-imagem">
+                            <img src="fotos/Halloween/bolo_abobora.PNG" alt="Bolo em forma de abóbora de Halloween"
+                                loading="lazy">
+                        </div>
+                        <div class="cartao-halloween-info">
+                            <div class="cartao-halloween-topo">
+                                <h3>Bolo Abóbora</h3>
+                                <span class="preco-halloween">14,00€</span>
+                            </div>
+                            <p>Abóbora sorridente com "terra" de chocolate e pão de ló com doce de ovos.</p>
+                            <div class="seletor-quantidade">
+                                <button type="button" class="qtd-btn qtd-menos"
+                                    aria-label="Diminuir quantidade de Bolo Abóbora">&minus;</button>
+                                <input type="number" class="qtd-input" id="qtd-bolo-abobora" value="0" min="0" max="50"
+                                    aria-label="Quantidade de Bolo Abóbora">
+                                <button type="button" class="qtd-btn qtd-mais"
+                                    aria-label="Aumentar quantidade de Bolo Abóbora">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="cartao-halloween" data-produto="Bolo Fantasma" data-preco="14">
+                        <div class="cartao-halloween-imagem">
+                            <img src="fotos/Halloween/bolo_fantasma.PNG" alt="Bolo em forma de fantasma" loading="lazy">
+                        </div>
+                        <div class="cartao-halloween-info">
+                            <div class="cartao-halloween-topo">
+                                <h3>Bolo Fantasma</h3>
+                                <span class="preco-halloween">14,00€</span>
+                            </div>
+                            <p>Um fantasminha coberto de pasta de açúcar e com pão de ló com doce de ovos.</p>
+                            <div class="seletor-quantidade">
+                                <button type="button" class="qtd-btn qtd-menos"
+                                    aria-label="Diminuir quantidade de Bolo Fantasma">&minus;</button>
+                                <input type="number" class="qtd-input" id="qtd-bolo-fantasma" value="0" min="0" max="50"
+                                    aria-label="Quantidade de Bolo Fantasma">
+                                <button type="button" class="qtd-btn qtd-mais"
+                                    aria-label="Aumentar quantidade de Bolo Fantasma">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="cartao-halloween" data-produto="Bolo Jack Skellington" data-preco="14">
+                        <div class="cartao-halloween-imagem">
+                            <img src="fotos/Halloween/bolo_esqueleto.jpg" alt="Bolo Jack Skellington" loading="lazy">
+                        </div>
+                        <div class="cartao-halloween-info">
+                            <div class="cartao-halloween-topo">
+                                <h3>Bolo Jack Skellington</h3>
+                                <span class="preco-halloween">14,00€</span>
+                            </div>
+                            <p>Caveira sorridente em pasta de açúcar e pão de ló com doce de ovos.</p>
+                            <div class="seletor-quantidade">
+                                <button type="button" class="qtd-btn qtd-menos"
+                                    aria-label="Diminuir quantidade de Bolo Jack Skellington">&minus;</button>
+                                <input type="number" class="qtd-input" id="qtd-bolo-esqueleto" value="0" min="0"
+                                    max="50" aria-label="Quantidade de Bolo Jack Skellington">
+                                <button type="button" class="qtd-btn qtd-mais"
+                                    aria-label="Aumentar quantidade de Bolo Jack Skellington">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="cartao-halloween" data-produto="Bolo Fantasma Laranja" data-preco="14">
+                        <div class="cartao-halloween-imagem">
+                            <img src="fotos/Halloween/bolo_laranja.jpg"
+                                alt="Bolo laranja decorado com fantasmas, morcegos e teia de aranha" loading="lazy">
+                        </div>
+                        <div class="cartao-halloween-info">
+                            <div class="cartao-halloween-topo">
+                                <h3>Bolo Fantasma Laranja</h3>
+                                <span class="preco-halloween">14,00€</span>
+                            </div>
+                            <p>Creme laranja, fantasminhas, morcegos e pão de ló com doce de ovos</p>
+                            <div class="seletor-quantidade">
+                                <button type="button" class="qtd-btn qtd-menos"
+                                    aria-label="Diminuir quantidade de Bolo Fantasma Laranja">&minus;</button>
+                                <input type="number" class="qtd-input" id="qtd-bolo-laranja" value="0" min="0" max="50"
+                                    aria-label="Quantidade de Bolo Fantasma Laranja">
+                                <button type="button" class="qtd-btn qtd-mais"
+                                    aria-label="Aumentar quantidade de Bolo Fantasma Laranja">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="cartao-halloween" data-produto="Cupcakes Assombrados" data-preco="3">
+                        <div class="cartao-halloween-imagem">
+                            <img src="fotos/Halloween/cupcake.jpg"
+                                alt="Cupcakes com chantilly, pão de ló de chocolate e doce de morango" loading="lazy">
+                        </div>
+                        <div class="cartao-halloween-info">
+                            <div class="cartao-halloween-topo">
+                                <h3>Cupcakes Assombrados (Un.)</h3>
+                                <span class="preco-halloween">3,00€</span>
+                            </div>
+                            <p>Cupcakes com chantilly, pão de ló de chocolate e doce de morango.</p>
+                            <div class="seletor-quantidade">
+                                <button type="button" class="qtd-btn qtd-menos"
+                                    aria-label="Diminuir quantidade de Cupcakes Assombrados">&minus;</button>
+                                <input type="number" class="qtd-input" id="qtd-cupcakes" value="0" min="0" max="200"
+                                    aria-label="Quantidade de Cupcakes Assombrados">
+                                <button type="button" class="qtd-btn qtd-mais"
+                                    aria-label="Aumentar quantidade de Cupcakes Assombrados">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="cartao-halloween" data-produto="Bolachas Decoradas" data-preco="1.75">
+                        <div class="cartao-halloween-imagem">
+                            <img src="fotos/Halloween/bolachas.jpg"
+                                alt="Bolachas decoradas de fantasma, gato preto e monstro verde" loading="lazy">
+                        </div>
+                        <div class="cartao-halloween-info">
+                            <div class="cartao-halloween-topo">
+                                <h3>Bolachas Decoradas (Un.)</h3>
+                                <span class="preco-halloween">1,75€</span>
+                            </div>
+                            <p>Bolachas de manteiga com fantasmas, gatos pretos e monstros.</p>
+                            <div class="seletor-quantidade">
+                                <button type="button" class="qtd-btn qtd-menos"
+                                    aria-label="Diminuir quantidade de Bolachas Decoradas">&minus;</button>
+                                <input type="number" class="qtd-input" id="qtd-bolachas" value="0" min="0" max="200"
+                                    aria-label="Quantidade de Bolachas Decoradas">
+                                <button type="button" class="qtd-btn qtd-mais"
+                                    aria-label="Aumentar quantidade de Bolachas Decoradas">+</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Formulário -->
+                <form action="https://formsubmit.co/3aa6ed18ce16a46be64aca3ee6062d7b" method="POST"
+                    class="formulario-luxo formulario-halloween" id="form-halloween">
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Redireciona diretamente para o pagamento do sinal no Stripe -->
+                    <input type="hidden" name="_next" value="https://buy.stripe.com/6oU3co0XF77f9XFcXyfYY00">
+                    <input type="hidden" name="_subject" value="&#127875; Nova Encomenda de Halloween - Site Tórrita!">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_autoresponse"
+                        value="A sua encomenda de Halloween na Pastelaria Tórrita foi recebida com sucesso! Este é um email automático para confirmar que recebemos o seu pedido. A nossa equipa vai contactá-lo muito em breve para confirmar os detalhes. Para validar a sua encomenda é necessário efetuar o pagamento do sinal de 10€ via Stripe. Obrigado pela preferência!">
+                    <input type="hidden" name="_replyto" id="replyto-hidden">
+                    <input type="hidden" name="Produtos Encomendados" id="produtos-hidden">
+                    <input type="hidden" name="Total Estimado" id="total-hidden">
+
+                    <div class="resumo-halloween" id="resumo-halloween" aria-live="polite">
+                        <h3>&#127875; O seu pedido</h3>
+                        <ul id="lista-resumo">
+                            <li class="resumo-vazio">Ainda não escolheu nenhum doce.</li>
+                        </ul>
+                        <div class="resumo-total-linha" id="resumo-total-linha" style="display: none;">
+                            <span>Total Estimado:</span>
+                            <strong id="resumo-total-valor">0,00€</strong>
+                        </div>
+                        <div class="aviso-minimo-encomenda" id="aviso-minimo" style="display: none;"></div>
+                        <span class="mensagem-erro-inline" id="erro-produtos"></span>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="nome">Nome Completo *</label>
+                        <input type="text" id="nome" name="Nome" required minlength="3" placeholder="Ex: João Silva"
+                            title="Introduza um nome válido (mínimo 3 letras).">
+                        <span class="mensagem-erro-inline" id="erro-nome"></span>
+                    </div>
+
+                    <div class="grupo-input-metade">
+                        <div class="grupo-input">
+                            <label for="email">Endereço de Email *</label>
+                            <input type="email" id="email" name="email" required
+                                placeholder="Para receber a confirmação">
+                            <span class="mensagem-erro-inline" id="erro-email"></span>
+                        </div>
+                        <div class="grupo-input">
+                            <label for="telefone">Contacto Telefónico *</label>
+                            <input type="tel" id="telefone" name="Telefone" required minlength="9" maxlength="15"
+                                placeholder="Ex: 912 345 678">
+                            <span class="mensagem-erro-inline" id="erro-telefone"></span>
+                        </div>
+                    </div>
+
+                    <div class="grupo-input-metade">
+                        <div class="grupo-input">
+                            <label for="data">Data de Levantamento * (31 de Outubro)</label>
+                            <input type="date" id="data" name="Data de Levantamento" min="2026-10-31" max="2026-10-31"
+                                value="2026-10-31" required>
+                            <span class="mensagem-erro-inline" id="erro-data"></span>
+                        </div>
+                        <div class="grupo-input">
+                            <label for="hora">Hora de Levantamento * (07:00 – 18:00)</label>
+                            <input type="time" id="hora" name="Hora de Levantamento" required min="07:00" max="18:00">
+                            <span class="mensagem-erro-inline" id="erro-hora"></span>
+                        </div>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="mensagem">Observações (Opcional)</label>
+                        <textarea id="mensagem" name="Observações" rows="4"
+                            placeholder="Se tiver preferência pela decoração das bolachas indique aqui..."></textarea>
+                    </div>
+
+                    <div class="grupo-input grupo-checkbox-sinal">
+                        <label class="opcao-checkbox" for="confirmar-sinal">
+                            <input type="checkbox" id="confirmar-sinal" name="Confirmacao_Sinal"
+                                value="Concordo com o pagamento do sinal de 10€" required>
+                            <span>Declaro que tenho conhecimento de que para validar a minha encomenda é necessário efetuar
+                                o pagamento de um sinal de 10€ a seguir via Stripe. *</span>
+                        </label>
+                        <span class="mensagem-erro-inline" id="erro-confirmar-sinal"></span>
+                    </div>
+
+                    <button type="submit" id="btn-submeter" disabled class="botao-enviar-luxo botao-enviar-halloween">
+                        Enviar Encomenda e Pagar Sinal (10€)
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contactos" class="rodape">
+        <div class="info-rodape">
+            <h4>Pastelaria Tórrita</h4>
+            <p>Av. Miguel Torga 24B/26A</p>
+            <p>2725-563 Tapada das Mercês</p>
+            <p>Telefone: <a href="tel:219166647">219 166 647</a></p>
+            <p>Telemóvel: <a href="tel:914225747">914 225 747</a></p>
+            <p>Email: <a href="mailto:torrita1@gmail.com">torrita1@gmail.com</a></p>
+            <div class="redes-sociais-rodape">
+                <a href="https://www.instagram.com/torrita1/" target="_blank" rel="noopener noreferrer"
+                    class="link-instagram-rodape" aria-label="Siga-nos no Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61569245280989&amp;locale=pt_PT" target="_blank"
+                    rel="noopener noreferrer" class="link-facebook-rodape" aria-label="Siga-nos no Facebook">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M14 8h3V4h-3c-3.3 0-5 1.7-5 5v3H6v4h3v8h4v-8h3.2l.8-4H13V9c0-.7.3-1 1-1z"></path>
+                    </svg>
+                    <span>Facebook</span>
+                </a>
+            </div>
+            <br>
+            <div class="horario-detalhado">
+                <h5>Horário de Funcionamento</h5>
+                <p>Segunda-feira: FECHADO</p>
+                <p>Terça a Sexta-feira: 07:00 – 20:00</p>
+                <p>Sábado: 07:00 – 18:00</p>
+                <p>Domingo e Feriados: 07:00 – 15:00</p>
+            </div>
+        </div>
+        <div class="direitos">
+            <p>&copy; 2026 Pastelaria Tórrita. Todos os direitos reservados. | <a href="politicas.html"
+                    style="color: inherit; text-decoration: underline;">Políticas da Loja</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- Menu hamburger ---
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const menuNav = document.getElementById('menu-nav');
+            if (hamburgerBtn && menuNav) {
+                hamburgerBtn.addEventListener('click', function () {
+                    hamburgerBtn.classList.toggle('ativo');
+                    menuNav.classList.toggle('ativo');
+                });
+                menuNav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function () {
+                        hamburgerBtn.classList.remove('ativo');
+                        menuNav.classList.remove('ativo');
+                    });
+                });
+            }
+
+            // --- Elementos ---
+            const form = document.getElementById('form-halloween');
+            const cartoes = document.querySelectorAll('.cartao-halloween');
+            const listaResumo = document.getElementById('lista-resumo');
+            const resumoTotalLinha = document.getElementById('resumo-total-linha');
+            const resumoTotalValor = document.getElementById('resumo-total-valor');
+            const avisoMinimo = document.getElementById('aviso-minimo');
+            const produtosHidden = document.getElementById('produtos-hidden');
+            const totalHidden = document.getElementById('total-hidden');
+            const nomeInput = document.getElementById('nome');
+            const emailInput = document.getElementById('email');
+            const telefoneInput = document.getElementById('telefone');
+            const dataInput = document.getElementById('data');
+            const horaInput = document.getElementById('hora');
+            const confirmarSinalInput = document.getElementById('confirmar-sinal');
+            const erroConfirmarSinal = document.getElementById('erro-confirmar-sinal');
+            const replytoHidden = document.getElementById('replyto-hidden');
+            const btnSubmeter = document.getElementById('btn-submeter');
+            const erroProdutos = document.getElementById('erro-produtos');
+            const VALOR_MINIMO = 10.0;
+            let produtosTocados = false;
+
+            emailInput.addEventListener('input', function () {
+                replytoHidden.value = emailInput.value;
+            });
+
+            function formatarMoeda(valor) {
+                return valor.toFixed(2).replace('.', ',') + '€';
+            }
+
+            // --- Data fixa de Halloween: 31 de Outubro ---
+            const anoAtual = new Date().getFullYear();
+            const dataExclusiva = `${anoAtual}-10-31`;
+            dataInput.setAttribute('min', dataExclusiva);
+            dataInput.setAttribute('max', dataExclusiva);
+            dataInput.value = dataExclusiva;
+
+            // --- Seletores de quantidade ---
+            function obterProdutosSelecionados() {
+                const selecionados = [];
+                cartoes.forEach(cartao => {
+                    const qtd = parseInt(cartao.querySelector('.qtd-input').value, 10) || 0;
+                    const preco = parseFloat(cartao.dataset.preco) || 0;
+                    if (qtd > 0) {
+                        selecionados.push({
+                            nome: cartao.dataset.produto,
+                            preco: preco,
+                            qtd: qtd,
+                            subtotal: qtd * preco
+                        });
+                    }
+                });
+                return selecionados;
+            }
+
+            function atualizarResumo() {
+                const selecionados = obterProdutosSelecionados();
+                listaResumo.innerHTML = '';
+                if (selecionados.length === 0) {
+                    const li = document.createElement('li');
+                    li.className = 'resumo-vazio';
+                    li.textContent = 'Ainda não escolheu nenhum doce.';
+                    listaResumo.appendChild(li);
+                    if (resumoTotalLinha) resumoTotalLinha.style.display = 'none';
+                    if (resumoTotalValor) resumoTotalValor.textContent = '0,00€';
+                    if (avisoMinimo) avisoMinimo.style.display = 'none';
+                    produtosHidden.value = '';
+                    if (totalHidden) totalHidden.value = '0,00€';
+                } else {
+                    let total = 0;
+                    selecionados.forEach(p => {
+                        total += p.subtotal;
+                        const li = document.createElement('li');
+                        li.className = 'resumo-item-linha';
+                        li.innerHTML = `
+                            <div class="resumo-item-info">
+                                <span class="resumo-item-nome">${p.nome}</span>
+                                <span class="resumo-item-detalhe">${p.qtd} &times; ${formatarMoeda(p.preco)}</span>
+                            </div>
+                            <strong class="resumo-item-subtotal">${formatarMoeda(p.subtotal)}</strong>
+                        `;
+                        listaResumo.appendChild(li);
+                    });
+                    if (resumoTotalLinha) resumoTotalLinha.style.display = 'flex';
+                    if (resumoTotalValor) resumoTotalValor.textContent = formatarMoeda(total);
+
+                    if (avisoMinimo) {
+                        if (total < VALOR_MINIMO) {
+                            avisoMinimo.style.display = 'block';
+                            avisoMinimo.textContent = `⚠️ Encomenda mínima de 10,00€ (faltam ${formatarMoeda(VALOR_MINIMO - total)}).`;
+                        } else {
+                            avisoMinimo.style.display = 'none';
+                        }
+                    }
+
+                    produtosHidden.value = selecionados.map(p => `${p.qtd}x ${p.nome} (${formatarMoeda(p.subtotal)})`).join(' | ');
+                    if (totalHidden) totalHidden.value = formatarMoeda(total);
+                }
+                cartoes.forEach(cartao => {
+                    const qtd = parseInt(cartao.querySelector('.qtd-input').value, 10) || 0;
+                    cartao.classList.toggle('selecionado', qtd > 0);
+                });
+            }
+
+            cartoes.forEach(cartao => {
+                const input = cartao.querySelector('.qtd-input');
+                const max = parseInt(input.max, 10) || 50;
+                const definir = (valor) => {
+                    input.value = Math.min(max, Math.max(0, valor));
+                    produtosTocados = true;
+                    atualizarResumo();
+                    verificarFormulario();
+                };
+                cartao.querySelector('.qtd-mais').addEventListener('click', () => definir((parseInt(input.value, 10) || 0) + 1));
+                cartao.querySelector('.qtd-menos').addEventListener('click', () => definir((parseInt(input.value, 10) || 0) - 1));
+                input.addEventListener('change', () => definir(parseInt(input.value, 10) || 0));
+            });
+
+            // --- Validações ---
+            function validarData() {
+                if (!dataInput.value) return 'Por favor selecione a data de levantamento.';
+                if (dataInput.value !== dataExclusiva) {
+                    return 'As encomendas de Halloween são exclusivas para levantamento no dia 31 de Outubro.';
+                }
+                return '';
+            }
+
+            function validarHora() {
+                if (!horaInput.value) return 'Por favor selecione a hora de levantamento.';
+                const [h, m] = horaInput.value.split(':').map(Number);
+                const minutos = h * 60 + m;
+                const min = 7 * 60;   // 07:00
+                const max = 18 * 60;  // 18:00 (Sábado, 31 de Outubro)
+                if (minutos < min || minutos > max) {
+                    return 'Horário indisponível! No dia 31 de Outubro o horário de funcionamento é das 07:00 às 18:00.';
+                }
+                return '';
+            }
+
+            function feedback(input, idErro, mensagem) {
+                const el = document.getElementById(idErro);
+                const mostrar = mensagem && input.dataset.touched;
+                input.classList.toggle('campo-invalido', Boolean(mostrar));
+                el.textContent = mostrar ? mensagem : '';
+                el.classList.toggle('ativo', Boolean(mostrar));
+                input.setCustomValidity(mensagem || '');
+            }
+
+            function verificarFormulario() {
+                const selecionados = obterProdutosSelecionados();
+                const temProdutos = selecionados.length > 0;
+                const total = selecionados.reduce((acc, p) => acc + p.subtotal, 0);
+                const atingiuMinimo = total >= VALOR_MINIMO;
+                const sinalConfirmado = Boolean(confirmarSinalInput && confirmarSinalInput.checked);
+
+                const erroNome = nomeInput.value.trim().length >= 3 ? '' : 'Por favor introduza o seu nome completo (mínimo 3 letras).';
+                const erroEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value.trim()) ? '' : 'Por favor introduza um endereço de email válido.';
+                const erroTelefone = /^(\+351)?[239]\d{8}$/.test(telefoneInput.value.replace(/\s+/g, '')) ? '' : 'Por favor introduza um contacto telefónico válido em Portugal (9 dígitos).';
+                const erroData = validarData();
+                const erroHora = validarHora();
+
+                feedback(nomeInput, 'erro-nome', erroNome);
+                feedback(emailInput, 'erro-email', erroEmail);
+                feedback(telefoneInput, 'erro-telefone', erroTelefone);
+                feedback(dataInput, 'erro-data', erroData);
+                feedback(horaInput, 'erro-hora', erroHora);
+
+                if (confirmarSinalInput && erroConfirmarSinal) {
+                    if (sinalConfirmado || !confirmarSinalInput.dataset.touched) {
+                        erroConfirmarSinal.textContent = '';
+                        erroConfirmarSinal.classList.remove('ativo');
+                    } else {
+                        erroConfirmarSinal.textContent = 'É obrigatório declarar conhecimento do pagamento do sinal de 10€. ';
+                        erroConfirmarSinal.classList.add('ativo');
+                    }
+                }
+
+                const mostrarErroProdutos = (!temProdutos || !atingiuMinimo) && produtosTocados;
+                if (!temProdutos) {
+                    erroProdutos.textContent = mostrarErroProdutos ? 'Por favor escolha pelo menos um produto.' : '';
+                } else if (!atingiuMinimo) {
+                    erroProdutos.textContent = mostrarErroProdutos ? `O valor mínimo para encomenda é de ${formatarMoeda(VALOR_MINIMO)}.` : '';
+                } else {
+                    erroProdutos.textContent = '';
+                }
+                erroProdutos.classList.toggle('ativo', Boolean(mostrarErroProdutos && erroProdutos.textContent));
+
+                btnSubmeter.disabled = !(temProdutos && atingiuMinimo && sinalConfirmado && !erroNome && !erroEmail && !erroTelefone && !erroData && !erroHora);
+            }
+
+            [nomeInput, emailInput, telefoneInput, dataInput, horaInput].forEach(campo => {
+                campo.addEventListener('blur', () => { campo.dataset.touched = 'true'; verificarFormulario(); });
+                campo.addEventListener('input', verificarFormulario);
+                campo.addEventListener('change', verificarFormulario);
+            });
+
+            if (confirmarSinalInput) {
+                confirmarSinalInput.addEventListener('change', function () {
+                    confirmarSinalInput.dataset.touched = 'true';
+                    verificarFormulario();
+                });
+            }
+
+            form.addEventListener('submit', function (event) {
+                [nomeInput, emailInput, telefoneInput, dataInput, horaInput].forEach(c => c.dataset.touched = 'true');
+                if (confirmarSinalInput) confirmarSinalInput.dataset.touched = 'true';
+                produtosTocados = true;
+                atualizarResumo();
+                verificarFormulario();
+                if (btnSubmeter.disabled) {
+                    event.preventDefault();
+                    form.reportValidity();
+                }
+            });
+
+            atualizarResumo();
+            verificarFormulario();
+        });
+    </script>
+
+</body>
+
+</html>

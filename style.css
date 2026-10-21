@@ -1912,3 +1912,573 @@ html {
         font-size: 1.1rem;
     }
 }
+
+/* ============================================== */
+/* --- HALLOWEEN --- */
+/* ============================================== */
+:root {
+    --halloween-laranja: #f07c1b;
+    --halloween-laranja-escuro: #c85a06;
+    --halloween-roxo: #3b1d4f;
+    --halloween-noite: #1a1022;
+}
+
+/* Link destacado na navbar */
+.menu a.menu-halloween {
+    color: #fff;
+    background: linear-gradient(135deg, var(--halloween-laranja), var(--halloween-laranja-escuro));
+    padding: 8px 14px;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(240, 124, 27, 0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu a.menu-halloween:hover,
+.menu a.menu-halloween.ativo {
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(240, 124, 27, 0.5);
+}
+
+/* Banner de destaque na página inicial */
+.banner-halloween {
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at 20% 20%, #5a2a78 0%, var(--halloween-roxo) 40%, var(--halloween-noite) 100%);
+    color: #fff;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.banner-halloween::before,
+.banner-halloween::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+.banner-halloween::before {
+    width: 320px;
+    height: 320px;
+    background: var(--halloween-laranja);
+    top: -120px;
+    right: -80px;
+}
+
+.banner-halloween::after {
+    width: 260px;
+    height: 260px;
+    background: #7b3fa6;
+    bottom: -120px;
+    left: -60px;
+}
+
+.banner-halloween-conteudo {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+}
+
+.banner-halloween-imagens {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.banner-halloween-imagens img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--halloween-laranja);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.banner-halloween-imagens img + img {
+    margin-left: -40px;
+    transform: translateY(25px);
+}
+
+.banner-halloween h2 {
+    font-family: 'Creepster', 'Oleo Script', cursive;
+    font-weight: 400;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    color: var(--halloween-laranja);
+    line-height: 1.1;
+    margin-bottom: 10px;
+    text-shadow: 0 0 18px rgba(240, 124, 27, 0.45);
+}
+
+.banner-halloween p {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 25px;
+}
+
+.halloween-etiqueta {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.botao-halloween {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--halloween-laranja), var(--halloween-laranja-escuro));
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 16px 36px;
+    border-radius: 40px;
+    animation: pulsar-halloween 2.2s ease-in-out infinite;
+    transition: transform 0.25s ease;
+}
+
+.botao-halloween:hover {
+    transform: scale(1.06);
+}
+
+@keyframes pulsar-halloween {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(240, 124, 27, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 0 16px rgba(240, 124, 27, 0);
+    }
+}
+
+/* Hero da página de Halloween */
+.halloween-hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(26, 16, 34, 0.55), rgba(26, 16, 34, 0.92)),
+        url("fotos/Halloween/bolo_laranja.jpg") center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 110px 20px 90px;
+}
+
+.halloween-hero-conteudo {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.halloween-hero h1 {
+    font-family: 'Creepster', 'Oleo Script', cursive;
+    font-weight: 400;
+    font-size: 4rem;
+    letter-spacing: 3px;
+    color: var(--halloween-laranja);
+    text-shadow: 0 0 25px rgba(240, 124, 27, 0.5);
+    margin-bottom: 15px;
+}
+
+.halloween-hero p {
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+}
+
+.halloween-morcegos span {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.8;
+    animation: voar-morcego 7s ease-in-out infinite;
+}
+
+.halloween-morcegos span:nth-child(1) { top: 15%; left: 10%; }
+.halloween-morcegos span:nth-child(2) { top: 25%; right: 12%; animation-delay: -2s; font-size: 1.5rem; }
+.halloween-morcegos span:nth-child(3) { bottom: 18%; left: 22%; animation-delay: -4s; font-size: 1.2rem; }
+
+@keyframes voar-morcego {
+    0%, 100% { transform: translate(0, 0) rotate(-5deg); }
+    50% { transform: translate(25px, -18px) rotate(8deg); }
+}
+
+/* Secção de produtos */
+.seccao-halloween {
+    padding: 70px 20px 80px;
+}
+
+.conteiner-halloween {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.conteiner-halloween h2 {
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--halloween-roxo);
+}
+
+.linha-halloween {
+    background-color: var(--halloween-laranja);
+}
+
+.grid-halloween {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.cartao-halloween {
+    background: #fff;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(59, 29, 79, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cartao-halloween:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(59, 29, 79, 0.16);
+}
+
+.cartao-halloween.selecionado {
+    border-color: var(--halloween-laranja);
+    box-shadow: 0 10px 28px rgba(240, 124, 27, 0.25);
+}
+
+.cartao-halloween-imagem {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.cartao-halloween-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.cartao-halloween:hover .cartao-halloween-imagem img {
+    transform: scale(1.06);
+}
+
+.cartao-halloween-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.cartao-halloween-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.cartao-halloween-topo h3 {
+    font-size: 1.1rem;
+    color: var(--halloween-roxo);
+    margin-bottom: 0;
+}
+
+.preco-halloween {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--halloween-laranja);
+    background-color: rgba(240, 124, 27, 0.12);
+    border: 1px solid rgba(240, 124, 27, 0.35);
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+.cartao-halloween-info p {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.seletor-quantidade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.qtd-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--halloween-laranja);
+    background: #fff;
+    color: var(--halloween-laranja-escuro);
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.qtd-btn:hover {
+    background: var(--halloween-laranja);
+    color: #fff;
+}
+
+.qtd-btn:active {
+    transform: scale(0.9);
+}
+
+.qtd-input {
+    width: 60px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 8px 4px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--color-text-main);
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.qtd-input::-webkit-outer-spin-button,
+.qtd-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Formulário */
+.formulario-halloween {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.resumo-halloween {
+    background: linear-gradient(135deg, var(--halloween-roxo), var(--halloween-noite));
+    color: #fff;
+    border-radius: 14px;
+    padding: 24px 26px;
+}
+
+.resumo-halloween h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--halloween-laranja);
+    margin-bottom: 12px;
+}
+
+.resumo-halloween ul {
+    list-style: none;
+}
+
+.resumo-halloween li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    font-size: 0.95rem;
+}
+
+.resumo-halloween li:last-child {
+    border-bottom: none;
+}
+
+.resumo-halloween li.resumo-vazio {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
+
+.resumo-item-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    font-size: 0.95rem;
+}
+
+.resumo-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+}
+
+.resumo-item-nome {
+    font-weight: 600;
+    color: #fff;
+}
+
+.resumo-item-detalhe {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.resumo-item-subtotal {
+    font-weight: 700;
+    color: var(--halloween-laranja);
+    font-size: 1.05rem;
+    white-space: nowrap;
+}
+
+.resumo-total-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 14px;
+    border-top: 2px solid rgba(240, 124, 27, 0.5);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.resumo-total-linha strong {
+    font-size: 1.35rem;
+    color: var(--halloween-laranja);
+    font-weight: 700;
+}
+
+.aviso-minimo-encomenda {
+    margin-top: 14px;
+    padding: 10px 14px;
+    background: rgba(240, 124, 27, 0.15);
+    border: 1px solid var(--halloween-laranja);
+    border-radius: 8px;
+    color: #ffd8b3;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.resumo-halloween .mensagem-erro-inline {
+    color: #ffb4a8;
+}
+
+.botao-enviar-halloween:not(:disabled) {
+    background: linear-gradient(135deg, var(--halloween-laranja), var(--halloween-laranja-escuro));
+}
+
+.botao-enviar-halloween:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--halloween-laranja-escuro), #9c4504);
+}
+
+@media (max-width: 768px) {
+    .menu a.menu-halloween {
+        width: auto;
+        padding: 10px 24px;
+        margin: 6px 0;
+    }
+
+    .banner-halloween {
+        padding: 50px 20px;
+    }
+
+    .banner-halloween-conteudo {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .banner-halloween-imagens img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .banner-halloween h2 {
+        font-size: 2.2rem;
+    }
+
+    .halloween-hero {
+        padding: 70px 20px 60px;
+    }
+
+    .halloween-hero h1 {
+        font-size: 2.6rem;
+    }
+
+    .seccao-halloween {
+        padding: 50px 15px 60px;
+    }
+
+    .conteiner-halloween h2 {
+        font-size: 1.4rem;
+    }
+
+    .grid-halloween {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .cartao-halloween-info {
+        padding: 14px;
+    }
+
+    .cartao-halloween-topo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .cartao-halloween-topo h3 {
+        font-size: 0.95rem;
+    }
+
+    .preco-halloween {
+        font-size: 0.85rem;
+        padding: 2px 8px;
+    }
+
+    .cartao-halloween-info p {
+        font-size: 0.8rem;
+    }
+
+    .qtd-btn {
+        width: 34px;
+        height: 34px;
+    }
+
+    .qtd-input {
+        width: 46px;
+    }
+
+    .resumo-total-linha {
+        font-size: 1rem;
+    }
+
+    .resumo-total-linha strong {
+        font-size: 1.2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .botao-halloween,
+    .halloween-morcegos span {
+        animation: none;
+    }
+}

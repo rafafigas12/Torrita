@@ -27,6 +27,7 @@
         <nav class="menu" id="menu-nav">
             <a href="index.html">Inicio</a>
             <a href="encomendas.html" class="ativo">Encomende o seu bolo</a>
+            <a href="halloween.html" class="menu-halloween">Halloween &#127875;</a>
             <a href="cardapio.html">Menu</a>
             <a href="menu.html">Bebidas</a>
             <a href="delivery.html">Entregas</a>
@@ -291,7 +292,8 @@
             <br>
             <div class="horario-detalhado">
                 <h5>Horário de Funcionamento</h5>
-                <p>Segunda a Sexta: 07:00 – 20:00</p>
+                <p>Segunda-feira: FECHADO</p>
+                <p>Terça a Sexta-feira: 07:00 – 20:00</p>
                 <p>Sábado: 07:00 – 18:00</p>
                 <p>Domingo e Feriados: 07:00 – 15:00</p>
             </div>
@@ -399,21 +401,27 @@
 
                 const [ano, mes, dia] = dataInput.value.split('-').map(Number);
                 const dataSelecionada = new Date(ano, mes - 1, dia);
-                const diaDaSemana = dataSelecionada.getDay(); // 0 = Domingo, 1-5 = Seg-Sex, 6 = Sábado
+                const diaDaSemana = dataSelecionada.getDay(); // 0 = Domingo, 1 = Segunda, 2-5 = Ter-Sex, 6 = Sábado
+
+                if (diaDaSemana === 1) {
+                    mensagemErroHoraActual = 'Estamos encerrados à segunda-feira. Por favor consulte o horário de funcionamento.';
+                    horaInput.setCustomValidity(mensagemErroHoraActual);
+                    return false;
+                }
 
                 const [horasStr, minutosStr] = horaInput.value.split(':');
                 const tempoEmMinutos = Number(horasStr) * 60 + Number(minutosStr);
 
                 const minMinutos = 7 * 60; // 07:00
-                let maxMinutos = 20 * 60; // 20:00 (Segunda a Sexta)
-                let horarioTexto = '07:00 às 20:00 (Segunda a Sexta)';
+                let maxMinutos = 20 * 60; // 20:00 (Terça a Sexta)
+                let horarioTexto = '07:00 às 20:00 (Terça a Sexta-feira)';
 
                 if (diaDaSemana === 6) {
                     maxMinutos = 18 * 60; // 18:00 (Sábado)
                     horarioTexto = '07:00 às 18:00 aos Sábados';
                 } else if (diaDaSemana === 0) {
                     maxMinutos = 15 * 60; // 15:00 (Domingo)
-                    horarioTexto = '07:00 às 15:00 aos Domingos';
+                    horarioTexto = '07:00 às 15:00 aos Domingos e Feriados';
                 }
 
                 if (tempoEmMinutos < minMinutos || tempoEmMinutos > maxMinutos) {
@@ -487,7 +495,25 @@
                 const decoracaoValida = decoracaoInput.value !== '';
                 const velasValidas = valorVelas !== '';
                 const idadeVelasValida = !pretendeVelas || (idadeVelasInput.value.trim() !== '' && Number(idadeVelasInput.value) >= 0);
-                const dataValida = Boolean(dataInput.value && dataInput.value >= dataMinima);
+                let dataValida = Boolean(dataInput.value && dataInput.value >= dataMinima);
+                let mensagemErroDataActual = 'A data de levantamento deve ser agendada com pelo menos 48 horas de antecedência.';
+
+                if (dataInput.value) {
+                    const [anoD, mesD, diaD] = dataInput.value.split('-').map(Number);
+                    const dataObj = new Date(anoD, mesD - 1, diaD);
+                    if (dataObj.getDay() === 1) {
+                        dataValida = false;
+                        mensagemErroDataActual = 'Estamos encerrados à segunda-feira. Por favor selecione outra data.';
+                        dataInput.setCustomValidity('Estamos encerrados à segunda-feira.');
+                    } else if (dataInput.value < dataMinima) {
+                        dataValida = false;
+                        mensagemErroDataActual = 'A data de levantamento deve ser agendada com pelo menos 48 horas de antecedência.';
+                        dataInput.setCustomValidity('A data de levantamento deve ser agendada com pelo menos 48 horas de antecedência.');
+                    } else {
+                        dataInput.setCustomValidity('');
+                    }
+                }
+
                 const horaValida = horaInput.value !== '' && validarHorarioFuncionamento();
                 const mensagemValida = mensagemInput.value.trim().length > 0;
                 const sinalConfirmado = confirmarSinalInput.checked;
@@ -521,7 +547,7 @@
                     atualizarFeedbackCampo(idadeVelasInput, erroIdadeVelas, idadeVelasValida, 'Por favor indique a idade/número para as velas.');
                 }
 
-                atualizarFeedbackCampo(dataInput, erroData, dataValida, 'A data de levantamento deve ser agendada com pelo menos 48 horas de antecedência.');
+                atualizarFeedbackCampo(dataInput, erroData, dataValida, mensagemErroDataActual);
                 atualizarFeedbackCampo(horaInput, erroHora, horaValida, mensagemErroHoraActual || 'Por favor selecione a hora de levantamento.');
                 atualizarFeedbackCampo(mensagemInput, erroMensagem, mensagemValida, 'Por favor especifique os pormenores da sua encomenda.');
                 atualizarFeedbackCampo(confirmarSinalInput, erroConfirmarSinal, sinalConfirmado, 'É obrigatório declarar conhecimento do pagamento do sinal.');
