@@ -223,11 +223,13 @@
                     <div class="grupo-input">
                         <label for="data">Data de Levantamento *</label>
                         <input type="date" id="data" name="Data de Levantamento" required>
+                        <small class="ajuda-campo" id="ajuda-data">Segunda-feira: Fechado • Mínimo 48h de antecedência</small>
                         <span class="mensagem-erro-inline" id="erro-data"></span>
                     </div>
                     <div class="grupo-input">
                         <label for="hora">Hora de Levantamento *</label>
                         <input type="time" id="hora" name="Hora de Levantamento" required>
+                        <small class="ajuda-campo" id="ajuda-hora">Dom: 08:00–15:00 | Sáb: 07:00–18:00 | Ter–Sex: 07:00–20:00</small>
                         <span class="mensagem-erro-inline" id="erro-hora"></span>
                     </div>
                 </div>
@@ -295,7 +297,7 @@
                 <p>Segunda-feira: FECHADO</p>
                 <p>Terça a Sexta-feira: 07:00 – 20:00</p>
                 <p>Sábado: 07:00 – 18:00</p>
-                <p>Domingo e Feriados: 07:00 – 15:00</p>
+                <p>Domingo e Feriados: 08:00 – 15:00</p>
             </div>
         </div>
         <div class="direitos">
@@ -388,14 +390,73 @@
 
             dataInput.setAttribute('min', dataMinima);
 
+            // Elementos de ajuda informativa
+            const ajudaDataEl = document.getElementById('ajuda-data');
+            const ajudaHoraEl = document.getElementById('ajuda-hora');
+
             // Guardar a última mensagem de erro da hora de funcionamento
             let mensagemErroHoraActual = '';
 
+            // Atualiza restrições de min/max e texto de ajuda do horário de acordo com o dia selecionado
+            function atualizarRestricoesHorario() {
+                if (!dataInput.value) {
+                    horaInput.removeAttribute('min');
+                    horaInput.removeAttribute('max');
+                    horaInput.disabled = false;
+                    if (ajudaHoraEl) {
+                        ajudaHoraEl.textContent = 'Dom: 08:00–15:00 | Sáb: 07:00–18:00 | Ter–Sex: 07:00–20:00';
+                        ajudaHoraEl.style.color = '';
+                    }
+                    return;
+                }
+
+                const [ano, mes, dia] = dataInput.value.split('-').map(Number);
+                const dataSelecionada = new Date(ano, mes - 1, dia);
+                const diaDaSemana = dataSelecionada.getDay(); // 0 = Domingo, 1 = Segunda, 2-5 = Ter-Sex, 6 = Sábado
+
+                if (diaDaSemana === 1) { // Segunda-feira: FECHADO
+                    horaInput.removeAttribute('min');
+                    horaInput.removeAttribute('max');
+                    horaInput.value = '';
+                    horaInput.disabled = true;
+                    if (ajudaHoraEl) {
+                        ajudaHoraEl.textContent = 'Encerramos à segunda-feira. Por favor selecione outra data.';
+                        ajudaHoraEl.style.color = '#d9534f';
+                    }
+                } else {
+                    horaInput.disabled = false;
+                    if (ajudaHoraEl) {
+                        ajudaHoraEl.style.color = '';
+                    }
+                    if (diaDaSemana === 0) { // Domingo: 08:00 - 15:00
+                        horaInput.min = '08:00';
+                        horaInput.max = '15:00';
+                        if (ajudaHoraEl) {
+                            ajudaHoraEl.textContent = 'Horário aceite aos domingos: 08:00 às 15:00';
+                        }
+                    } else if (diaDaSemana === 6) { // Sábado: 07:00 - 18:00
+                        horaInput.min = '07:00';
+                        horaInput.max = '18:00';
+                        if (ajudaHoraEl) {
+                            ajudaHoraEl.textContent = 'Horário aceite aos sábados: 07:00 às 18:00';
+                        }
+                    } else { // Terça a Sexta: 07:00 - 20:00
+                        horaInput.min = '07:00';
+                        horaInput.max = '20:00';
+                        if (ajudaHoraEl) {
+                            ajudaHoraEl.textContent = 'Horário aceite de terça a sexta: 07:00 às 20:00';
+                        }
+                    }
+                }
+            }
+
             // Validar o horário de levantamento de acordo com o dia da semana
             function validarHorarioFuncionamento() {
-                if (!dataInput.value || !horaInput.value) {
-                    horaInput.setCustomValidity('');
-                    mensagemErroHoraActual = 'Por favor selecione a hora de levantamento.';
+                atualizarRestricoesHorario();
+
+                if (!dataInput.value) {
+                    horaInput.setCustomValidity('Por favor selecione primeiro a data de levantamento.');
+                    mensagemErroHoraActual = 'Por favor selecione primeiro a data de levantamento.';
                     return false;
                 }
 
@@ -404,28 +465,39 @@
                 const diaDaSemana = dataSelecionada.getDay(); // 0 = Domingo, 1 = Segunda, 2-5 = Ter-Sex, 6 = Sábado
 
                 if (diaDaSemana === 1) {
-                    mensagemErroHoraActual = 'Estamos encerrados à segunda-feira. Por favor consulte o horário de funcionamento.';
+                    mensagemErroHoraActual = 'Estamos encerrados à segunda-feira. Não são aceites encomendas neste dia.';
                     horaInput.setCustomValidity(mensagemErroHoraActual);
+                    return false;
+                }
+
+                if (!horaInput.value) {
+                    horaInput.setCustomValidity('');
+                    mensagemErroHoraActual = 'Por favor selecione a hora de levantamento.';
                     return false;
                 }
 
                 const [horasStr, minutosStr] = horaInput.value.split(':');
                 const tempoEmMinutos = Number(horasStr) * 60 + Number(minutosStr);
 
-                const minMinutos = 7 * 60; // 07:00
+                let minMinutos = 7 * 60; // 07:00
                 let maxMinutos = 20 * 60; // 20:00 (Terça a Sexta)
-                let horarioTexto = '07:00 às 20:00 (Terça a Sexta-feira)';
 
                 if (diaDaSemana === 6) {
+                    minMinutos = 7 * 60; // 07:00 (Sábado)
                     maxMinutos = 18 * 60; // 18:00 (Sábado)
-                    horarioTexto = '07:00 às 18:00 aos Sábados';
                 } else if (diaDaSemana === 0) {
+                    minMinutos = 8 * 60; // 08:00 (Domingo)
                     maxMinutos = 15 * 60; // 15:00 (Domingo)
-                    horarioTexto = '07:00 às 15:00 aos Domingos e Feriados';
                 }
 
                 if (tempoEmMinutos < minMinutos || tempoEmMinutos > maxMinutos) {
-                    mensagemErroHoraActual = `Horário indisponível! Por favor consulte o horário de funcionamento.`;
+                    if (diaDaSemana === 0) {
+                        mensagemErroHoraActual = 'Horário indisponível! Aos domingos o horário de levantamento é das 08:00 às 15:00.';
+                    } else if (diaDaSemana === 6) {
+                        mensagemErroHoraActual = 'Horário indisponível! Aos sábados o horário de levantamento é das 07:00 às 18:00.';
+                    } else {
+                        mensagemErroHoraActual = 'Horário indisponível! De terça a sexta-feira o horário de levantamento é das 07:00 às 20:00.';
+                    }
                     horaInput.setCustomValidity(mensagemErroHoraActual);
                     return false;
                 } else {
@@ -501,9 +573,9 @@
                 if (dataInput.value) {
                     const [anoD, mesD, diaD] = dataInput.value.split('-').map(Number);
                     const dataObj = new Date(anoD, mesD - 1, diaD);
-                    if (dataObj.getDay() === 1) {
+                    if (dataObj.getDay() === 1) { // Segunda-feira
                         dataValida = false;
-                        mensagemErroDataActual = 'Estamos encerrados à segunda-feira. Por favor selecione outra data.';
+                        mensagemErroDataActual = 'Estamos encerrados à segunda-feira. Por favor selecione outra data (terça a domingo).';
                         dataInput.setCustomValidity('Estamos encerrados à segunda-feira.');
                     } else if (dataInput.value < dataMinima) {
                         dataValida = false;
@@ -514,7 +586,8 @@
                     }
                 }
 
-                const horaValida = horaInput.value !== '' && validarHorarioFuncionamento();
+                atualizarRestricoesHorario();
+                const horaValida = horaInput.value !== '' && !horaInput.disabled && validarHorarioFuncionamento();
                 const mensagemValida = mensagemInput.value.trim().length > 0;
                 const sinalConfirmado = confirmarSinalInput.checked;
 
@@ -588,6 +661,26 @@
                         verificarFormularioCompleto();
                     }
                 });
+            });
+
+            // Eventos dedicados para data e hora com atualização imediata de restrições
+            dataInput.addEventListener('change', function () {
+                dataInput.dataset.touched = 'true';
+                atualizarRestricoesHorario();
+                if (horaInput.value) {
+                    horaInput.dataset.touched = 'true';
+                }
+                verificarFormularioCompleto();
+            });
+
+            horaInput.addEventListener('change', function () {
+                horaInput.dataset.touched = 'true';
+                verificarFormularioCompleto();
+            });
+
+            horaInput.addEventListener('input', function () {
+                horaInput.dataset.touched = 'true';
+                verificarFormularioCompleto();
             });
 
             // Escutar eventos gerais no formulário
