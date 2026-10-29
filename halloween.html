@@ -205,8 +205,6 @@
                     class="formulario-luxo formulario-halloween" id="form-halloween">
                     <!-- Chave de Acesso Web3Forms -->
                     <input type="hidden" name="access_key" value="f23ed46a-8ff0-4af2-b73f-5a9c2ad7bb04">
-                    <!-- Redireciona diretamente para o pagamento do sinal no Stripe -->
-                    <input type="hidden" name="redirect" value="https://buy.stripe.com/6oU3co0XF77f9XFcXyfYY00">
                     <input type="hidden" name="subject" value="&#127875; Nova Encomenda de Halloween - Site Tórrita!">
                     <input type="hidden" name="from_name" value="Site Pastelaria Tórrita">
                     <!-- Proteção anti-spam invisível (Honeypot) -->
@@ -564,15 +562,58 @@
             }
 
             form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
                 [nomeInput, emailInput, telefoneInput, dataInput, horaInput].forEach(c => c.dataset.touched = 'true');
                 if (confirmarSinalInput) confirmarSinalInput.dataset.touched = 'true';
                 produtosTocados = true;
                 atualizarResumo();
                 verificarFormulario();
+
                 if (btnSubmeter.disabled) {
-                    event.preventDefault();
                     form.reportValidity();
+                    return;
                 }
+
+                // Desativa o botão e informa o cliente
+                const textoOriginal = btnSubmeter.textContent;
+                btnSubmeter.disabled = true;
+                btnSubmeter.textContent = 'A processar encomenda...';
+
+                const formData = new FormData(form);
+                const dadosForm = Object.fromEntries(formData);
+                const jsonPayload = JSON.stringify(dadosForm);
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: jsonPayload
+                })
+                .then(async function (response) {
+                    let resultado;
+                    try {
+                        resultado = await response.json();
+                    } catch (e) {
+                        resultado = {};
+                    }
+
+                    if (response.status === 200 || resultado.success) {
+                        btnSubmeter.textContent = 'A redirecionar para o pagamento (Stripe)...';
+                        window.location.href = 'https://buy.stripe.com/6oU3co0XF77f9XFcXyfYY00';
+                    } else {
+                        alert(resultado.message || 'Ocorreu um erro ao enviar o pedido. Por favor tente novamente.');
+                        btnSubmeter.disabled = false;
+                        btnSubmeter.textContent = textoOriginal;
+                    }
+                })
+                .catch(function (erro) {
+                    console.error('Erro no envio:', erro);
+                    btnSubmeter.textContent = 'A redirecionar para o pagamento (Stripe)...';
+                    window.location.href = 'https://buy.stripe.com/6oU3co0XF77f9XFcXyfYY00';
+                });
             });
 
             atualizarResumo();
