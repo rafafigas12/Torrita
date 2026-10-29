@@ -201,16 +201,17 @@
                 </div>
 
                 <!-- Formulário -->
-                <form action="https://formsubmit.co/3aa6ed18ce16a46be64aca3ee6062d7b" method="POST"
+                <form action="https://api.web3forms.com/submit" method="POST"
                     class="formulario-luxo formulario-halloween" id="form-halloween">
-                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Chave de Acesso Web3Forms -->
+                    <input type="hidden" name="access_key" value="f23ed46a-8ff0-4af2-b73f-5a9c2ad7bb04">
                     <!-- Redireciona diretamente para o pagamento do sinal no Stripe -->
-                    <input type="hidden" name="_next" value="https://buy.stripe.com/6oU3co0XF77f9XFcXyfYY00">
-                    <input type="hidden" name="_subject" value="&#127875; Nova Encomenda de Halloween - Site Tórrita!">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_autoresponse"
-                        value="A sua encomenda de Halloween na Pastelaria Tórrita foi recebida com sucesso! Este é um email automático para confirmar que recebemos o seu pedido. A nossa equipa vai contactá-lo muito em breve para confirmar os detalhes. Para validar a sua encomenda é necessário efetuar o pagamento do sinal de 10€ via Stripe. Obrigado pela preferência!">
-                    <input type="hidden" name="_replyto" id="replyto-hidden">
+                    <input type="hidden" name="redirect" value="https://buy.stripe.com/6oU3co0XF77f9XFcXyfYY00">
+                    <input type="hidden" name="subject" value="&#127875; Nova Encomenda de Halloween - Site Tórrita!">
+                    <input type="hidden" name="from_name" value="Site Pastelaria Tórrita">
+                    <!-- Proteção anti-spam invisível (Honeypot) -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <input type="hidden" name="replyto" id="replyto-hidden">
 
                     <div class="resumo-halloween" id="resumo-halloween" aria-live="polite">
                         <h3>&#127875; O seu pedido</h3>
