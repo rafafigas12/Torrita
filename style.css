@@ -2500,4 +2500,11 @@ html {
     .halloween-morcegos span {
         animation: none;
     }
-}
+}
+
+/* Ocultação temporária da campanha de Halloween, mantendo o código reutilizável. */
+.menu a.menu-halloween,
+.banner-halloween,
+body.pagina-halloween main {
+    display: none !important;
+}
