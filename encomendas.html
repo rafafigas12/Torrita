@@ -682,8 +682,11 @@
             form.addEventListener('input', verificarFormularioCompleto);
             form.addEventListener('change', verificarFormularioCompleto);
 
+            // Chave da API gratuita do ImgBB para alojamento de fotos de referência
+            const IMGBB_API_KEY = 'f8780dd16fefef2903fca2febadeebe5';
+
             // Validação e envio do formulário
-            form.addEventListener('submit', function (event) {
+            form.addEventListener('submit', async function (event) {
                 event.preventDefault();
 
                 formTocadoRadioVelas = true;
@@ -698,27 +701,54 @@
                 // Desativa o botão e informa o cliente
                 const textoOriginal = btnSubmeter.textContent;
                 btnSubmeter.disabled = true;
+
+                const imagemInput = document.getElementById('imagem-bolo');
+                let linkFoto = '';
+
+                // Se o cliente anexou uma foto, faz upload para o ImgBB para obter link direto
+                if (imagemInput && imagemInput.files && imagemInput.files.length > 0) {
+                    btnSubmeter.textContent = 'A carregar fotografia de referência...';
+                    try {
+                        const imgFormData = new FormData();
+                        imgFormData.append('image', imagemInput.files[0]);
+
+                        const imgResponse = await fetch('https://api.imgbb.com/1/upload?key=' + IMGBB_API_KEY, {
+                            method: 'POST',
+                            body: imgFormData
+                        });
+                        const imgResultado = await imgResponse.json();
+
+                        if (imgResultado && imgResultado.success && imgResultado.data && imgResultado.data.url) {
+                            linkFoto = imgResultado.data.url;
+                        }
+                    } catch (erroFoto) {
+                        console.warn('Não foi possível carregar foto para o ImgBB:', erroFoto);
+                    }
+                }
+
                 btnSubmeter.textContent = 'A processar encomenda...';
 
                 const formData = new FormData(form);
-                const imagemInput = document.getElementById('imagem-bolo');
-                if (imagemInput && imagemInput.files && imagemInput.files.length > 0) {
-                    formData.append('Nota_Foto', 'Foto selecionada pelo cliente: ' + imagemInput.files[0].name + ' (solicitar por WhatsApp se necessário)');
+                if (linkFoto) {
+                    formData.append('Foto_Referencia', linkFoto);
+                } else if (imagemInput && imagemInput.files && imagemInput.files.length > 0) {
+                    formData.append('Nota_Foto', 'Foto selecionada: ' + imagemInput.files[0].name + ' (solicitar por WhatsApp)');
                 }
                 formData.delete('imagem_referencia');
 
                 const dadosForm = Object.fromEntries(formData);
                 const jsonPayload = JSON.stringify(dadosForm);
 
-                fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: jsonPayload
-                })
-                .then(async function (response) {
+                try {
+                    const response = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: jsonPayload
+                    });
+
                     let resultado;
                     try {
                         resultado = await response.json();
@@ -734,12 +764,11 @@
                         btnSubmeter.disabled = false;
                         btnSubmeter.textContent = textoOriginal;
                     }
-                })
-                .catch(function (erro) {
+                } catch (erro) {
                     console.error('Erro no envio:', erro);
                     btnSubmeter.textContent = 'A redirecionar para o pagamento (Stripe)...';
                     window.location.href = 'https://buy.stripe.com/6oU3co0XF77f9XFcXyfYY00';
-                });
+                }
             });
 
             // Executar verificação inicial ao carregar a página
