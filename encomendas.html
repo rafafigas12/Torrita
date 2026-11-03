@@ -56,21 +56,16 @@
             </div>
 
             <!-- O action define para onde vai o email. O method POST envia os dados de forma segura -->
-            <form action="https://formsubmit.co/3aa6ed18ce16a46be64aca3ee6062d7b" method="POST"
+            <form action="https://api.web3forms.com/submit" method="POST" id="form-encomendas"
                 enctype="multipart/form-data">
 
-                <!-- Campos ocultos de configuração da API -->
-                <!-- 1. Desativa o Captcha chato -->
-                <input type="hidden" name="_captcha" value="false">
-                <!-- 2. Redireciona diretamente para o pagamento do sinal no Stripe -->
-                <input type="hidden" name="_next" value="https://buy.stripe.com/6oU3co0XF77f9XFcXyfYY00">
-                <!-- 3. Assunto do email que chega à pastelaria -->
-                <input type="hidden" name="_subject" value="Nova Encomenda de Bolo - Site Tórrita!">
-                <!-- 4. Resposta automática enviada para o email do cliente -->
-                <input type="hidden" name="_autoresponse"
-                    value="A sua encomenda na Pastelaria Tórrita foi recebida com sucesso! Este é um email automático para confirmar que recebemos o seu pedido. A nossa equipa vai contactá-lo muito em breve para confirmar os detalhes e o valor final. Obrigado pela preferência!">
-                <!-- 5. Define explicitamente o email de resposta para envio da auto-resposta -->
-                <input type="hidden" name="_replyto" id="replyto-hidden">
+                <!-- Campos ocultos de configuração Web3Forms -->
+                <input type="hidden" name="access_key" value="d513de2c-779d-4849-a1c7-9eec4f1c5721">
+                <input type="hidden" name="subject" value="&#127874; Nova Encomenda de Bolo - Site Tórrita!">
+                <input type="hidden" name="from_name" value="Site Pastelaria Tórrita">
+                <!-- Proteção anti-spam invisível (Honeypot) -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                <input type="hidden" name="replyto" id="replyto-hidden">
 
                 <div class="grupo-input">
                     <label for="nome">Nome Completo *</label>
@@ -238,7 +233,7 @@
                     <label for="imagem-bolo">Imagem de Referência (Opcional)</label>
                     <input type="file" id="imagem-bolo" name="imagem_referencia"
                         accept="image/png, image/jpeg, image/webp">
-                    <small>Anexe uma foto de inspiração para o seu bolo (PNG, JPG).</small>
+                    <small>Anexe uma foto de inspiração para o seu bolo (PNG, JPG) ou envie diretamente pelo nosso WhatsApp.</small>
                 </div>
 
                 <div class="grupo-input">
@@ -687,16 +682,64 @@
             form.addEventListener('input', verificarFormularioCompleto);
             form.addEventListener('change', verificarFormularioCompleto);
 
-            // Validação ao tentar submeter
+            // Validação e envio do formulário
             form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
                 formTocadoRadioVelas = true;
                 todosCampos.forEach(campo => campo.dataset.touched = 'true');
                 verificarFormularioCompleto();
 
                 if (btnSubmeter.disabled) {
-                    event.preventDefault();
                     form.reportValidity();
+                    return;
                 }
+
+                // Desativa o botão e informa o cliente
+                const textoOriginal = btnSubmeter.textContent;
+                btnSubmeter.disabled = true;
+                btnSubmeter.textContent = 'A processar encomenda...';
+
+                const formData = new FormData(form);
+                const imagemInput = document.getElementById('imagem-bolo');
+                if (imagemInput && imagemInput.files && imagemInput.files.length > 0) {
+                    formData.append('Nota_Foto', 'Foto selecionada pelo cliente: ' + imagemInput.files[0].name + ' (solicitar por WhatsApp se necessário)');
+                }
+                formData.delete('imagem_referencia');
+
+                const dadosForm = Object.fromEntries(formData);
+                const jsonPayload = JSON.stringify(dadosForm);
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: jsonPayload
+                })
+                .then(async function (response) {
+                    let resultado;
+                    try {
+                        resultado = await response.json();
+                    } catch (e) {
+                        resultado = {};
+                    }
+
+                    if (response.status === 200 || resultado.success) {
+                        btnSubmeter.textContent = 'A redirecionar para o pagamento (Stripe)...';
+                        window.location.href = 'https://buy.stripe.com/6oU3co0XF77f9XFcXyfYY00';
+                    } else {
+                        alert(resultado.message || 'Ocorreu um erro ao enviar o pedido. Por favor tente novamente.');
+                        btnSubmeter.disabled = false;
+                        btnSubmeter.textContent = textoOriginal;
+                    }
+                })
+                .catch(function (erro) {
+                    console.error('Erro no envio:', erro);
+                    btnSubmeter.textContent = 'A redirecionar para o pagamento (Stripe)...';
+                    window.location.href = 'https://buy.stripe.com/6oU3co0XF77f9XFcXyfYY00';
+                });
             });
 
             // Executar verificação inicial ao carregar a página
