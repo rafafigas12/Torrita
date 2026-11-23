@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Impede a indexação nos motores de busca (página apenas interna para a loja) -->
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <title>Registo Interno de Encomendas | Pastelaria Tórrita</title>
+    <link rel="icon" type="image/jpeg" href="fotos/logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Biblioteca para gerar PDF instantâneo na loja -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+    <style>
+        :root {
+            --bg-main: #f7f1e8;
+            --bg-card: #ffffff;
+            --bg-soft: #f3e7ca;
+            --primary: #3c9f7b;
+            --primary-dark: #0A4A33;
+            --primary-light: #e2f0ea;
+            --text-main: #1C2D24;
+            --text-muted: #666052;
+            --border: #e0d3c2;
+            --danger: #c0392b;
+            --radius: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding-bottom: 60px;
+        }
+
+        /* Barra Superior Interna */
+        .topo-interno {
+            background: var(--primary-dark);
+            color: #fff;
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .topo-titulo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .topo-titulo h1 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-interno {
+            background: rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        .topo-direita {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .num-encomenda-badge {
+            background: #fff;
+            color: var(--primary-dark);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-topo-limpar {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-topo-limpar:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Layout Principal */
+        .layout-loja {
+            max-width: 1320px;
+            margin: 24px auto 0;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 24px;
+            align-items: start;
+        }
+
+        @media (max-width: 980px) {
+            .layout-loja {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cartao {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px 22px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 8px rgba(28, 45, 36, 0.04);
+        }
+
+        .cartao-titulo {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .cartao-sub {
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        /* Dados do cliente */
+        .grelha-cliente {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 14px;
+        }
+
+        .campo-grupo {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .campo-grupo label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .campo-grupo input,
+        .campo-grupo textarea {
+            padding: 9px 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            background: #fdfbf8;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .campo-grupo input:focus,
+        .campo-grupo textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(60, 159, 123, 0.15);
+        }
+
+        /* Barra de pesquisa rápida */
+        .barra-pesquisa {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 18px;
+            background: #fff;
+            padding: 10px 14px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+        }
+
+        .barra-pesquisa input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-family: inherit;
+            font-size: 0.92rem;
+            color: var(--text-main);
+        }
+
+        .barra-pesquisa button {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Tabela de Bolos por Peso */
+        .tabela-pesos {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tabela-pesos th {
+            text-align: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            background: var(--primary-light);
+            padding: 8px 6px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tabela-pesos th:first-child {
+            text-align: left;
+            padding-left: 10px;
+            border-radius: 6px 0 0 0;
+        }
+
+        .tabela-pesos th:last-child {
+            border-radius: 0 6px 0 0;
+        }
+
+        .tabela-pesos td {
+            padding: 8px 6px;
+            border-bottom: 1px solid #f0e8dc;
+            vertical-align: middle;
+        }
+
+        .tabela-pesos td:first-child {
+            font-weight: 600;
+            font-size: 0.88rem;
+            padding-left: 10px;
+        }
+
+        .tabela-pesos tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tabela-pesos tr.oculto,
+        .item-linha.oculto,
+        .item-texto.oculto {
+            display: none !important;
+        }
+
+        /* Grelha de artigos de quantidade */
+        .grelha-artigos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+            gap: 10px;
+        }
+
+        .item-linha {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 9px 12px;
+            border: 1px solid #ece3d7;
+            border-radius: 8px;
+            background: #fdfbf8;
+            transition: border-color 0.15s, background 0.15s;
+        }
+
+        .item-linha.ativo {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .item-nome {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Controlo de quantidade compacto */
+        .qtd-ctrl {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            background: #fff;
+            flex-shrink: 0;
+        }
+
+        .qtd-ctrl button {
+            width: 28px;
+            height: 28px;
+            border: none;
+            background: #f3ede4;
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+        }
+
+        .qtd-ctrl button:hover {
+            background: var(--primary-light);
+        }
+
+        .qtd-ctrl input {
+            width: 42px;
+            height: 28px;
+            border: none;
+            text-align: center;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: var(--text-main);
+            -moz-appearance: textfield;
+        }
+
+        .qtd-ctrl input::-webkit-outer-spin-button,
+        .qtd-ctrl input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .qtd-ctrl.com-valor {
+            border-color: var(--primary);
+        }
+
+        .qtd-ctrl.com-valor input {
+            background: #eef8f3;
+            color: var(--primary-dark);
+        }
+
+        /* Grelha de artigos de peso / variedades (texto) */
+        .grelha-texto {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 12px;
+        }
+
+        .item-texto {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 10px 12px;
+            border: 1px solid #ece3d7;
+            border-radius: 8px;
+            background: #fdfbf8;
+        }
+
+        .item-texto.ativo {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .item-texto label {
+            font-size: 0.83rem;
+            font-weight: 600;
+        }
+
+        .item-texto input {
+            padding: 7px 10px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.86rem;
+            background: #fff;
+        }
+
+        .item-texto input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Secção de Sinal */
+        .sinal-box {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px;
+            margin-top: 6px;
+        }
+
+        .sinal-botoes {
+            display: inline-flex;
+            gap: 8px;
+        }
+
+        .btn-sinal-opcao {
+            padding: 10px 22px;
+            border-radius: 8px;
+            border: 2px solid var(--border);
+            background: #fdfbf8;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .btn-sinal-opcao.selecionado {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            color: #fff;
+        }
+
+        .sinal-valor-wrap {
+            display: none;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sinal-valor-wrap.visivel {
+            display: inline-flex;
+        }
+
+        .sinal-valor-wrap label {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .sinal-valor-wrap input {
+            width: 120px;
+            padding: 9px 12px;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        /* Painel Lateral de Resumo */
+        .resumo-sticky {
+            position: sticky;
+            top: 84px;
+        }
+
+        .resumo-lista {
+            list-style: none;
+            max-height: 45vh;
+            overflow-y: auto;
+            margin-bottom: 16px;
+            padding-right: 4px;
+        }
+
+        .resumo-lista li {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 7px 0;
+            border-bottom: 1px dashed #e5dacb;
+            font-size: 0.84rem;
+        }
+
+        .resumo-lista li:last-child {
+            border-bottom: none;
+        }
+
+        .resumo-lista .resumo-vazio {
+            color: var(--text-muted);
+            font-style: italic;
+            justify-content: center;
+            padding: 18px 0;
+        }
+
+        .resumo-qtd {
+            font-weight: 700;
+            color: var(--primary-dark);
+            background: var(--primary-light);
+            padding: 2px 8px;
+            border-radius: 999px;
+            white-space: nowrap;
+            font-size: 0.8rem;
+        }
+
+        .resumo-meta {
+            background: #fdfbf8;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 0.82rem;
+            margin-bottom: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .btn-submeter {
+            width: 100%;
+            padding: 14px 18px;
+            border: none;
+            border-radius: 8px;
+            background: var(--primary);
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .btn-submeter:hover:not(:disabled) {
+            background: var(--primary-dark);
+        }
+
+        .btn-submeter:disabled {
+            background: #b9c5bf;
+            cursor: not-allowed;
+        }
+
+        .btn-pdf-secundario {
+            width: 100%;
+            margin-top: 8px;
+            padding: 10px 14px;
+            border: 1px solid var(--primary-dark);
+            border-radius: 8px;
+            background: #fff;
+            color: var(--primary-dark);
+            font-family: inherit;
+            font-size: 0.84rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-pdf-secundario:hover {
+            background: var(--primary-light);
+        }
+
+        .msg-erro {
+            color: var(--danger);
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-top: 8px;
+            display: none;
+        }
+
+        .msg-erro.visivel {
+            display: block;
+        }
+
+        /* Modal de Confirmação após envio */
+        .modal-fundo {
+            position: fixed;
+            inset: 0;
+            background: rgba(20, 34, 27, 0.65);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 999;
+        }
+
+        .modal-fundo.aberto {
+            display: flex;
+        }
+
+        .modal-caixa {
+            background: #fff;
+            border-radius: 14px;
+            max-width: 480px;
+            width: 100%;
+            padding: 28px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .modal-icone {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+        }
+
+        .modal-caixa h2 {
+            color: var(--primary-dark);
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .modal-num {
+            display: inline-block;
+            background: var(--bg-soft);
+            color: var(--primary-dark);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin: 10px 0 14px;
+            letter-spacing: 0.8px;
+        }
+
+        .modal-caixa p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+        }
+
+        .modal-acoes {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        @media (max-width: 640px) {
+            .tabela-pesos {
+                display: block;
+                overflow-x: auto;
+            }
+            .topo-interno {
+                padding: 12px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="topo-interno">
+        <div class="topo-titulo">
+            <h1>Pastelaria Tórrita — Encomendas Loja</h1>
+            <span class="badge-interno">Uso Interno</span>
+        </div>
+        <div class="topo-direita">
+            <span class="num-encomenda-badge" id="badge-num-encomenda">ENC-0000</span>
+            <button type="button" class="btn-topo-limpar" id="btn-nova-encomenda">Nova Encomenda</button>
+        </div>
+    </header>
+
+    <form id="form-loja-interno" novalidate>
+        <div class="layout-loja">
+            <!-- COLUNA ESQUERDA: DADOS E ARTIGOS -->
+            <div class="coluna-principal">
+
+                <!-- 1. Dados do Cliente -->
+                <section class="cartao">
+                    <div class="cartao-titulo">
+                        <span>1. Dados do Cliente</span>
+                        <span class="cartao-sub">Para identificação e PDF</span>
+                    </div>
+                    <div class="grelha-cliente">
+                        <div class="campo-grupo">
+                            <label for="cliente-nome">Nome do Cliente *</label>
+                            <input type="text" id="cliente-nome" name="Nome_Cliente" required placeholder="Ex: Maria Silva">
+                        </div>
+                        <div class="campo-grupo">
+                            <label for="cliente-telefone">Telefone / Telemóvel *</label>
+                            <input type="tel" id="cliente-telefone" name="Telefone" required placeholder="Ex: 912 345 678">
+                        </div>
+                        <div class="campo-grupo">
+                            <label for="levantamento-data">Data de Levantamento</label>
+                            <input type="date" id="levantamento-data" name="Data_Levantamento">
+                        </div>
+                        <div class="campo-grupo">
+                            <label for="levantamento-hora">Hora de Levantamento</label>
+                            <input type="time" id="levantamento-hora" name="Hora_Levantamento">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Barra de Pesquisa Rápida -->
+                <div class="barra-pesquisa">
+                    <span>🔍</span>
+                    <input type="text" id="pesquisa-artigo" placeholder="Pesquisar artigo rapidamente (ex: bolo rei, sonhos, pão, cheesecake...)">
+                    <button type="button" id="btn-limpar-pesquisa">Limpar</button>
+                </div>
+
+                <!-- 2. Bolos de Natal por Peso -->
+                <section class="cartao seccao-artigos">
+                    <div class="cartao-titulo">
+                        <span>2. Bolos de Natal por Peso</span>
+                        <span class="cartao-sub">Indique a quantidade em cada peso</span>
+                    </div>
+                    <table class="tabela-pesos">
+                        <thead>
+                            <tr>
+                                <th>Artigo</th>
+                                <th>700g</th>
+                                <th>1kg</th>
+                                <th>1.5kg</th>
+                                <th>2kg</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-pesos"></tbody>
+                    </table>
+                </section>
+
+                <!-- 3. Fritos e Panetones -->
+                <section class="cartao seccao-artigos">
+                    <div class="cartao-titulo">
+                        <span>3. Panetones e Fritos de Natal</span>
+                        <span class="cartao-sub">Quantidade</span>
+                    </div>
+                    <div class="grelha-artigos" id="sec-fritos"></div>
+                </section>
+
+                <!-- 4. Tortas -->
+                <section class="cartao seccao-artigos">
+                    <div class="cartao-titulo">
+                        <span>4. Tortas</span>
+                        <span class="cartao-sub">Quantidade</span>
+                    </div>
+                    <div class="grelha-artigos" id="sec-tortas"></div>
+                </section>
+
+                <!-- 5. Bolos, Semifrios e Cheesecakes -->
+                <section class="cartao seccao-artigos">
+                    <div class="cartao-titulo">
+                        <span>5. Bolos, Semifrios e Cheesecakes</span>
+                        <span class="cartao-sub">Quantidade</span>
+                    </div>
+                    <div class="grelha-artigos" id="sec-bolos"></div>
+                </section>
+
+                <!-- 6. Tartes, Molotof, Pão de Ló e Pudim -->
+                <section class="cartao seccao-artigos">
+                    <div class="cartao-titulo">
+                        <span>6. Tartes, Sobremesas e Pão de Ló</span>
+                        <span class="cartao-sub">Quantidade</span>
+                    </div>
+                    <div class="grelha-artigos" id="sec-sobremesas"></div>
+                </section>
+
+                <!-- 7. Doçaria Individual e Salgados -->
+                <section class="cartao seccao-artigos">
+                    <div class="cartao-titulo">
+                        <span>7. Doçaria Individual e Pequenos</span>
+                        <span class="cartao-sub">Quantidade</span>
+                    </div>
+                    <div class="grelha-artigos" id="sec-docaria"></div>
+                </section>
+
+                <!-- 8. Miniaturas e Sortidos (Variedades e Peso) -->
+                <section class="cartao seccao-artigos">
+                    <div class="cartao-titulo">
+                        <span>8. Miniaturas e Sortido</span>
+                        <span class="cartao-sub">Escrever variedades e peso</span>
+                    </div>
+                    <div class="grelha-texto" id="sec-miniaturas"></div>
+                </section>
+
+                <!-- 9. Doces a Peso -->
+                <section class="cartao seccao-artigos">
+                    <div class="cartao-titulo">
+                        <span>9. Doces a Peso</span>
+                        <span class="cartao-sub">Escrever o peso (ex: 500g, 1kg)</span>
+                    </div>
+                    <div class="grelha-texto" id="sec-doces-peso"></div>
+                </section>
+
+                <!-- 10. Pão -->
+                <section class="cartao seccao-artigos">
+                    <div class="cartao-titulo">
+                        <span>10. Pão</span>
+                        <span class="cartao-sub">Quantidade (Massa de Pão: peso)</span>
+                    </div>
+                    <div class="grelha-artigos" id="sec-pao"></div>
+                    <div class="grelha-texto" id="sec-pao-peso" style="margin-top: 12px;"></div>
+                </section>
+
+                <!-- 11. Observações e Sinal -->
+                <section class="cartao">
+                    <div class="cartao-titulo">
+                        <span>11. Observações e Sinal</span>
+                    </div>
+                    <div class="campo-grupo" style="margin-bottom: 18px;">
+                        <label for="observacoes">Observações</label>
+                        <textarea id="observacoes" name="Observacoes" rows="3"
+                            placeholder="Notas adicionais, dizeres, alergias, preferências..."></textarea>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label>O cliente deixou sinal? *</label>
+                        <div class="sinal-box">
+                            <div class="sinal-botoes">
+                                <button type="button" class="btn-sinal-opcao selecionado" data-sinal="Não" id="btn-sinal-nao">Sinal: Não</button>
+                                <button type="button" class="btn-sinal-opcao" data-sinal="Sim" id="btn-sinal-sim">Sinal: Sim</button>
+                            </div>
+                            <div class="sinal-valor-wrap" id="sinal-valor-wrap">
+                                <label for="sinal-valor">Valor (€):</label>
+                                <input type="number" id="sinal-valor" min="0" step="0.50" placeholder="Ex: 10.00">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- COLUNA DIREITA: RESUMO E ENVIO -->
+            <aside class="resumo-sticky">
+                <div class="cartao">
+                    <div class="cartao-titulo">
+                        <span>Resumo da Encomenda</span>
+                        <span class="cartao-sub" id="contador-artigos">0 itens</span>
+                    </div>
+
+                    <div class="resumo-meta">
+                        <div><strong>Nº:</strong> <span id="resumo-num">-</span></div>
+                        <div><strong>Cliente:</strong> <span id="resumo-cliente">Por preencher</span></div>
+                        <div><strong>Sinal:</strong> <span id="resumo-sinal">Não</span></div>
+                    </div>
+
+                    <ul class="resumo-lista" id="resumo-lista">
+                        <li class="resumo-vazio">Nenhum artigo selecionado.</li>
+                    </ul>
+
+                    <button type="submit" class="btn-submeter" id="btn-submeter">
+                        Registar Encomenda e Enviar
+                    </button>
+                    <button type="button" class="btn-pdf-secundario" id="btn-pdf-previa">
+                        Descarregar PDF (Cópia Loja)
+                    </button>
+                    <div class="msg-erro" id="msg-erro"></div>
+                </div>
+            </aside>
+        </div>
+    </form>
+
+    <!-- MODAL DE SUCESSO -->
+    <div class="modal-fundo" id="modal-sucesso" role="dialog" aria-modal="true">
+        <div class="modal-caixa">
+            <div class="modal-icone">✓</div>
+            <h2>Encomenda Registada!</h2>
+            <div class="modal-num" id="modal-num-encomenda">ENC-0000</div>
+            <p id="modal-texto">Os dados foram enviados para <strong>torritaencomendas@gmail.com</strong> (com cópia em PDF gerada pelo script e registo automático no Sheets).</p>
+            <div class="modal-acoes">
+                <button type="button" class="btn-submeter" id="btn-modal-pdf">Descarregar PDF da Encomenda</button>
+                <button type="button" class="btn-pdf-secundario" id="btn-modal-nova">Registar Nova Encomenda</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // =========================================================================
+        // CONFIGURAÇÃO WEB3FORMS (obter chave gratuita em web3forms.com com o email
+        // torritaencomendas@gmail.com e colar abaixo)
+        // =========================================================================
+        const WEB3FORMS_ACCESS_KEY = '8df08c3f-bcac-4e77-908c-2ee62a310931';
+
+        // Definição completa de todos os artigos (mesmos nomes usados no Google Sheets)
+        const BOLOS_NATAL_PESOS = [
+            'Bolo Rei',
+            'Bolo Rei de Chocolate',
+            'Bolo Rainha',
+            'Troncos de Natal',
+            'Lampreia'
+        ];
+        const PESOS_OPCOES = ['700g', '1kg', '1.5kg', '2kg'];
+
+        const SECCOES_QTD = {
+            'sec-fritos': [
+                'Panetone de Chocolate',
+                'Panetone de Chocolate Mini',
+                'Sonhos',
+                'Filhós B.B',
+                'Coscorões',
+                'Azevias',
+                'Fatias Douradas'
+            ],
+            'sec-tortas': [
+                'Torta de Brigadeiro',
+                'Torta de Laranja',
+                'Torta de Claras'
+            ],
+            'sec-bolos': [
+                'Bolo Brigadeiro',
+                'Bolo Doce D\'Ovos',
+                'Bolo Kinder Bueno',
+                'Bolo Chantilly e Fruta',
+                'Bolo Red Velvet c/ Cheesecake',
+                'Bolo Lotus Biscoff',
+                'Bolo Picnic',
+                'Bolo Oreo',
+                'Bolo Profiteroles',
+                'Bolo Bolacha',
+                'Semifrio de Morango',
+                'Semifrio de Frutos Vermelhos',
+                'Cheesecake Morango',
+                'Cheesecake Limão',
+                'Cheesecake Maracujá'
+            ],
+            'sec-sobremesas': [
+                'Tarte de Natas',
+                'Tarte Bom Bocado',
+                'Tarte de Amêndoa',
+                'Tarte de Maçã',
+                'Molotof Caramelo',
+                'Molotof D\'Ovos',
+                'Pão de Ló Grande',
+                'Pão de Ló Pequeno',
+                'Pudim Flan Grande',
+                'Pudim Flan Pequeno'
+            ],
+            'sec-docaria': [
+                'Trouxas D\'Ovos',
+                'Noz Dourada',
+                'Brigadeiros',
+                'Beijinhos',
+                'Brigadeiros Kinder',
+                'Brigadeiros Pistachio',
+                'Macarrons',
+                'Pão de Queijo',
+                'Pastel de Nata'
+            ],
+            'sec-pao': [
+                'Bolas',
+                'Carcaças',
+                'Avós',
+                'Pão Saloio',
+                'Pão Alentejano',
+                'Pão de Forma Grande',
+                'Pão de Forma Pequeno',
+                'Pão de Milho'
+            ]
+        };
+
+        const SECCOES_TEXTO = {
+            'sec-miniaturas': [
+                { nome: 'Miniaturas', placeholder: 'Ex: 1kg (pastéis, bolas, éclairs...)' },
+                { nome: 'Miniaturas Salgadas', placeholder: 'Ex: 1kg (rissóis, croquetes...)' },
+                { nome: 'Sortido', placeholder: 'Ex: 500g (variedades pretendidas)' }
+            ],
+            'sec-doces-peso': [
+                { nome: 'Broa Castelar', placeholder: 'Peso (ex: 500g)' },
+                { nome: 'Broa de Espécie', placeholder: 'Peso (ex: 500g)' },
+                { nome: 'Doces do Algarve', placeholder: 'Peso (ex: 500g)' },
+                { nome: 'Castanhas D\'ovo', placeholder: 'Peso (ex: 500g)' },
+                { nome: 'Ovo Rijo', placeholder: 'Peso (ex: 500g)' },
+                { nome: 'Fios D\'ovos', placeholder: 'Peso (ex: 250g)' }
+            ],
+            'sec-pao-peso': [
+                { nome: 'Massa de Pão', placeholder: 'Peso (ex: 1kg, 2kg)' }
+            ]
+        };
+
+        // Estado da encomenda atual
+        let numeroEncomendaAtual = '';
+        let deixouSinal = false;
+        let ultimoPedidoGuardado = null;
+
+        function gerarNumeroEncomenda() {
+            const agora = new Date();
+            const dd = String(agora.getDate()).padStart(2, '0');
+            const mm = String(agora.getMonth() + 1).padStart(2, '0');
+            const chaveDia = `torrita_seq_${agora.getFullYear()}${mm}${dd}`;
+            let seq = parseInt(localStorage.getItem(chaveDia) || '0', 10) + 1;
+            const codigoAleatorio = Math.floor(10 + Math.random() * 89);
+            const num = `ENC-${dd}${mm}-${String(seq).padStart(3, '0')}`;
+            return { num, chaveDia, seq, fallback: `ENC-${dd}${mm}-${codigoAleatorio}` };
+        }
+
+        function definirNovoNumero(incrementar = false) {
+            const agora = new Date();
+            const dd = String(agora.getDate()).padStart(2, '0');
+            const mm = String(agora.getMonth() + 1).padStart(2, '0');
+            const chaveDia = `torrita_seq_${agora.getFullYear()}${mm}${dd}`;
+            let seq = parseInt(localStorage.getItem(chaveDia) || '0', 10);
+            if (incrementar) {
+                seq += 1;
+                localStorage.setItem(chaveDia, String(seq));
+            }
+            const proximo = seq + 1;
+            numeroEncomendaAtual = `ENC-${dd}${mm}-${String(proximo).padStart(3, '0')}`;
+            document.getElementById('badge-num-encomenda').textContent = numeroEncomendaAtual;
+            document.getElementById('resumo-num').textContent = numeroEncomendaAtual;
+        }
+
+        function criarControloQtd(nomeCampo) {
+            const wrap = document.createElement('div');
+            wrap.className = 'qtd-ctrl';
+
+            const btnMenos = document.createElement('button');
+            btnMenos.type = 'button';
+            btnMenos.textContent = '−';
+            btnMenos.setAttribute('aria-label', 'Diminuir ' + nomeCampo);
+
+            const input = document.createElement('input');
+            input.type = 'number';
+            input.min = '0';
+            input.step = '1';
+            input.value = '0';
+            input.dataset.artigo = nomeCampo;
+            input.dataset.tipo = 'qtd';
+
+            const btnMais = document.createElement('button');
+            btnMais.type = 'button';
+            btnMais.textContent = '+';
+            btnMais.setAttribute('aria-label', 'Aumentar ' + nomeCampo);
+
+            function atualizarEstado() {
+                const val = Math.max(0, parseInt(input.value, 10) || 0);
+                input.value = val;
+                wrap.classList.toggle('com-valor', val > 0);
+                const linha = wrap.closest('.item-linha');
+                if (linha) linha.classList.toggle('ativo', val > 0);
+                atualizarResumo();
+            }
+
+            btnMenos.addEventListener('click', () => {
+                input.value = Math.max(0, (parseInt(input.value, 10) || 0) - 1);
+                atualizarEstado();
+            });
+            btnMais.addEventListener('click', () => {
+                input.value = (parseInt(input.value, 10) || 0) + 1;
+                atualizarEstado();
+            });
+            input.addEventListener('input', atualizarEstado);
+            input.addEventListener('focus', () => input.select());
+
+            wrap.append(btnMenos, input, btnMais);
+            return wrap;
+        }
+
+        function construirFormulario() {
+            // 1. Bolos de Natal por Peso
+            const tbodyPesos = document.getElementById('tbody-pesos');
+            BOLOS_NATAL_PESOS.forEach(bolo => {
+                const tr = document.createElement('tr');
+                tr.dataset.busca = normalizarTexto(bolo);
+
+                const tdNome = document.createElement('td');
+                tdNome.textContent = bolo;
+                tr.appendChild(tdNome);
+
+                PESOS_OPCOES.forEach(peso => {
+                    const td = document.createElement('td');
+                    td.style.textAlign = 'center';
+                    td.appendChild(criarControloQtd(`${bolo} ${peso}`));
+                    tr.appendChild(td);
+                });
+
+                tbodyPesos.appendChild(tr);
+            });
+
+            // 2. Secções de Quantidade
+            Object.entries(SECCOES_QTD).forEach(([idSec, artigos]) => {
+                const container = document.getElementById(idSec);
+                artigos.forEach(nome => {
+                    const div = document.createElement('div');
+                    div.className = 'item-linha';
+                    div.dataset.busca = normalizarTexto(nome);
+
+                    const span = document.createElement('span');
+                    span.className = 'item-nome';
+                    span.textContent = nome;
+
+                    div.append(span, criarControloQtd(nome));
+                    container.appendChild(div);
+                });
+            });
+
+            // 3. Secções de Texto (Variedades / Peso)
+            Object.entries(SECCOES_TEXTO).forEach(([idSec, artigos]) => {
+                const container = document.getElementById(idSec);
+                artigos.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'item-texto';
+                    div.dataset.busca = normalizarTexto(item.nome);
+
+                    const label = document.createElement('label');
+                    label.textContent = item.nome;
+
+                    const input = document.createElement('input');
+                    input.type = 'text';
+                    input.placeholder = item.placeholder;
+                    input.dataset.artigo = item.nome;
+                    input.dataset.tipo = 'texto';
+
+                    input.addEventListener('input', () => {
+                        div.classList.toggle('ativo', input.value.trim().length > 0);
+                        atualizarResumo();
+                    });
+
+                    div.append(label, input);
+                    container.appendChild(div);
+                });
+            });
+        }
+
+        function normalizarTexto(str) {
+            return (str || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        }
+
+        function obterItensSelecionados() {
+            const itens = [];
+            document.querySelectorAll('[data-artigo]').forEach(el => {
+                const nome = el.dataset.artigo;
+                if (el.dataset.tipo === 'qtd') {
+                    const val = parseInt(el.value, 10) || 0;
+                    if (val > 0) itens.push({ nome, valor: val, tipo: 'qtd' });
+                } else {
+                    const val = el.value.trim();
+                    if (val) itens.push({ nome, valor: val, tipo: 'texto' });
+                }
+            });
+            return itens;
+        }
+
+        function obterTextoSinal() {
+            if (!deixouSinal) return 'Não';
+            const val = parseFloat(document.getElementById('sinal-valor').value);
+            if (!isNaN(val) && val > 0) {
+                return `Sim — ${val.toFixed(2).replace('.', ',')}€`;
+            }
+            return 'Sim (valor por indicar)';
+        }
+
+        function atualizarResumo() {
+            const nomeCliente = document.getElementById('cliente-nome').value.trim();
+            document.getElementById('resumo-cliente').textContent = nomeCliente || 'Por preencher';
+            document.getElementById('resumo-sinal').textContent = obterTextoSinal();
+
+            const itens = obterItensSelecionados();
+            const ul = document.getElementById('resumo-lista');
+            document.getElementById('contador-artigos').textContent = `${itens.length} ${itens.length === 1 ? 'artigo' : 'artigos'}`;
+
+            ul.innerHTML = '';
+            if (itens.length === 0) {
+                const li = document.createElement('li');
+                li.className = 'resumo-vazio';
+                li.textContent = 'Nenhum artigo selecionado.';
+                ul.appendChild(li);
+                return;
+            }
+
+            itens.forEach(item => {
+                const li = document.createElement('li');
+                const spanNome = document.createElement('span');
+                spanNome.textContent = item.nome;
+                const spanVal = document.createElement('span');
+                spanVal.className = 'resumo-qtd';
+                spanVal.textContent = item.tipo === 'qtd' ? `× ${item.valor}` : item.valor;
+                li.append(spanNome, spanVal);
+                ul.appendChild(li);
+            });
+        }
+
+        function montarDadosEncomenda() {
+            const itens = obterItensSelecionados();
+            return {
+                numero: numeroEncomendaAtual,
+                nome: document.getElementById('cliente-nome').value.trim(),
+                telefone: document.getElementById('cliente-telefone').value.trim(),
+                dataLevantamento: document.getElementById('levantamento-data').value || '-',
+                horaLevantamento: document.getElementById('levantamento-hora').value || '-',
+                observacoes: document.getElementById('observacoes').value.trim(),
+                sinal: deixouSinal ? 'Sim' : 'Não',
+                valorSinal: deixouSinal ? (document.getElementById('sinal-valor').value || '0') + '€' : '0€',
+                textoSinal: obterTextoSinal(),
+                itens
+            };
+        }
+
+        function gerarPDF(dados) {
+            if (!window.jspdf || !window.jspdf.jsPDF) {
+                window.print();
+                return;
+            }
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+            let y = 18;
+
+            doc.setFillColor(10, 74, 51);
+            doc.rect(0, 0, 210, 26, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(16);
+            doc.text('PASTELARIA TORRITA — COMPROVATIVO DE ENCOMENDA', 14, 13);
+            doc.setFontSize(11);
+            doc.text(`N.º Encomenda: ${dados.numero}`, 14, 21);
+
+            doc.setTextColor(28, 45, 36);
+            y = 36;
+            doc.setFontSize(10);
+            doc.setFont('helvetica', 'bold');
+            doc.text(`Cliente: `, 14, y);
+            doc.setFont('helvetica', 'normal');
+            doc.text(dados.nome || '-', 32, y);
+
+            doc.setFont('helvetica', 'bold');
+            doc.text(`Telefone: `, 115, y);
+            doc.setFont('helvetica', 'normal');
+            doc.text(dados.telefone || '-', 135, y);
+
+            y += 7;
+            doc.setFont('helvetica', 'bold');
+            doc.text(`Levantamento: `, 14, y);
+            doc.setFont('helvetica', 'normal');
+            doc.text(`${dados.dataLevantamento} às ${dados.horaLevantamento}`, 44, y);
+
+            doc.setFont('helvetica', 'bold');
+            doc.text(`Sinal: `, 115, y);
+            doc.setFont('helvetica', 'normal');
+            doc.text(dados.textoSinal, 129, y);
+
+            y += 10;
+            doc.setDrawColor(200, 190, 175);
+            doc.line(14, y, 196, y);
+            y += 8;
+
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(11);
+            doc.text('ARTIGOS ENCOMENDADOS', 14, y);
+            y += 7;
+
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(10);
+            dados.itens.forEach(item => {
+                if (y > 270) {
+                    doc.addPage();
+                    y = 20;
+                }
+                const valorTxt = item.tipo === 'qtd' ? `Qtd: ${item.valor}` : item.valor;
+                doc.text(`• ${item.nome}`, 16, y);
+                doc.setFont('helvetica', 'bold');
+                doc.text(String(valorTxt), 194, y, { align: 'right' });
+                doc.setFont('helvetica', 'normal');
+                y += 6.5;
+            });
+
+            if (dados.observacoes) {
+                y += 6;
+                if (y > 255) {
+                    doc.addPage();
+                    y = 20;
+                }
+                doc.setFont('helvetica', 'bold');
+                doc.text('OBSERVAÇÕES:', 14, y);
+                y += 6;
+                doc.setFont('helvetica', 'normal');
+                const linhasObs = doc.splitTextToSize(dados.observacoes, 180);
+                doc.text(linhasObs, 14, y);
+            }
+
+            doc.save(`${dados.numero}_${(dados.nome || 'cliente').replace(/\s+/g, '_')}.pdf`);
+        }
+
+        function limparFormulario() {
+            document.getElementById('form-loja-interno').reset();
+            document.querySelectorAll('[data-tipo="qtd"]').forEach(inp => {
+                inp.value = '0';
+                inp.closest('.qtd-ctrl').classList.remove('com-valor');
+                const linha = inp.closest('.item-linha');
+                if (linha) linha.classList.remove('ativo');
+            });
+            document.querySelectorAll('.item-texto').forEach(div => div.classList.remove('ativo'));
+
+            deixouSinal = false;
+            document.getElementById('btn-sinal-nao').classList.add('selecionado');
+            document.getElementById('btn-sinal-sim').classList.remove('selecionado');
+            document.getElementById('sinal-valor-wrap').classList.remove('visivel');
+            document.getElementById('sinal-valor').value = '';
+
+            document.getElementById('pesquisa-artigo').value = '';
+            filtrarArtigos('');
+            mostrarErro('');
+            atualizarResumo();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function filtrarArtigos(termo) {
+            const q = normalizarTexto(termo);
+            document.querySelectorAll('[data-busca]').forEach(el => {
+                const corresponde = !q || el.dataset.busca.includes(q);
+                el.classList.toggle('oculto', !corresponde);
+            });
+            document.querySelectorAll('.seccao-artigos').forEach(sec => {
+                const visiveis = sec.querySelectorAll('[data-busca]:not(.oculto)').length;
+                sec.style.display = visiveis > 0 ? '' : 'none';
+            });
+        }
+
+        function mostrarErro(msg) {
+            const el = document.getElementById('msg-erro');
+            el.textContent = msg;
+            el.classList.toggle('visivel', Boolean(msg));
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            construirFormulario();
+            definirNovoNumero(false);
+            atualizarResumo();
+
+            // Atualizar resumo quando nome muda
+            document.getElementById('cliente-nome').addEventListener('input', atualizarResumo);
+            document.getElementById('sinal-valor').addEventListener('input', atualizarResumo);
+
+            // Pesquisa rápida
+            const inputPesquisa = document.getElementById('pesquisa-artigo');
+            inputPesquisa.addEventListener('input', () => filtrarArtigos(inputPesquisa.value));
+            document.getElementById('btn-limpar-pesquisa').addEventListener('click', () => {
+                inputPesquisa.value = '';
+                filtrarArtigos('');
+                inputPesquisa.focus();
+            });
+
+            // Botões de Sinal (Sim / Não)
+            const btnNao = document.getElementById('btn-sinal-nao');
+            const btnSim = document.getElementById('btn-sinal-sim');
+            const wrapValor = document.getElementById('sinal-valor-wrap');
+            const inputValorSinal = document.getElementById('sinal-valor');
+
+            btnNao.addEventListener('click', () => {
+                deixouSinal = false;
+                btnNao.classList.add('selecionado');
+                btnSim.classList.remove('selecionado');
+                wrapValor.classList.remove('visivel');
+                inputValorSinal.value = '';
+                atualizarResumo();
+            });
+
+            btnSim.addEventListener('click', () => {
+                deixouSinal = true;
+                btnSim.classList.add('selecionado');
+                btnNao.classList.remove('selecionado');
+                wrapValor.classList.add('visivel');
+                inputValorSinal.focus();
+                atualizarResumo();
+            });
+
+            // Botão Nova Encomenda no topo
+            document.getElementById('btn-nova-encomenda').addEventListener('click', () => {
+                if (confirm('Limpar os campos atuais para iniciar uma nova encomenda?')) {
+                    limparFormulario();
+                }
+            });
+
+            // Botão pré-visualização / download PDF direto
+            document.getElementById('btn-pdf-previa').addEventListener('click', () => {
+                const dados = montarDadosEncomenda();
+                if (dados.itens.length === 0) {
+                    mostrarErro('Selecione pelo menos um artigo antes de gerar o PDF.');
+                    return;
+                }
+                mostrarErro('');
+                gerarPDF(dados);
+            });
+
+            // Botões do Modal de Sucesso
+            document.getElementById('btn-modal-pdf').addEventListener('click', () => {
+                if (ultimoPedidoGuardado) gerarPDF(ultimoPedidoGuardado);
+            });
+
+            document.getElementById('btn-modal-nova').addEventListener('click', () => {
+                document.getElementById('modal-sucesso').classList.remove('aberto');
+                limparFormulario();
+            });
+
+            // Submissão do Formulário
+            document.getElementById('form-loja-interno').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                mostrarErro('');
+
+                const dados = montarDadosEncomenda();
+
+                if (!dados.nome) {
+                    mostrarErro('Por favor indique o nome do cliente.');
+                    document.getElementById('cliente-nome').focus();
+                    return;
+                }
+                if (!dados.telefone) {
+                    mostrarErro('Por favor indique o telefone do cliente.');
+                    document.getElementById('cliente-telefone').focus();
+                    return;
+                }
+                if (dados.itens.length === 0) {
+                    mostrarErro('Selecione pelo menos um artigo para registar a encomenda.');
+                    return;
+                }
+                if (deixouSinal && (!document.getElementById('sinal-valor').value || parseFloat(document.getElementById('sinal-valor').value) <= 0)) {
+                    mostrarErro('Como selecionou "Sinal: Sim", indique o valor deixado em euros.');
+                    inputValorSinal.focus();
+                    return;
+                }
+
+                const btn = document.getElementById('btn-submeter');
+                const textoOrig = btn.textContent;
+                btn.disabled = true;
+                btn.textContent = 'A enviar encomenda...';
+
+                // Monta payload limpo para o Web3Forms (apenas artigos pedidos + dados)
+                const payload = {
+                    access_key: WEB3FORMS_ACCESS_KEY,
+                    subject: `Nova Encomenda Loja ${dados.numero} - ${dados.nome}`,
+                    from_name: 'Balcão Pastelaria Tórrita',
+                    'Numero_Encomenda': dados.numero,
+                    'Nome_Cliente': dados.nome,
+                    'Telefone': dados.telefone,
+                    'Data_Levantamento': dados.dataLevantamento,
+                    'Hora_Levantamento': dados.horaLevantamento,
+                    'Sinal': dados.textoSinal,
+                    'Observacoes': dados.observacoes || '-'
+                };
+
+                dados.itens.forEach(item => {
+                    payload[item.nome] = item.valor;
+                });
+
+                try {
+                    const resp = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const json = await resp.json();
+
+                    if (resp.status === 200 || json.success) {
+                        ultimoPedidoGuardado = dados;
+                        // Incrementa o contador diário e prepara o próximo número
+                        definirNovoNumero(true);
+                        document.getElementById('modal-num-encomenda').textContent = dados.numero;
+                        document.getElementById('modal-sucesso').classList.add('aberto');
+                    } else {
+                        mostrarErro(json.message || 'Erro ao enviar para o Web3Forms. Verifique a chave de acesso.');
+                    }
+                } catch (err) {
+                    console.error(err);
+                    mostrarErro('Erro de ligação. Verifique a internet e tente novamente.');
+                } finally {
+                    btn.disabled = false;
+                    btn.textContent = textoOrig;
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+
