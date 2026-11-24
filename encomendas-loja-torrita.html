@@ -691,6 +691,10 @@
                             <input type="tel" id="cliente-telefone" name="Telefone" required placeholder="Ex: 912 345 678">
                         </div>
                         <div class="campo-grupo">
+                            <label for="cliente-email">Email do Cliente (para enviar PDF)</label>
+                            <input type="email" id="cliente-email" name="Email_Cliente" placeholder="Ex: maria@email.com">
+                        </div>
+                        <div class="campo-grupo">
                             <label for="levantamento-data">Data de Levantamento</label>
                             <input type="date" id="levantamento-data" name="Data_Levantamento">
                         </div>
@@ -1184,6 +1188,7 @@
                 numero: numeroEncomendaAtual,
                 nome: document.getElementById('cliente-nome').value.trim(),
                 telefone: document.getElementById('cliente-telefone').value.trim(),
+                email: document.getElementById('cliente-email').value.trim(),
                 dataLevantamento: document.getElementById('levantamento-data').value || '-',
                 horaLevantamento: document.getElementById('levantamento-hora').value || '-',
                 observacoes: document.getElementById('observacoes').value.trim(),
@@ -1235,6 +1240,14 @@
             doc.text(`Sinal: `, 115, y);
             doc.setFont('helvetica', 'normal');
             doc.text(dados.textoSinal, 129, y);
+
+            if (dados.email) {
+                y += 7;
+                doc.setFont('helvetica', 'bold');
+                doc.text(`Email: `, 14, y);
+                doc.setFont('helvetica', 'normal');
+                doc.text(dados.email, 29, y);
+            }
 
             y += 10;
             doc.setDrawColor(200, 190, 175);
@@ -1406,6 +1419,11 @@
                     document.getElementById('cliente-telefone').focus();
                     return;
                 }
+                if (dados.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(dados.email)) {
+                    mostrarErro('O endereço de email indicado não é válido.');
+                    document.getElementById('cliente-email').focus();
+                    return;
+                }
                 if (dados.itens.length === 0) {
                     mostrarErro('Selecione pelo menos um artigo para registar a encomenda.');
                     return;
@@ -1429,11 +1447,15 @@
                     'Numero_Encomenda': dados.numero,
                     'Nome_Cliente': dados.nome,
                     'Telefone': dados.telefone,
+                    'Email_Cliente': dados.email || '-',
                     'Data_Levantamento': dados.dataLevantamento,
                     'Hora_Levantamento': dados.horaLevantamento,
                     'Sinal': dados.textoSinal,
                     'Observacoes': dados.observacoes || '-'
                 };
+                if (dados.email) {
+                    payload.replyto = dados.email;
+                }
 
                 dados.itens.forEach(item => {
                     payload[item.nome] = item.valor;
